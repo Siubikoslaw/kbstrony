@@ -1,30 +1,68 @@
-/* Reset i ogólne */
+/* RESET / BASE */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: 'Segoe UI', sans-serif;
-  background-color: #f7f8fa;
+  background-color: #f9f9f9;
   color: #222;
   line-height: 1.6;
 }
 
-/* Kontener */
-.container {
-  max-width: 1140px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+/* NAVBAR */
+.navbar {
+  background: white;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 999;
 }
 
-/* Header */
+.nav-container {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #4e54c8;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+  color: #4e54c8;
+}
+
+/* HEADER / HERO */
 header {
   background: linear-gradient(to right, #4e54c8, #8f94fb);
   color: white;
-  padding: 5rem 2rem;
+  padding: 6rem 2rem;
+  text-align: center;
 }
 
 header h1 {
@@ -51,10 +89,11 @@ header p {
   background: #ddd;
 }
 
-/* Sekcja oferta */
+/* OFERTA */
 .oferta {
   background-color: #fff;
   padding: 4rem 2rem;
+  text-align: center;
 }
 
 .oferta h2 {
@@ -87,10 +126,11 @@ header p {
   margin-bottom: 1rem;
 }
 
-/* Kontakt */
+/* KONTAKT */
 .kontakt {
   background-color: #fefefe;
   padding: 4rem 2rem;
+  text-align: center;
 }
 
 .kontakt h2 {
@@ -106,15 +146,16 @@ header p {
   text-decoration: underline;
 }
 
-/* Footer */
+/* FOOTER */
 footer {
   background-color: #333;
   color: #aaa;
   padding: 1.5rem 0;
   font-size: 0.9rem;
+  text-align: center;
 }
 
-/* Responsywność */
+/* RESPONSYWNOŚĆ */
 @media (max-width: 768px) {
   header h1 {
     font-size: 2rem;
@@ -123,5 +164,15 @@ footer {
   .cards {
     flex-direction: column;
     align-items: center;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .nav-container {
+    flex-direction: column;
+    align-items: flex-start;
   }
 }
