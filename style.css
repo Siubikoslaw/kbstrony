@@ -1,6 +1,95 @@
+/* Reset / base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-  font-family: sans-serif;
-  background: #f0f0f0;
-  color: #333;
-  padding: 2rem;
+  font-family: 'Segoe UI', sans-serif;
+  line-height: 1.6;
+  color: #222;
+  background-color: #f9f9f9;
+}
+
+a {
+  color: #1e90ff;
+  text-decoration: none;
+}
+
+.container {
+  width: 90%;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 2rem 0;
+  text-align: center;
+}
+
+/* Header */
+header {
+  background: linear-gradient(to right, #4e54c8, #8f94fb);
+  color: white;
+  padding: 6rem 0;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+header p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.btn {
+  background-color: white;
+  color: #4e54c8;
+  padding: 0.8rem 1.5rem;
+  border-radius: 25px;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.btn:hover {
+  background-color: #ddd;
+}
+
+/* Oferta */
+.oferta {
+  background-color: #fff;
+}
+
+.oferta h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.oferta ul {
+  list-style: none;
+  margin-top: 1rem;
+}
+
+.oferta li {
+  margin: 0.5rem 0;
+  font-size: 1.1rem;
+}
+
+/* Kontakt */
+.kontakt {
+  background-color: #efefef;
+  padding-bottom: 4rem;
+}
+
+.kontakt h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+/* Footer */
+footer {
+  background-color: #333;
+  color: #aaa;
+  padding: 1rem 0;
+  font-size: 0.9rem;
 }
