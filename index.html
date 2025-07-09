@@ -1,31 +1,52 @@
+
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>kpstrony – Strony internetowe</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="theme-color" content="#2563EB" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Profesjonalne tworzenie stron internetowych we Wrocławiu. Nowoczesne strony www dla firm z gwarancją responsywności, optymalizacją SEO i skutecznym designem. Atrakcyjne ceny i kompleksowa obsługa." />
+    <meta name="keywords" content="profesjonalne tworzenie stron internetowych wrocław, projektowanie stron www wrocław, nowoczesne strony dla firm wrocław, responsywne strony internetowe, strony internetowe wrocław, strony www dla małych firm wrocław" />
+    <meta name="author" content="KP strony" />
+    <meta property="og:title" content="Tworzenie Stron Internetowych Wrocław | Kompleksowe Usługi WWW | KP Strony" />
+    <meta property="og:description" content="Profesjonalne tworzenie stron internetowych we Wrocławiu. Nowoczesne strony www z gwarancją responsywności i optymalizacją SEO." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://kpstrony.pl/tworzenie-stron-internetowych-wroclaw" />
+    <meta property="og:image" content="https://kpstrony.pl/og-image.jpg" />
+    <title>Tworzenie Profesjonalnych Stron Internetowych Wrocław | Kompleksowe Usługi WWW | KP Strony</title>
+    <link rel="canonical" href="https://kpstrony.pl/tworzenie-stron-internetowych-wroclaw">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&amp;family=Open+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js" defer></script>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 </head>
 <body>
-  <!-- Nawigacja -->
-  <nav class="navbar">
-    <div class="nav-container">
-      <a href="#" class="logo">kpstrony</a>
-      <input type="checkbox" id="menu-toggle" class="menu-toggle">
-      <label for="menu-toggle" class="menu-icon">&#9776;</label>
-      <ul class="nav-links">
-        <li><a href="#start">Start</a></li>
-        <li><a href="#oferta">Oferta</a></li>
-        <li><a href="#kontakt">Kontakt</a></li>
-      </ul>
-    </div>
-  </nav>
+    <button id="backToTop" class="back-to-top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+    <header>
+        <nav>
+            <div class="logo">KP <span>strony</span></div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index"><i class="fas fa-home"></i> Strona Główna</a></li>
+                <li><a href="tworzenie-stron-internetowych-wroclaw" class="active"><i class="fas fa-laptop-code"></i> Tworzenie Stron</a></li>
+                <li><a href="portfolio-stron-internetowych"><i class="fas fa-briefcase"></i> Portfolio</a></li>
+                <li><a href="strony-internetowe-wroclaw-kontakt"><i class="fas fa-envelope"></i> Kontakt</a></li>
+            </ul>
+        </nav>
+    </header>
 
-  <!-- Hero -->
- <section id="hero" class="hero">
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
         <div class="video-background">
             <video autoplay muted loop playsinline>
                 <source src="film.mp4" type="video/mp4">
@@ -46,45 +67,151 @@
         </div>
     </section>
 
-  <!-- Oferta -->
-  <section class="oferta" id="oferta">
-    <div class="container">
-      <h2>Co oferujemy?</h2>
-      <div class="cards">
-        <div class="card">
-          <h3>⚡ Szybkość</h3>
-          <p>Strony działające błyskawicznie, gotowe w kilka dni.</p>
+    <!-- Pricing Section -->
+    <section id="pricing" class="pricing">
+        <h2 data-aos="fade-up">Nasze Pakiety</h2>
+        <p class="section-description" data-aos="fade-up" data-aos-delay="100">Wybierz pakiet dopasowany do potrzeb i możliwości Twojej firmy. Każde rozwiązanie jest tworzone indywidualnie z myślą o Twoich celach biznesowych.</p>
+        <div class="pricing-container">
+            <div class="pricing-box" data-aos="fade-up" data-aos-delay="150">
+                <h3>Strona Podstawowa</h3>
+                <div class="price">500 zł</div>
+                <div class="monthly">+ 50 zł / miesiąc</div>
+                <ul>
+                    <li><i class="fas fa-check"></i> Strona typu one-page</li>
+                    <li><i class="fas fa-check"></i> Responsywny Design</li>
+                    <li><i class="fas fa-check"></i> Podstawowe SEO</li>
+                    <li><i class="fas fa-check"></i> Hosting</li>
+                    <li><i class="fas fa-check"></i> Wsparcie techniczne</li>
+                    <li><i class="fas fa-check"></i> Domena .pl</li>
+                </ul>
+                <a href="strony-internetowe-wroclaw-kontakt.html" class="pricing-button"><i class="fas fa-paper-plane"></i> Zamów</a>
+            </div>
+            
+            <div class="pricing-box featured" data-aos="fade-up" data-aos-delay="250">
+                <h3>Strona Premium</h3>
+                <div class="price">1000 zł</div>
+                <div class="monthly">+ 100 zł / miesiąc</div>
+                <ul>
+                    <li><i class="fas fa-check"></i> Dowolna ilość podstron</li>
+                    <li><i class="fas fa-check"></i> Responsywny Design</li>
+                    <li><i class="fas fa-check"></i> Zaawansowane SEO</li>
+                    <li><i class="fas fa-check"></i> Hosting Premium</li>
+                    <li><i class="fas fa-check"></i> Integracje z mediami społecznościowymi</li>
+                    <li><i class="fas fa-check"></i> Priorytetowe wsparcie techniczne</li>
+                    <li><i class="fas fa-check"></i> Domena .pl lub .com</li>
+                    <li><i class="fas fa-check"></i> Analityka Google</li>
+                </ul>
+                <a href="strony-internetowe-wroclaw-kontakt.html" class="pricing-button"><i class="fas fa-paper-plane"></i> Zamów</a>
+            </div>
+            </div>
+    </section>
+    
+    <!-- Process Section -->
+    <section id="process" class="process">
+        <h2 data-aos="fade-up">Jak Pracujemy</h2>
+        <p class="section-description" data-aos="fade-up" data-aos-delay="100">Nasz sprawdzony proces tworzenia stron zapewnia efektywną współpracę i najlepsze rezultaty dla Twojego biznesu</p>
+        <div class="process-container">
+            <div class="process-step" data-aos="fade-up" data-aos-delay="150">
+                <div class="process-icon">
+                    <i class="fas fa-comments"></i>
+                </div>
+                <h3>1. Konsultacja</h3>
+                <p>Dokładnie poznajemy Twoje potrzeby, cele biznesowe i oczekiwania wobec strony internetowej. Analizujemy branżę i konkurencję.</p>
+            </div>
+            
+            <div class="process-step" data-aos="fade-up" data-aos-delay="250">
+                <div class="process-icon">
+                    <i class="fas fa-pencil-ruler"></i>
+                </div>
+                <h3>2. Projektowanie</h3>
+                <p>Tworzymy projekt graficzny zgodny z Twoją wizją, identyfikacją wizualną firmy i najnowszymi standardami UX/UI.</p>
+            </div>
+            
+            <div class="process-step" data-aos="fade-up" data-aos-delay="350">
+                <div class="process-icon">
+                    <i class="fas fa-code"></i>
+                </div>
+                <h3>3. Realizacja</h3>
+                <p>Implementujemy stronę z dbałością o każdy detal, czysty kod, optymalizację i bezpieczeństwo. Regularnie konsultujemy postępy.</p>
+            </div>
+            
+            <div class="process-step" data-aos="fade-up" data-aos-delay="450">
+                <div class="process-icon">
+                    <i class="fas fa-rocket"></i>
+                </div>
+                <h3>4. Wdrożenie</h3>
+                <p>Publikujemy stronę, przeprowadzamy testy końcowe i optymalizujemy pod kątem wyszukiwarek.</p>
+            </div>
         </div>
-        <div class="card">
-          <h3>📱 Responsywność</h3>
-          <p>Działają na każdym urządzeniu, wyglądają świetnie wszędzie.</p>
-        </div>
-        <div class="card">
-          <h3>🎯 Efektywność</h3>
-          <p>Bez zbędnych bajerów – tylko to, czego potrzebujesz.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Kontakt -->
-  <section class="kontakt" id="kontakt">
-    <div class="container">
-      <h2>Kontakt</h2>
-      <form class="kontakt-form" action="mailto:kontakt@twojadomena.pl" method="POST" enctype="text/plain">
-        <input type="text" name="Imię i nazwisko" placeholder="Imię i nazwisko" required>
-        <input type="email" name="Email" placeholder="Twój e-mail" required>
-        <textarea name="Wiadomość" rows="5" placeholder="Twoja wiadomość" required></textarea>
-        <button type="submit" class="btn">Wyślij wiadomość</button>
-      </form>
-    </div>
-  </section>
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <h2 data-aos="fade-up">Co Otrzymujesz</h2>
+        <div class="features-container">
+            <div class="feature-box" data-aos="fade-up" data-aos-delay="100">
+                <i class="fas fa-mobile-alt"></i>
+                <h3>Responsywny Design</h3>
+                <p>Strona internetowa dostosowana do wszystkich urządzeń - od smartfonów po duże ekrany komputerów.</p>
+            </div>
+            
+            <div class="feature-box" data-aos="fade-up" data-aos-delay="200">
+                <i class="fas fa-search"></i>
+                <h3>Optymalizacja SEO</h3>
+                <p>Wdrożenie najlepszych praktyk SEO, aby Twoja strona osiągała wysokie pozycje w wyszukiwarkach.</p>
+            </div>
+            
+            <div class="feature-box" data-aos="fade-up" data-aos-delay="250">
+                <i class="fas fa-lock"></i>
+                <h3>Bezpieczeństwo</h3>
+                <p>Kompleksowe zabezpieczenia chroniące Twoją stronę przed zagrożeniami.</p>
+            </div>
+            
+            <div class="feature-box" data-aos="fade-up" data-aos-delay="350">
+                <i class="fas fa-cogs"></i>
+                <h3>Wsparcie Techniczne</h3>
+                <p>Stała opieka techniczna, aktualizacje systemu i pomoc w rozwiązywaniu problemów.</p>
+            </div>
+        </div>
+    </section>
 
-  <!-- Stopka -->
-  <footer>
-    <div class="container">
-      <p>&copy; 2025 kpstrony. Wszelkie prawa zastrzeżone.</p>
-    </div>
-  </footer>
+    <!-- Contact CTA -->
+    <section id="contact-cta" class="contact-cta">
+        <h2 data-aos="fade-up">Rozpocznij Projekt</h2>
+        <p data-aos="fade-up" data-aos-delay="100">Skontaktuj się z nami i omów swój projekt. Razem stworzymy stronę, która przyniesie realne korzyści dla Twojego biznesu.</p>
+        <div class="cta-buttons" data-aos="fade-up" data-aos-delay="200">
+            <a href="tel:+48798402047" class="cta-button"><i class="fas fa-phone-alt"></i> Zadzwoń teraz</a>
+            <a href="mailto:kpec.business@gmail.com" class="cta-button secondary"><i class="fas fa-envelope"></i> Wyślij maila</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>KB strony</h4>
+                <p>Profesjonalne projektowanie i tworzenie stron internetowych w Opolu.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Szybki kontakt</h4>
+                <p><i class="fas fa-envelope"></i> Email: <a href="mailto:kubbak.business@gmail.com">kubbak.business@gmail.com</a></p>
+                <p><i class="fas fa-phone-alt"></i> Tel: <a href="tel:+48572070483">+48 572 070 483</a></p>
+                <p><i class="fas fa-map-marker-alt"></i> Lokalizacja: Opole, Polska</p>
+            </div>
+            <div class="footer-section">
+                <h4>Nasze usługi</h4>
+                <ul class="footer-links">
+                    <li><a href="#pricing">Tworzenie stron WWW</a></li>
+                    <li><a href="#features">Optymalizacja SEO</a></li>
+                    <li><a href="#features">Obsługa techniczna</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 KB strony - tworzenie stron internetowych Opole</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
