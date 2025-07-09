@@ -1,4 +1,4 @@
-/* Reset / base */
+/* Reset i ogólne */
 * {
   margin: 0;
   padding: 0;
@@ -7,21 +7,16 @@
 
 body {
   font-family: 'Segoe UI', sans-serif;
-  line-height: 1.6;
+  background-color: #f7f8fa;
   color: #222;
-  background-color: #f9f9f9;
+  line-height: 1.6;
 }
 
-a {
-  color: #1e90ff;
-  text-decoration: none;
-}
-
+/* Kontener */
 .container {
-  width: 90%;
-  max-width: 960px;
+  max-width: 1140px;
   margin: 0 auto;
-  padding: 2rem 0;
+  padding: 2rem;
   text-align: center;
 }
 
@@ -29,11 +24,11 @@ a {
 header {
   background: linear-gradient(to right, #4e54c8, #8f94fb);
   color: white;
-  padding: 6rem 0;
+  padding: 5rem 2rem;
 }
 
 header h1 {
-  font-size: 2.5rem;
+  font-size: 2.8rem;
   margin-bottom: 1rem;
 }
 
@@ -43,42 +38,59 @@ header p {
 }
 
 .btn {
-  background-color: white;
+  background: white;
   color: #4e54c8;
-  padding: 0.8rem 1.5rem;
-  border-radius: 25px;
+  padding: 0.8rem 1.6rem;
+  border-radius: 30px;
   font-weight: bold;
-  transition: background 0.3s;
+  text-decoration: none;
+  transition: background 0.3s ease;
 }
 
 .btn:hover {
-  background-color: #ddd;
+  background: #ddd;
 }
 
-/* Oferta */
+/* Sekcja oferta */
 .oferta {
   background-color: #fff;
+  padding: 4rem 2rem;
 }
 
 .oferta h2 {
   font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.cards {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.card {
+  background-color: #f0f2f5;
+  border-radius: 16px;
+  padding: 2rem;
+  width: 300px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card h3 {
+  font-size: 1.4rem;
   margin-bottom: 1rem;
-}
-
-.oferta ul {
-  list-style: none;
-  margin-top: 1rem;
-}
-
-.oferta li {
-  margin: 0.5rem 0;
-  font-size: 1.1rem;
 }
 
 /* Kontakt */
 .kontakt {
-  background-color: #efefef;
-  padding-bottom: 4rem;
+  background-color: #fefefe;
+  padding: 4rem 2rem;
 }
 
 .kontakt h2 {
@@ -86,10 +98,30 @@ header p {
   margin-bottom: 1rem;
 }
 
+.email-link {
+  display: inline-block;
+  margin-top: 1rem;
+  font-size: 1.1rem;
+  color: #4e54c8;
+  text-decoration: underline;
+}
+
 /* Footer */
 footer {
   background-color: #333;
   color: #aaa;
-  padding: 1rem 0;
+  padding: 1.5rem 0;
   font-size: 0.9rem;
+}
+
+/* Responsywność */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 2rem;
+  }
+
+  .cards {
+    flex-direction: column;
+    align-items: center;
+  }
 }
