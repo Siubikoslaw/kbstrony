@@ -1,13 +1,18 @@
-/* Reset & podstawowe */
+/* Reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-body, button, input, textarea {
-  font-family: 'Montserrat', sans-serif;
-  color: #1f2937;
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  background: #f5f7fa;
+  color: #333;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 a {
@@ -15,315 +20,313 @@ a {
   color: inherit;
 }
 
-ul {
-  list-style: none;
-}
-
-img, video {
-  max-width: 100%;
-  height: auto;
-}
-
-/* Nawigacja i header */
-header {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  background: #fff;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-  z-index: 1000;
-}
+/* Nawigacja */
 nav {
-  max-width: 1200px;
-  margin: auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  background: #222;
   padding: 1rem 2rem;
-}
-.logo {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: #2563EB;
-}
-.logo span {
-  color: #111827;
-}
-.nav-links {
   display: flex;
-  gap: 1.5rem;
-}
-.nav-links a {
-  font-weight: 500;
-  transition: color 0.2s;
-}
-.nav-links a:hover,
-.nav-links a.active {
-  color: #2563EB;
+  gap: 1rem;
+  justify-content: center;
 }
 
-/* Hamburger menu (mobilne) */
-.hamburger {
-  display: none;
-  flex-direction: column;
-  gap: 4px;
+nav button.tab-btn {
+  background: transparent;
+  border: 2px solid transparent;
+  color: #eee;
+  font-size: 1rem;
+  padding: 0.5rem 1.2rem;
   cursor: pointer;
-}
-.hamburger span {
-  display: block;
-  width: 25px;
-  height: 3px;
-  background: #2563EB;
-  border-radius: 2px;
+  border-radius: 4px;
+  transition: border-color 0.3s ease, background-color 0.3s ease;
 }
 
-/* Hero z wideo */
-.hero {
-  position: relative;
-  height: 100vh;
-  overflow: hidden;
+nav button.tab-btn:hover,
+nav button.tab-btn.active {
+  background: #08c;
+  border-color: #08c;
+  color: white;
 }
+
+/* Sekcje */
+section {
+  display: none;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 2rem auto;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgb(0 0 0 / 0.1);
+}
+
+section.active {
+  display: block;
+}
+
+/* Tło wideo i animowany tekst */
+.video-background {
+  position: relative;
+  width: 100%;
+  height: 280px;
+  overflow: hidden;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
 .video-background video {
-  position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-}
-.hero-content {
-  position: relative;
-  z-index: 2;
-  max-width: 800px;
-  margin: auto;
-  padding: 2rem;
-  text-align: center;
-  color: white;
-}
-.hero-content h1 {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-}
-.hero-content h1 span {
-  color: #60a5fa;
-}
-.hero-content p {
-  font-size: 1.1rem;
-  margin-bottom: 1.5rem;
-}
-.hero-buttons {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  flex-wrap: wrap;
-}
-.cta-button {
-  display: inline-block;
-  font-weight: 600;
-  padding: 0.75rem 1.5rem;
-  border-radius: 30px;
-  background: #2563EB;
-  color: white;
-  transition: background 0.2s;
-}
-.cta-button:hover {
-  background: #1d4ed8;
-}
-.cta-button.secondary {
-  background: #111827;
-}
-.cta-button.secondary:hover {
-  background: #374151;
+  filter: brightness(0.5);
 }
 
-/* Sekcja cen */
-.pricing {
-  background: #f9fafb;
-  padding: 4rem 2rem;
-  text-align: center;
+.video-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  font-size: 2.4rem;
+  font-weight: 700;
+  white-space: nowrap;
+  border-right: 3px solid white;
+  overflow: hidden;
+  width: 0;
+  animation: typing 3s steps(30, end) forwards, blink-caret 0.75s step-end infinite;
 }
-.pricing h2 {
-  font-size: 2rem;
-  margin-bottom: .5rem;
-  color: #111827;
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 18ch;
+  }
 }
-.section-description {
-  color: #4b5563;
-  margin-bottom: 2rem;
+
+@keyframes blink-caret {
+  50% {
+    border-color: transparent;
+  }
 }
-.pricing-container {
+
+/* Przycisk */
+.btn {
+  background-color: #08c;
+  color: white;
+  border: none;
+  padding: 0.7rem 1.6rem;
+  margin: 0.5rem 0.7rem;
+  font-size: 1.1rem;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #005fa3;
+}
+
+/* Sekcje podstron */
+
+/* O nas, oferta */
+.about, .offer, .plan-pracy {
+  margin: 2rem 0;
+}
+
+.plan-pracy .steps {
   display: flex;
+  justify-content: space-around;
   flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.plan-pracy .step {
+  background: #08c;
+  color: white;
+  padding: 1rem 1.5rem;
+  border-radius: 6px;
+  flex: 1 1 150px;
+  text-align: center;
+  font-weight: 600;
+}
+
+/* Kontakt - ikony */
+.contact-icons {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  font-size: 2.5rem;
+  color: #08c;
+  cursor: pointer;
+  user-select: none;
+}
+
+.contact-icons div:hover {
+  color: #005fa3;
+}
+
+/* Pakiety */
+.packages {
+  display: flex;
   gap: 2rem;
   justify-content: center;
+  flex-wrap: wrap;
+  margin: 2rem 0;
 }
-.pricing-box {
-  background: #fff;
+
+.package {
+  background: #e8f0fe;
   border-radius: 10px;
-  padding: 2rem;
-  width: 300px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.04);
-  transition: transform .2s;
+  padding: 1.5rem 2rem;
+  width: 320px;
+  box-shadow: 0 2px 8px rgb(0 0 0 / 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: box-shadow 0.3s ease;
 }
-.pricing-box:hover {
-  transform: translateY(-5px);
+
+.package:hover {
+  box-shadow: 0 4px 15px rgb(0 0 0 / 0.2);
 }
-.pricing-box.featured {
-  border: 2px solid #2563EB;
-}
+
 .price {
   font-size: 2rem;
-  color: #2563EB;
-  margin: 1rem 0 .5rem;
+  font-weight: 700;
+  color: #08c;
+  margin-bottom: 0.3rem;
 }
-.monthly {
-  color: #6b7280;
-  margin-bottom: 1rem;
-}
-.pricing-box ul {
-  text-align: left;
-  margin-bottom: 1rem;
-}
-.pricing-box ul li {
-  margin: .5rem 0;
-}
-.pricing-button {
-  display: inline-block;
-  padding: .7rem 1.2rem;
-  border-radius: 30px;
-  background: #2563EB;
-  color: white;
+
+.name {
+  font-size: 1.3rem;
   font-weight: 600;
-  transition: background .2s;
-}
-.pricing-button:hover {
-  background: #1d4ed8;
+  margin-bottom: 0.5rem;
 }
 
-/* Sekcja procesu */
-.process {
-  background: #fff;
-  padding: 4rem 2rem;
-  text-align: center;
-}
-.process-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
-  max-width: 1200px;
-  margin: auto;
-}
-.process-step {
-  background: #f3f4f6;
-  padding: 2rem;
-  border-radius: 10px;
-}
-.process-icon {
-  font-size: 2rem;
-  color: #2563EB;
+.monthly {
+  font-weight: 500;
+  color: #555;
   margin-bottom: 1rem;
 }
 
-/* Sekcja features */
-.features {
-  background: #f9fafb;
-  padding: 4rem 2rem;
-  text-align: center;
-}
-.features-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
-  gap: 2rem;
-  max-width: 1200px;
-  margin: auto;
-}
-.feature-box {
-  background: #fff;
-  padding: 2rem;
-  border-radius: 12px;
-  box-shadow: 0 3px 8px rgba(0,0,0,0.05);
-}
-.feature-box i {
-  font-size: 2rem;
-  color: #2563EB;
-  margin-bottom: .5rem;
+.package ul {
+  list-style: disc inside;
+  margin-bottom: 1rem;
+  text-align: left;
+  width: 100%;
 }
 
-/* CTA */
-.contact-cta {
-  background: #2563EB;
-  color: white;
-  padding: 4rem 2rem;
-  text-align: center;
+.package ul li {
+  margin: 0.3rem 0;
 }
-.cta-buttons a {
-  margin: .5rem;
+
+.package button.btn {
+  align-self: center;
+  width: 100%;
+}
+
+/* Portfolio */
+.portfolio-gallery {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.portfolio-item {
+  max-width: 400px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgb(0 0 0 / 0.1);
+  background: white;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.portfolio-item:hover {
+  transform: scale(1.05);
+}
+
+.portfolio-item img {
+  width: 100%;
+  display: block;
+}
+
+.portfolio-item .desc {
+  padding: 0.8rem 1rem;
+  font-size: 0.9rem;
+  color: #333;
+}
+
+.section-header {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+/* Sekcja kontakt */
+#kontakt .contact-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.contact-btn {
+  background: #08c;
+  border: none;
+  color: white;
+  padding: 0.8rem 1.6rem;
+  font-size: 1.1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: background-color 0.3s ease;
+}
+
+.contact-btn:hover {
+  background-color: #005fa3;
 }
 
 /* Stopka */
 footer {
-  background: #111827;
-  color: white;
-  padding: 2rem 2rem;
-}
-.footer-content {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
-  gap: 2rem;
-  max-width: 1200px;
-  margin: auto;
-}
-.footer-section h4 {
-  margin-bottom: .8rem;
-  color: #93c5fd;
-}
-.footer-links li {
-  margin: .3rem 0;
-}
-.footer-bottom {
+  background: #222;
+  color: #eee;
   text-align: center;
-  margin-top: 2rem;
-  color: #9ca3af;
-}
-
-/* Back to top button */
-.back-to-top {
-  position: fixed;
-  bottom: 2rem;
-  right: 2rem;
-  width: 48px;
-  height: 48px;
-  background: #2563EB;
-  color: white;
-  border: none;
-  border-radius: 50%;
-  font-size: 1.2rem;
-  display: none;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  z-index: 1000;
-}
-.back-to-top i {
-  pointer-events: none;
+  padding: 1rem 2rem;
+  margin-top: auto;
+  font-size: 0.9rem;
 }
 
 /* Responsywność */
 @media (max-width: 768px) {
-  .nav-links {
-    position: absolute;
-    top: 100%;
-    right: 2rem;
-    background: #fff;
+  .video-background {
+    height: 180px;
+  }
+
+  .video-text {
+    font-size: 1.5rem;
+  }
+
+  .plan-pracy .steps {
     flex-direction: column;
-    padding: 1rem;
-    display: none;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    gap: 1rem;
   }
-  .nav-links.active {
-    display: flex;
+
+  .packages {
+    flex-direction: column;
+    align-items: center;
   }
-  .hamburger {
-    display: flex;
+
+  .package {
+    width: 90%;
+  }
+
+  nav {
+    flex-wrap: wrap;
   }
 }
