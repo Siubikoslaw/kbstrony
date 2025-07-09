@@ -1,4 +1,4 @@
-/* Reset */
+/* Reset i baza */
 * {
   margin: 0;
   padding: 0;
@@ -6,77 +6,81 @@
 }
 
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #fff;
+  color: #1a1a1a;
   line-height: 1.6;
-  background: #f5f7fa;
-  color: #333;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-}
-
-a {
-  text-decoration: none;
-  color: inherit;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 /* Nawigacja */
 nav {
-  background: #222;
+  background-color: #ffffff;
+  border-bottom: 1px solid #e0e0e0;
   padding: 1rem 2rem;
   display: flex;
-  gap: 1rem;
   justify-content: center;
+  gap: 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 nav button.tab-btn {
-  background: transparent;
-  border: 2px solid transparent;
-  color: #eee;
+  background: none;
+  border: none;
+  color: #555555;
+  font-weight: 600;
   font-size: 1rem;
-  padding: 0.5rem 1.2rem;
   cursor: pointer;
-  border-radius: 4px;
-  transition: border-color 0.3s ease, background-color 0.3s ease;
+  padding: 0.5rem 1rem;
+  transition: color 0.3s ease, border-bottom 0.3s ease;
+  border-bottom: 3px solid transparent;
 }
 
-nav button.tab-btn:hover,
+nav button.tab-btn:hover {
+  color: #0056d2;
+  border-bottom: 3px solid #0056d2;
+}
+
 nav button.tab-btn.active {
-  background: #08c;
-  border-color: #08c;
-  color: white;
+  color: #0056d2;
+  border-bottom: 3px solid #0056d2;
+  cursor: default;
 }
 
 /* Sekcje */
 section {
   display: none;
-  padding: 2rem;
-  max-width: 1200px;
-  margin: 2rem auto;
-  background: white;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgb(0 0 0 / 0.1);
+  max-width: 1100px;
+  margin: 3rem auto;
+  padding: 0 1.5rem;
 }
 
 section.active {
   display: block;
 }
 
-/* Tło wideo i animowany tekst */
+/* Video background */
 .video-background {
   position: relative;
   width: 100%;
-  height: 280px;
+  height: 320px;
+  border-radius: 12px;
   overflow: hidden;
-  border-radius: 8px;
-  margin-bottom: 1rem;
+  box-shadow: 0 10px 20px rgb(0 0 0 / 0.08);
+  margin-bottom: 2rem;
 }
 
 .video-background video {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: brightness(0.5);
+  filter: brightness(0.6);
 }
 
 .video-text {
@@ -85,13 +89,16 @@ section.active {
   left: 50%;
   transform: translate(-50%, -50%);
   color: #fff;
-  font-size: 2.4rem;
+  font-size: 2.8rem;
   font-weight: 700;
+  letter-spacing: 1px;
   white-space: nowrap;
   border-right: 3px solid white;
   overflow: hidden;
   width: 0;
   animation: typing 3s steps(30, end) forwards, blink-caret 0.75s step-end infinite;
+  font-family: 'Courier New', Courier, monospace;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.7);
 }
 
 @keyframes typing {
@@ -99,7 +106,7 @@ section.active {
     width: 0;
   }
   to {
-    width: 18ch;
+    width: 20ch;
   }
 }
 
@@ -111,222 +118,255 @@ section.active {
 
 /* Przycisk */
 .btn {
-  background-color: #08c;
-  color: white;
+  background-color: #0056d2;
+  color: #fff;
   border: none;
-  padding: 0.7rem 1.6rem;
-  margin: 0.5rem 0.7rem;
-  font-size: 1.1rem;
+  padding: 0.75rem 2rem;
+  margin: 0.8rem 1rem 1.5rem 1rem;
+  font-size: 1.15rem;
+  font-weight: 600;
+  border-radius: 30px;
   cursor: pointer;
-  border-radius: 4px;
-  transition: background-color 0.3s ease;
+  box-shadow: 0 4px 10px rgb(0 86 210 / 0.3);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  display: inline-block;
 }
 
-.btn:hover {
-  background-color: #005fa3;
+.btn:hover,
+.btn:focus {
+  background-color: #003f9a;
+  box-shadow: 0 6px 15px rgb(0 63 154 / 0.4);
+  outline: none;
 }
 
-/* Sekcje podstron */
-
-/* O nas, oferta */
+/* Teksty */
 .about, .offer, .plan-pracy {
-  margin: 2rem 0;
+  margin-bottom: 3rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333;
 }
 
+.about h2,
+.offer h2,
+.plan-pracy h2,
+.section-header {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #222;
+  text-align: center;
+  letter-spacing: 0.03em;
+}
+
+.about p,
+.offer p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  text-align: center;
+  color: #555;
+}
+
+/* Plan pracy */
 .plan-pracy .steps {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
+  gap: 2rem;
   flex-wrap: wrap;
-  gap: 1rem;
 }
 
 .plan-pracy .step {
-  background: #08c;
-  color: white;
-  padding: 1rem 1.5rem;
-  border-radius: 6px;
-  flex: 1 1 150px;
-  text-align: center;
+  flex: 1 1 180px;
+  background-color: #e9f0ff;
+  color: #0056d2;
+  padding: 1.5rem 1rem;
+  border-radius: 16px;
   font-weight: 600;
+  font-size: 1.1rem;
+  text-align: center;
+  box-shadow: 0 3px 8px rgb(0 86 210 / 0.2);
+  transition: background-color 0.3s ease;
+}
+
+.plan-pracy .step:hover {
+  background-color: #d0e0ff;
 }
 
 /* Kontakt - ikony */
 .contact-icons {
-  margin-top: 2rem;
+  margin-top: 3rem;
   display: flex;
   justify-content: center;
-  gap: 2rem;
-  font-size: 2.5rem;
-  color: #08c;
+  gap: 3rem;
+  font-size: 2.8rem;
+  color: #0056d2;
   cursor: pointer;
   user-select: none;
+  transition: color 0.3s ease;
 }
 
 .contact-icons div:hover {
-  color: #005fa3;
+  color: #003f9a;
 }
 
 /* Pakiety */
 .packages {
   display: flex;
-  gap: 2rem;
+  gap: 3rem;
   justify-content: center;
   flex-wrap: wrap;
-  margin: 2rem 0;
+  margin-top: 2rem;
+  margin-bottom: 3rem;
 }
 
 .package {
-  background: #e8f0fe;
-  border-radius: 10px;
-  padding: 1.5rem 2rem;
+  background: #f7faff;
+  border-radius: 20px;
+  padding: 2rem 2.5rem;
   width: 320px;
-  box-shadow: 0 2px 8px rgb(0 0 0 / 0.1);
+  box-shadow: 0 8px 24px rgb(0 86 210 / 0.12);
   display: flex;
   flex-direction: column;
   align-items: center;
-  transition: box-shadow 0.3s ease;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
 }
 
 .package:hover {
-  box-shadow: 0 4px 15px rgb(0 0 0 / 0.2);
+  transform: translateY(-6px);
+  box-shadow: 0 12px 36px rgb(0 86 210 / 0.25);
 }
 
 .price {
-  font-size: 2rem;
+  font-size: 2.5rem;
   font-weight: 700;
-  color: #08c;
-  margin-bottom: 0.3rem;
+  color: #0056d2;
+  margin-bottom: 0.25rem;
+  font-family: 'Poppins', sans-serif;
 }
 
 .name {
-  font-size: 1.3rem;
-  font-weight: 600;
-  margin-bottom: 0.5rem;
+  font-size: 1.35rem;
+  font-weight: 700;
+  margin-bottom: 0.8rem;
+  color: #003f9a;
 }
 
 .monthly {
-  font-weight: 500;
-  color: #555;
-  margin-bottom: 1rem;
+  font-weight: 600;
+  color: #666;
+  margin-bottom: 1.2rem;
+  font-size: 1rem;
 }
 
 .package ul {
-  list-style: disc inside;
-  margin-bottom: 1rem;
-  text-align: left;
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 1.5rem;
   width: 100%;
 }
 
 .package ul li {
-  margin: 0.3rem 0;
+  position: relative;
+  padding-left: 25px;
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 0.7rem;
 }
 
+.package ul li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #0056d2;
+  font-weight: 700;
+  font-size: 1.2rem;
+  line-height: 1;
+}
+
+/* Przycisk zamów */
 .package button.btn {
-  align-self: center;
   width: 100%;
+  padding: 0.85rem 0;
+  font-size: 1.1rem;
 }
 
 /* Portfolio */
 .portfolio-gallery {
   display: flex;
-  gap: 1rem;
+  gap: 1.5rem;
   flex-wrap: wrap;
   justify-content: center;
+  margin-top: 2rem;
 }
 
 .portfolio-item {
   max-width: 400px;
-  border-radius: 8px;
+  border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 2px 8px rgb(0 0 0 / 0.1);
-  background: white;
+  box-shadow: 0 5px 15px rgb(0 0 0 / 0.08);
+  background-color: #fff;
   cursor: pointer;
   transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
 }
 
 .portfolio-item:hover {
-  transform: scale(1.05);
+  transform: translateY(-8px);
 }
 
 .portfolio-item img {
   width: 100%;
+  height: 160px;
+  object-fit: cover;
   display: block;
+  border-bottom: 1px solid #eee;
 }
 
 .portfolio-item .desc {
-  padding: 0.8rem 1rem;
-  font-size: 0.9rem;
-  color: #333;
-}
-
-.section-header {
-  text-align: center;
-  font-size: 2rem;
-  margin-bottom: 1rem;
+  padding: 1rem 1.2rem;
+  font-size: 1rem;
+  color: #444;
+  flex-grow: 1;
 }
 
 /* Sekcja kontakt */
 #kontakt .contact-buttons {
   display: flex;
   justify-content: center;
-  gap: 1.5rem;
-  margin-top: 1.5rem;
+  gap: 1.8rem;
+  margin-top: 2rem;
   flex-wrap: wrap;
 }
 
 .contact-btn {
-  background: #08c;
+  background-color: #0056d2;
   border: none;
   color: white;
-  padding: 0.8rem 1.6rem;
-  font-size: 1.1rem;
-  border-radius: 5px;
+  padding: 0.85rem 2rem;
+  font-size: 1.15rem;
+  font-weight: 700;
+  border-radius: 30px;
   cursor: pointer;
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  transition: background-color 0.3s ease;
+  gap: 0.7rem;
+  box-shadow: 0 4px 12px rgb(0 86 210 / 0.25);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-.contact-btn:hover {
-  background-color: #005fa3;
+.contact-btn:hover,
+.contact-btn:focus {
+  background-color: #003f9a;
+  box-shadow: 0 6px 20px rgb(0 63 154 / 0.4);
+  outline: none;
 }
 
 /* Stopka */
 footer {
-  background: #222;
-  color: #eee;
+  background-color: #f0f0f0;
+  color: #555555;
   text-align: center;
-  padding: 1rem 2rem;
-  margin-top: auto;
-  font-size: 0.9rem;
-}
-
-/* Responsywność */
-@media (max-width: 768px) {
-  .video-background {
-    height: 180px;
-  }
-
-  .video-text {
-    font-size: 1.5rem;
-  }
-
-  .plan-pracy .steps {
-    flex-direction: column;
-    gap: 1rem;
-  }
-
-  .packages {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .package {
-    width: 90%;
-  }
-
-  nav {
-    flex-wrap: wrap;
-  }
-}
+  padding
