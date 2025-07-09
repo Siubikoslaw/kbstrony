@@ -1,15 +1,13 @@
-/* Reset & podstawy */
+/* Reset & podstawowe */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-body {
+body, button, input, textarea {
   font-family: 'Montserrat', sans-serif;
-  background-color: #fff;
-  color: #333;
-  line-height: 1.6;
+  color: #1f2937;
 }
 
 a {
@@ -17,77 +15,74 @@ a {
   color: inherit;
 }
 
-/* Navbar */
-header {
-  position: sticky;
-  top: 0;
-  z-index: 999;
-  background: #fff;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+ul {
+  list-style: none;
 }
 
+img, video {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Nawigacja i header */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  z-index: 1000;
+}
 nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   max-width: 1200px;
   margin: auto;
-  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
 }
-
 .logo {
+  font-size: 1.5rem;
   font-weight: 700;
-  font-size: 1.4rem;
   color: #2563EB;
 }
-
 .logo span {
-  color: #111;
+  color: #111827;
 }
-
 .nav-links {
-  list-style: none;
   display: flex;
   gap: 1.5rem;
 }
-
-.nav-links li a {
+.nav-links a {
   font-weight: 500;
-  transition: color 0.2s ease;
+  transition: color 0.2s;
 }
-
-.nav-links li a:hover,
-.nav-links li a.active {
+.nav-links a:hover,
+.nav-links a.active {
   color: #2563EB;
 }
 
-/* Hamburger */
+/* Hamburger menu (mobilne) */
 .hamburger {
   display: none;
   flex-direction: column;
   gap: 4px;
   cursor: pointer;
 }
-
 .hamburger span {
+  display: block;
   width: 25px;
   height: 3px;
-  background: #333;
-  border-radius: 3px;
+  background: #2563EB;
+  border-radius: 2px;
 }
 
-/* Hero section */
+/* Hero z wideo */
 .hero {
   position: relative;
   height: 100vh;
-  color: #fff;
-  text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   overflow: hidden;
 }
-
 .video-background video {
   position: absolute;
   top: 0;
@@ -95,289 +90,240 @@ nav {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  z-index: -1;
 }
-
 .hero-content {
+  position: relative;
   z-index: 2;
   max-width: 800px;
+  margin: auto;
   padding: 2rem;
+  text-align: center;
+  color: white;
 }
-
-.hero h1 {
+.hero-content h1 {
   font-size: 2.5rem;
   margin-bottom: 1rem;
 }
-
-.hero h1 span {
+.hero-content h1 span {
   color: #60a5fa;
 }
-
-.hero p {
+.hero-content p {
   font-size: 1.1rem;
   margin-bottom: 1.5rem;
 }
-
 .hero-buttons {
   display: flex;
-  gap: 1rem;
   justify-content: center;
+  gap: 1rem;
   flex-wrap: wrap;
 }
-
 .cta-button {
-  background: #2563EB;
-  color: #fff;
-  padding: 0.8rem 1.6rem;
-  border-radius: 50px;
+  display: inline-block;
   font-weight: 600;
-  transition: background 0.2s ease;
+  padding: 0.75rem 1.5rem;
+  border-radius: 30px;
+  background: #2563EB;
+  color: white;
+  transition: background 0.2s;
 }
-
 .cta-button:hover {
   background: #1d4ed8;
 }
-
 .cta-button.secondary {
-  background: #fff;
-  color: #2563EB;
-  border: 2px solid #2563EB;
+  background: #111827;
 }
-
 .cta-button.secondary:hover {
-  background: #2563EB;
-  color: #fff;
+  background: #374151;
 }
 
-/* Pricing section */
+/* Sekcja cen */
 .pricing {
-  padding: 4rem 1rem;
-  text-align: center;
   background: #f9fafb;
+  padding: 4rem 2rem;
+  text-align: center;
 }
-
 .pricing h2 {
   font-size: 2rem;
-  margin-bottom: 0.5rem;
+  margin-bottom: .5rem;
+  color: #111827;
 }
-
 .section-description {
-  max-width: 600px;
-  margin: 0 auto 2rem;
+  color: #4b5563;
+  margin-bottom: 2rem;
 }
-
 .pricing-container {
   display: flex;
   flex-wrap: wrap;
   gap: 2rem;
   justify-content: center;
 }
-
 .pricing-box {
   background: #fff;
+  border-radius: 10px;
   padding: 2rem;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
   width: 300px;
-  transition: transform 0.2s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+  transition: transform .2s;
 }
-
 .pricing-box:hover {
   transform: translateY(-5px);
 }
-
 .pricing-box.featured {
   border: 2px solid #2563EB;
 }
-
 .price {
   font-size: 2rem;
-  margin: 1rem 0 0.5rem;
   color: #2563EB;
+  margin: 1rem 0 .5rem;
 }
-
 .monthly {
-  font-size: 0.9rem;
-  color: #666;
+  color: #6b7280;
   margin-bottom: 1rem;
 }
-
 .pricing-box ul {
-  list-style: none;
   text-align: left;
-  margin: 1rem 0;
+  margin-bottom: 1rem;
 }
-
 .pricing-box ul li {
-  margin-bottom: 0.5rem;
+  margin: .5rem 0;
 }
-
 .pricing-button {
   display: inline-block;
-  margin-top: 1rem;
+  padding: .7rem 1.2rem;
+  border-radius: 30px;
   background: #2563EB;
   color: white;
-  padding: 0.7rem 1.2rem;
-  border-radius: 30px;
+  font-weight: 600;
+  transition: background .2s;
+}
+.pricing-button:hover {
+  background: #1d4ed8;
 }
 
-/* Process section */
+/* Sekcja procesu */
 .process {
-  padding: 4rem 1rem;
   background: #fff;
+  padding: 4rem 2rem;
   text-align: center;
 }
-
 .process-container {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 2rem;
-  justify-content: center;
+  max-width: 1200px;
+  margin: auto;
 }
-
 .process-step {
   background: #f3f4f6;
   padding: 2rem;
   border-radius: 10px;
-  max-width: 280px;
 }
-
 .process-icon {
   font-size: 2rem;
-  margin-bottom: 1rem;
   color: #2563EB;
+  margin-bottom: 1rem;
 }
 
-/* Features */
+/* Sekcja features */
 .features {
-  padding: 4rem 1rem;
   background: #f9fafb;
+  padding: 4rem 2rem;
   text-align: center;
 }
-
 .features-container {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
   gap: 2rem;
-  justify-content: center;
+  max-width: 1200px;
+  margin: auto;
 }
-
 .feature-box {
   background: #fff;
   padding: 2rem;
   border-radius: 12px;
-  max-width: 250px;
   box-shadow: 0 3px 8px rgba(0,0,0,0.05);
 }
-
 .feature-box i {
   font-size: 2rem;
   color: #2563EB;
-  margin-bottom: 0.5rem;
+  margin-bottom: .5rem;
 }
 
 /* CTA */
 .contact-cta {
-  padding: 4rem 1rem;
   background: #2563EB;
-  color: #fff;
+  color: white;
+  padding: 4rem 2rem;
   text-align: center;
 }
-
 .cta-buttons a {
-  margin: 0.5rem;
+  margin: .5rem;
 }
 
-/* Footer */
+/* Stopka */
 footer {
   background: #111827;
-  color: #fff;
-  padding: 2rem 1rem;
+  color: white;
+  padding: 2rem 2rem;
 }
-
 .footer-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+  gap: 2rem;
   max-width: 1200px;
   margin: auto;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-  justify-content: space-between;
 }
-
 .footer-section h4 {
-  margin-bottom: 0.8rem;
+  margin-bottom: .8rem;
   color: #93c5fd;
 }
-
-.footer-links {
-  list-style: none;
-}
-
 .footer-links li {
-  margin: 0.3rem 0;
+  margin: .3rem 0;
 }
-
 .footer-bottom {
   text-align: center;
   margin-top: 2rem;
-  font-size: 0.9rem;
+  color: #9ca3af;
 }
 
-/* Back to top */
+/* Back to top button */
 .back-to-top {
   position: fixed;
   bottom: 2rem;
   right: 2rem;
+  width: 48px;
+  height: 48px;
   background: #2563EB;
-  color: #fff;
+  color: white;
   border: none;
   border-radius: 50%;
-  padding: 0.8rem;
   font-size: 1.2rem;
-  cursor: pointer;
   display: none;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
   z-index: 1000;
 }
-
-.back-to-top.show {
-  display: block;
+.back-to-top i {
+  pointer-events: none;
 }
 
 /* Responsywność */
 @media (max-width: 768px) {
   .nav-links {
-    display: none;
-    flex-direction: column;
     position: absolute;
-    top: 70px;
-    right: 1rem;
+    top: 100%;
+    right: 2rem;
     background: #fff;
+    flex-direction: column;
     padding: 1rem;
+    display: none;
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   }
-
   .nav-links.active {
     display: flex;
   }
-
   .hamburger {
     display: flex;
-  }
-
-  .hero h1 {
-    font-size: 1.8rem;
-  }
-
-  .pricing-container,
-  .process-container,
-  .features-container {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .footer-content {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
   }
 }
