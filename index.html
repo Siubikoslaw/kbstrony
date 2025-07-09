@@ -2,16 +2,20 @@
 <html lang="pl">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>kbstrony – Nowoczesne Strony Internetowe</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>kpstrony – Strony internetowe</title>
   <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-
-  <!-- 🔝 Nawigacja -->
+  <!-- Nawigacja -->
   <nav class="navbar">
     <div class="nav-container">
-      <div class="logo">kpstrony</div>
+      <a href="#" class="logo">kpstrony</a>
+      <input type="checkbox" id="menu-toggle" class="menu-toggle">
+      <label for="menu-toggle" class="menu-icon">&#9776;</label>
       <ul class="nav-links">
         <li><a href="#start">Start</a></li>
         <li><a href="#oferta">Oferta</a></li>
@@ -20,51 +24,54 @@
     </div>
   </nav>
 
-  <!-- 🎯 Sekcja startowa -->
+  <!-- Hero -->
   <header id="start">
     <div class="container">
-      <h1>Tworzymy Nowoczesne Strony Internetowe</h1>
+      <h1>Tworzymy strony internetowe</h1>
       <p>Prosto. Szybko. Efektywnie.</p>
-      <a href="#kontakt" class="btn">Skontaktuj się</a>
+      <a href="#kontakt" class="btn">Bezpłatna wycena</a>
     </div>
   </header>
 
-  <!-- 💼 Sekcja oferty -->
+  <!-- Oferta -->
   <section class="oferta" id="oferta">
     <div class="container">
       <h2>Co oferujemy?</h2>
       <div class="cards">
         <div class="card">
           <h3>⚡ Szybkość</h3>
-          <p>Strony ładujące się błyskawicznie – bez zbędnych dodatków.</p>
+          <p>Strony działające błyskawicznie, gotowe w kilka dni.</p>
         </div>
         <div class="card">
-          <h3>🛡️ Wsparcie</h3>
-          <p>Po zakupie strony oferujemy wsparcie techniczne.</p>
+          <h3>📱 Responsywność</h3>
+          <p>Działają na każdym urządzeniu, wyglądają świetnie wszędzie.</p>
         </div>
         <div class="card">
-          <h3>🎯 Skuteczność</h3>
-          <p>Ukierunkowane na Twój cel: sprzedaż, wizerunek, kontakt.</p>
+          <h3>🎯 Efektywność</h3>
+          <p>Bez zbędnych bajerów – tylko to, czego potrzebujesz.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ✉️ Sekcja kontaktowa -->
+  <!-- Kontakt -->
   <section class="kontakt" id="kontakt">
     <div class="container">
       <h2>Kontakt</h2>
-      <p>Masz pytania? Napisz do nas:</p>
-      <a href="mailto:kontakt@twojadomena.pl" class="email-link">kontakt@twojadomena.pl</a>
+      <form class="kontakt-form" action="mailto:kontakt@twojadomena.pl" method="POST" enctype="text/plain">
+        <input type="text" name="Imię i nazwisko" placeholder="Imię i nazwisko" required>
+        <input type="email" name="Email" placeholder="Twój e-mail" required>
+        <textarea name="Wiadomość" rows="5" placeholder="Twoja wiadomość" required></textarea>
+        <button type="submit" class="btn">Wyślij wiadomość</button>
+      </form>
     </div>
   </section>
 
-  <!-- ⚫ Stopka -->
+  <!-- Stopka -->
   <footer>
     <div class="container">
-      <p>&copy; 2025 KB - strony Opole. .</p>
+      <p>&copy; 2025 kpstrony. Wszelkie prawa zastrzeżone.</p>
     </div>
   </footer>
-
 </body>
 </html>
