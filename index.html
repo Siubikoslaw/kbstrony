@@ -2,216 +2,198 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="theme-color" content="#2563EB" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Profesjonalne tworzenie stron internetowych we Wrocławiu. Nowoczesne strony www dla firm z gwarancją responsywności, optymalizacją SEO i skutecznym designem. Atrakcyjne ceny i kompleksowa obsługa." />
-    <meta name="keywords" content="profesjonalne tworzenie stron internetowych wrocław, projektowanie stron www wrocław, nowoczesne strony dla firm wrocław, responsywne strony internetowe, strony internetowe wrocław, strony www dla małych firm wrocław" />
-    <meta name="author" content="KP strony" />
-    <meta property="og:title" content="Tworzenie Stron Internetowych Wrocław | Kompleksowe Usługi WWW | KP Strony" />
-    <meta property="og:description" content="Profesjonalne tworzenie stron internetowych we Wrocławiu. Nowoczesne strony www z gwarancją responsywności i optymalizacją SEO." />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://kpstrony.pl/tworzenie-stron-internetowych-wroclaw" />
-    <meta property="og:image" content="https://kpstrony.pl/og-image.jpg" />
-    <title>Tworzenie Profesjonalnych Stron Internetowych Wrocław | Kompleksowe Usługi WWW | KP Strony</title>
-    <link rel="canonical" href="https://kpstrony.pl/tworzenie-stron-internetowych-wroclaw">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&amp;family=Open+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js" defer></script>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
-    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Twoja Firma - Strony Internetowe</title>
+
+  <!-- Font Awesome CDN do ikon -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-p0U6y6xYH+n9YywGlG+1JvM6KUtNJ3c6XMrQ/kPz6aN8XzO5ZLE2IjVTrFNj+w5t6EElF4zBmfG+T8h3vE6J7w=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+
+  <!-- Podłączony zewnętrzny plik CSS -->
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-    <button id="backToTop" class="back-to-top">
-        <i class="fas fa-chevron-up"></i>
-    </button>
-    <header>
-        <nav>
-            <div class="logo">KP <span>strony</span></div>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-            <ul class="nav-links">
-                <li><a href="index"><i class="fas fa-home"></i> Strona Główna</a></li>
-                <li><a href="tworzenie-stron-internetowych-wroclaw" class="active"><i class="fas fa-laptop-code"></i> Tworzenie Stron</a></li>
-                <li><a href="portfolio-stron-internetowych"><i class="fas fa-briefcase"></i> Portfolio</a></li>
-                <li><a href="strony-internetowe-wroclaw-kontakt"><i class="fas fa-envelope"></i> Kontakt</a></li>
-            </ul>
-        </nav>
-    </header>
 
-    <!-- Hero Section -->
-    <section id="hero" class="hero">
-        <div class="video-background">
-            <video autoplay muted loop playsinline>
-                <source src="film.mp4" type="video/mp4">
-            </video>
-        </div>
-        <div class="hero-content" data-aos="fade-up" data-aos-duration="1000">
-            <h1 class="typing-effect">Tworzenie Stron Internetowych <span>Wrocław</span></h1>
-            <p>Profesjonalne i nowoczesne strony internetowe, które budują wizerunek Twojej firmy i przyciągają klientów</p>
-            <div class="hero-buttons">
-                <a href="#pricing" class="cta-button"><i class="fas fa-tags"></i> Zobacz pakiety</a>
-                <a href="#process" class="cta-button secondary"><i class="fas fa-tasks"></i> Poznaj proces</a>
-            </div>
-        </div>
-        <div class="hero-shapes">
-            <div class="shape shape-1"></div>
-            <div class="shape shape-2"></div>
-            <div class="shape shape-3"></div>
-        </div>
-    </section>
+  <!-- Nawigacja -->
+  <nav>
+    <button class="tab-btn active" data-tab="home">Strona główna</button>
+    <button class="tab-btn" data-tab="strony">Strony</button>
+    <button class="tab-btn" data-tab="portfolio">Portfolio</button>
+    <button class="tab-btn" data-tab="kontakt">Kontakt</button>
+  </nav>
 
-    <!-- Pricing Section -->
-    <section id="pricing" class="pricing">
-        <h2 data-aos="fade-up">Nasze Pakiety</h2>
-        <p class="section-description" data-aos="fade-up" data-aos-delay="100">Wybierz pakiet dopasowany do potrzeb i możliwości Twojej firmy. Każde rozwiązanie jest tworzone indywidualnie z myślą o Twoich celach biznesowych.</p>
-        <div class="pricing-container">
-            <div class="pricing-box" data-aos="fade-up" data-aos-delay="150">
-                <h3>Strona Podstawowa</h3>
-                <div class="price">500 zł</div>
-                <div class="monthly">+ 50 zł / miesiąc</div>
-                <ul>
-                    <li><i class="fas fa-check"></i> Strona typu one-page</li>
-                    <li><i class="fas fa-check"></i> Responsywny Design</li>
-                    <li><i class="fas fa-check"></i> Podstawowe SEO</li>
-                    <li><i class="fas fa-check"></i> Hosting</li>
-                    <li><i class="fas fa-check"></i> Wsparcie techniczne</li>
-                    <li><i class="fas fa-check"></i> Domena .pl</li>
-                </ul>
-                <a href="strony-internetowe-wroclaw-kontakt.html" class="pricing-button"><i class="fas fa-paper-plane"></i> Zamów</a>
-            </div>
-            
-            <div class="pricing-box featured" data-aos="fade-up" data-aos-delay="250">
-                <h3>Strona Premium</h3>
-                <div class="price">1000 zł</div>
-                <div class="monthly">+ 100 zł / miesiąc</div>
-                <ul>
-                    <li><i class="fas fa-check"></i> Dowolna ilość podstron</li>
-                    <li><i class="fas fa-check"></i> Responsywny Design</li>
-                    <li><i class="fas fa-check"></i> Zaawansowane SEO</li>
-                    <li><i class="fas fa-check"></i> Hosting Premium</li>
-                    <li><i class="fas fa-check"></i> Integracje z mediami społecznościowymi</li>
-                    <li><i class="fas fa-check"></i> Priorytetowe wsparcie techniczne</li>
-                    <li><i class="fas fa-check"></i> Domena .pl lub .com</li>
-                    <li><i class="fas fa-check"></i> Analityka Google</li>
-                </ul>
-                <a href="strony-internetowe-wroclaw-kontakt.html" class="pricing-button"><i class="fas fa-paper-plane"></i> Zamów</a>
-            </div>
-            </div>
-    </section>
-    
-    <!-- Process Section -->
-    <section id="process" class="process">
-        <h2 data-aos="fade-up">Jak Pracujemy</h2>
-        <p class="section-description" data-aos="fade-up" data-aos-delay="100">Nasz sprawdzony proces tworzenia stron zapewnia efektywną współpracę i najlepsze rezultaty dla Twojego biznesu</p>
-        <div class="process-container">
-            <div class="process-step" data-aos="fade-up" data-aos-delay="150">
-                <div class="process-icon">
-                    <i class="fas fa-comments"></i>
-                </div>
-                <h3>1. Konsultacja</h3>
-                <p>Dokładnie poznajemy Twoje potrzeby, cele biznesowe i oczekiwania wobec strony internetowej. Analizujemy branżę i konkurencję.</p>
-            </div>
-            
-            <div class="process-step" data-aos="fade-up" data-aos-delay="250">
-                <div class="process-icon">
-                    <i class="fas fa-pencil-ruler"></i>
-                </div>
-                <h3>2. Projektowanie</h3>
-                <p>Tworzymy projekt graficzny zgodny z Twoją wizją, identyfikacją wizualną firmy i najnowszymi standardami UX/UI.</p>
-            </div>
-            
-            <div class="process-step" data-aos="fade-up" data-aos-delay="350">
-                <div class="process-icon">
-                    <i class="fas fa-code"></i>
-                </div>
-                <h3>3. Realizacja</h3>
-                <p>Implementujemy stronę z dbałością o każdy detal, czysty kod, optymalizację i bezpieczeństwo. Regularnie konsultujemy postępy.</p>
-            </div>
-            
-            <div class="process-step" data-aos="fade-up" data-aos-delay="450">
-                <div class="process-icon">
-                    <i class="fas fa-rocket"></i>
-                </div>
-                <h3>4. Wdrożenie</h3>
-                <p>Publikujemy stronę, przeprowadzamy testy końcowe i optymalizujemy pod kątem wyszukiwarek.</p>
-            </div>
-        </div>
-    </section>
+  <!-- Strona Główna -->
+  <section id="home" class="active">
+    <div class="video-background">
+      <video autoplay muted loop playsinline src="film.mp4"></video>
+      <div class="video-text">Twoja firma w sieci</div>
+    </div>
 
-    <!-- Features Section -->
-    <section id="features" class="features">
-        <h2 data-aos="fade-up">Co Otrzymujesz</h2>
-        <div class="features-container">
-            <div class="feature-box" data-aos="fade-up" data-aos-delay="100">
-                <i class="fas fa-mobile-alt"></i>
-                <h3>Responsywny Design</h3>
-                <p>Strona internetowa dostosowana do wszystkich urządzeń - od smartfonów po duże ekrany komputerów.</p>
-            </div>
-            
-            <div class="feature-box" data-aos="fade-up" data-aos-delay="200">
-                <i class="fas fa-search"></i>
-                <h3>Optymalizacja SEO</h3>
-                <p>Wdrożenie najlepszych praktyk SEO, aby Twoja strona osiągała wysokie pozycje w wyszukiwarkach.</p>
-            </div>
-            
-            <div class="feature-box" data-aos="fade-up" data-aos-delay="250">
-                <i class="fas fa-lock"></i>
-                <h3>Bezpieczeństwo</h3>
-                <p>Kompleksowe zabezpieczenia chroniące Twoją stronę przed zagrożeniami.</p>
-            </div>
-            
-            <div class="feature-box" data-aos="fade-up" data-aos-delay="350">
-                <i class="fas fa-cogs"></i>
-                <h3>Wsparcie Techniczne</h3>
-                <p>Stała opieka techniczna, aktualizacje systemu i pomoc w rozwiązywaniu problemów.</p>
-            </div>
-        </div>
-    </section>
+    <div style="text-align:center;">
+      <button class="btn" onclick="alert('Oferta - w przygotowaniu!')">Zobacz ofertę</button>
+      <button class="btn" onclick="alert('O nas - w przygotowaniu!')">O nas</button>
+    </div>
 
-    <!-- Contact CTA -->
-    <section id="contact-cta" class="contact-cta">
-        <h2 data-aos="fade-up">Rozpocznij Projekt</h2>
-        <p data-aos="fade-up" data-aos-delay="100">Skontaktuj się z nami i omów swój projekt. Razem stworzymy stronę, która przyniesie realne korzyści dla Twojego biznesu.</p>
-        <div class="cta-buttons" data-aos="fade-up" data-aos-delay="200">
-            <a href="tel:+48798402047" class="cta-button"><i class="fas fa-phone-alt"></i> Zadzwoń teraz</a>
-            <a href="mailto:kpec.business@gmail.com" class="cta-button secondary"><i class="fas fa-envelope"></i> Wyślij maila</a>
-        </div>
-    </section>
+    <div class="about">
+      <h2>O nas</h2>
+      <p>
+        Jesteśmy młodym i dynamicznym zespołem specjalistów, którzy tworzą profesjonalne strony internetowe dopasowane do potrzeb klienta. Naszym celem jest wspieranie biznesów w rozwoju w sieci.
+      </p>
+    </div>
 
-    <!-- Footer -->
-    <footer>
-        <div class="footer-content">
-            <div class="footer-section">
-                <h4>KB strony</h4>
-                <p>Profesjonalne projektowanie i tworzenie stron internetowych w Opolu.</p>
-            </div>
-            <div class="footer-section">
-                <h4>Szybki kontakt</h4>
-                <p><i class="fas fa-envelope"></i> Email: <a href="mailto:kubbak.business@gmail.com">kubbak.business@gmail.com</a></p>
-                <p><i class="fas fa-phone-alt"></i> Tel: <a href="tel:+48572070483">+48 572 070 483</a></p>
-                <p><i class="fas fa-map-marker-alt"></i> Lokalizacja: Opole, Polska</p>
-            </div>
-            <div class="footer-section">
-                <h4>Nasze usługi</h4>
-                <ul class="footer-links">
-                    <li><a href="#pricing">Tworzenie stron WWW</a></li>
-                    <li><a href="#features">Optymalizacja SEO</a></li>
-                    <li><a href="#features">Obsługa techniczna</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2025 KB strony - tworzenie stron internetowych Opole</p>
-        </div>
-    </footer>
+    <div class="offer">
+      <h2>Nasza oferta</h2>
+      <p>Tworzymy strony wizytówki, sklepy internetowe oraz serwisy dostosowane do Twoich potrzeb.</p>
+    </div>
 
-    <script src="script.js"></script>
+    <div class="plan-pracy">
+      <h2>Nasza praca w 4 krokach</h2>
+      <div class="steps">
+        <div class="step">1. Analiza potrzeb</div>
+        <div class="step">2. Projektowanie</div>
+        <div class="step">3. Realizacja</div>
+        <div class="step">4. Wsparcie i utrzymanie</div>
+      </div>
+    </div>
+
+    <div class="contact-icons" aria-label="Kontakt">
+      <div title="Email"><i class="fa-solid fa-envelope"></i></div>
+      <div title="Telefon"><i class="fa-solid fa-phone"></i></div>
+      <div title="Instagram"><i class="fa-brands fa-instagram"></i></div>
+    </div>
+  </section>
+
+  <!-- Strony -->
+  <section id="strony">
+    <div class="video-background">
+      <video autoplay muted loop playsinline src="film.mp4"></video>
+      <div class="video-text">Twoje strony marzeń</div>
+    </div>
+
+    <div style="text-align:center;">
+      <button class="btn" onclick="alert('Pakiety - w przygotowaniu!')">Zobacz pakiety</button>
+      <button class="btn" onclick="alert('Proces tworzenia - w przygotowaniu!')">Poznaj proces</button>
+    </div>
+
+    <div class="packages">
+      <div class="package">
+        <div class="price">1500 zł</div>
+        <div class="name">Strona wizytówka</div>
+        <div class="monthly">Utrzymanie: 100 zł / mies.</div>
+        <ul>
+          <li>Responsywny design</li>
+          <li>Formularz kontaktowy</li>
+          <li>Podstawowa optymalizacja SEO</li>
+          <li>3 podstrony</li>
+        </ul>
+        <button class="btn" onclick="alert('Zamów stronę wizytówkę!')">Zamów</button>
+      </div>
+
+      <div class="package">
+        <div class="price">4000 zł</div>
+        <div class="name">Sklep internetowy</div>
+        <div class="monthly">Utrzymanie: 250 zł / mies.</div>
+        <ul>
+          <li>System zarządzania produktami</li>
+          <li>Integracja płatności online</li>
+          <li>Zaawansowane SEO</li>
+          <li>Do 50 produktów</li>
+        </ul>
+        <button class="btn" onclick="alert('Zamów sklep internetowy!')">Zamów</button>
+      </div>
+    </div>
+
+    <div class="plan-pracy">
+      <h2>Nasza praca w 4 krokach</h2>
+      <div class="steps">
+        <div class="step">1. Analiza potrzeb</div>
+        <div class="step">2. Projektowanie</div>
+        <div class="step">3. Realizacja</div>
+        <div class="step">4. Wsparcie i utrzymanie</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio -->
+  <section id="portfolio">
+    <h2 class="section-header">Nasze portfolio</h2>
+
+    <div class="portfolio-gallery">
+      <div class="portfolio-item">
+        <a href="https://example.com/projekt1" target="_blank" rel="noopener">
+          <img src="https://via.placeholder.com/400x150?text=Projekt+1" alt="Projekt 1" />
+          <div class="desc">Strona wizytówka dla lokalnej kawiarni.</div>
+        </a>
+      </div>
+
+      <div class="portfolio-item">
+        <a href="https://example.com/projekt2" target="_blank" rel="noopener">
+          <img src="https://via.placeholder.com/400x150?text=Projekt+2" alt="Projekt 2" />
+          <div class="desc">Sklep internetowy dla sklepu z modą.</div>
+        </a>
+      </div>
+
+      <div class="portfolio-item">
+        <a href="https://example.com/projekt3" target="_blank" rel="noopener">
+          <img src="https://via.placeholder.com/400x150?text=Projekt+3" alt="Projekt 3" />
+          <div class="desc">Serwis informacyjny dla firmy eventowej.</div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Kontakt -->
+  <section id="kontakt">
+    <div class="video-background">
+      <video autoplay muted loop playsinline src="film.mp4"></video>
+      <div class="video-text">Skontaktuj się z nami</div>
+    </div>
+
+    <div class="contact-buttons">
+      <button class="contact-btn" onclick="window.location.href='mailto:kontakt@twojafirma.pl'">
+        <i class="fa-solid fa-envelope"></i> Email
+      </button>
+      <button class="contact-btn" onclick="window.location.href='tel:+48123456789'">
+        <i class="fa-solid fa-phone"></i> Telefon
+      </button>
+      <button class="contact-btn" onclick="window.open('https://instagram.com/twojafirma', '_blank')">
+        <i class="fa-brands fa-instagram"></i> Instagram
+      </button>
+    </div>
+  </section>
+
+  <!-- Stopka -->
+  <footer>
+    &copy; 2025 Twoja Firma. Wszelkie prawa zastrzeżone.
+  </footer>
+
+  <script>
+    // Skrypt do obsługi zakładek (tabów)
+    const tabs = document.querySelectorAll('.tab-btn');
+    const sections = document.querySelectorAll('section');
+
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        tabs.forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+
+        const target = tab.dataset.tab;
+        sections.forEach(section => {
+          if (section.id === target) {
+            section.classList.add('active');
+          } else {
+            section.classList.remove('active');
+          }
+        });
+      });
+    });
+  </script>
+
 </body>
 </html>
