@@ -606,3 +606,113 @@ footer {
     padding: 0.5rem 0.6rem;
   }
 }
+/* Podstawowy reset i ogólne style */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+section {
+  padding: 60px 20px;
+}
+
+h1, h2, h3 {
+  color: #0056d2;
+  margin-bottom: 1rem;
+}
+
+/* Ramki i cienie do sekcji */
+.boxed-section {
+  background: white;
+  margin: 30px auto;
+  padding: 40px 30px;
+  max-width: 1100px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 86, 210, 0.1);
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.boxed-section:hover {
+  box-shadow: 0 12px 35px rgba(0, 86, 210, 0.15);
+}
+
+/* Karty/pakiety */
+.package-card {
+  background-color: #fff;
+  border: 1px solid #dbeafe;
+  border-left: 5px solid #0056d2;
+  border-radius: 10px;
+  padding: 25px;
+  margin-bottom: 20px;
+  box-shadow: 0 6px 12px rgba(0, 86, 210, 0.08);
+  transition: transform 0.3s ease;
+}
+
+.package-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 86, 210, 0.15);
+}
+
+/* Przycisk */
+button, .btn {
+  padding: 12px 24px;
+  background-color: #0056d2;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.2s ease;
+}
+
+button:hover, .btn:hover {
+  background-color: #003f9a;
+  box-shadow: 0 4px 12px rgba(0, 86, 210, 0.3);
+}
+
+/* Typowa sekcja z cieniem */
+.shadow-section {
+  background-color: #e0f0ff;
+  box-shadow: inset 0 0 30px rgba(0, 86, 210, 0.05);
+  border-radius: 20px;
+  padding: 60px 20px;
+  margin: 40px 0;
+}
+
+/* Ikony kontaktowe */
+.footer-contact-icons a svg {
+  transition: transform 0.3s ease;
+}
+.footer-contact-icons a:hover svg {
+  transform: scale(1.15);
+}
+
+/* Przykład layoutu z ikonami */
+.icon-box {
+  background: white;
+  border: 1px solid #cfe2ff;
+  box-shadow: 0 8px 20px rgba(0, 86, 210, 0.08);
+  border-radius: 12px;
+  padding: 30px;
+  text-align: center;
+  transition: all 0.3s ease-in-out;
+}
+
+.icon-box:hover {
+  box-shadow: 0 12px 24px rgba(0, 86, 210, 0.15);
+  transform: translateY(-4px);
+}
+
+/* Reaktywność */
+@media (max-width: 768px) {
+  .boxed-section {
+    padding: 25px 15px;
+  }
+  .package-card {
+    padding: 20px;
+  }
+}
+
