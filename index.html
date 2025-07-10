@@ -219,27 +219,7 @@
   </div>
 </footer>
 
-  <script>
-    // Skrypt do obsługi zakładek (tabów)
-    const tabs = document.querySelectorAll('.tab-btn');
-    const sections = document.querySelectorAll('section');
-
-    tabs.forEach(tab => {
-      tab.addEventListener('click', () => {
-        tabs.forEach(t => t.classList.remove('active'));
-        tab.classList.add('active');
-
-        const target = tab.dataset.tab;
-        sections.forEach(section => {
-          if (section.id === target) {
-            section.classList.add('active');
-          } else {
-            section.classList.remove('active');
-          }
-        });
-      });
-    });
-  </script>
+  <script src="script.js"></script>
 
 </body>
 </html>
