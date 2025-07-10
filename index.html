@@ -5,9 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Twoja Firma - Strony Internetowe</title>
 
-  <!-- Font Awesome do ikon -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-  <!-- Twój CSS -->
+  <!-- Font Awesome CDN do ikon -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-p0U6y6xYH+n9YywGlG+1JvM6KUtNJ3c6XMrQ/kPz6aN8XzO5ZLE2IjVTrFNj+w5t6EElF4zBmfG+T8h3vE6J7w=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+
+  <!-- Podłączony zewnętrzny plik CSS -->
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -28,61 +35,23 @@
     </div>
 
     <div style="text-align:center;">
-      <button class="btn" onclick="document.querySelector('.tab-btn[data-tab=strony]').click()">Zobacz ofertę</button>
-      <button class="btn" onclick="document.querySelector('#onas').scrollIntoView({behavior:'smooth'})">O nas</button>
+      <button class="btn" onclick="alert('Oferta - w przygotowaniu!')">Zobacz ofertę</button>
+      <button class="btn" onclick="alert('O nas - w przygotowaniu!')">O nas</button>
     </div>
 
-    <div id="onas" class="about">
+    <div class="about">
       <h2>O nas</h2>
       <p>
-        Jesteśmy młodym i dynamicznym zespołem specjalistów, którzy tworzą profesjonalne strony internetowe dopasowane do potrzeb klienta.
+        Jesteśmy młodym i dynamicznym zespołem specjalistów, którzy tworzą profesjonalne strony internetowe dopasowane do potrzeb klienta. Naszym celem jest wspieranie biznesów w rozwoju w sieci.
       </p>
     </div>
-    </section>
-    <section id="services" class="services">
-        <h2 data-aos="fade-up">Usługi tworzenia stron internetowych</h2>
-        <p data-aos="fade-up" data-aos-delay="100">Oferujemy kompleksowe usługi tworzenia stron internetowych, rozwoju oraz obsługi stron, które rozwiną Twoją działalność i zwiększą Twoją widoczność w sieci.</p>
-        <div class="service-boxes">
-            <div class="service-box" data-aos="fade-up" data-aos-delay="150">
-                <div class="service-icon-wrapper">
-                    <i class="fas fa-laptop-code"></i>
-                </div>
-                <h3>Tworzenie strony</h3>
-                <p>Projektujemy i tworzymy nowoczesne, responsywne strony WWW dostosowane do potrzeb Twojej firmy i branży.</p>
-                <ul class="service-features">
-                    <li><i class="fas fa-check"></i> Responsywny design</li>
-                    <li><i class="fas fa-check"></i> Optymalizacja pod SEO</li>
-                </ul>
-                <a href="index.html" class="service-button">Dowiedz się więcej</a>
-            </div>
-            <div class="service-box" data-aos="fade-up" data-aos-delay="250">
-                <div class="service-icon-wrapper">
-                    <i class="fas fa-cogs"></i>
-                </div>
-                <h3>Obsługa strony</h3>
-                <p>Zapewniamy pełną obsługę techniczną Twojej strony, aktualizacje, poprawki i rozbudowę funkcji.</p>
-                <ul class="service-features">
-                    <li><i class="fas fa-check"></i> Regularne aktualizacje</li>
-                    <li><i class="fas fa-check"></i> Pomoc techniczna</li>
-                </ul>
-                <a href="index.html" class="service-button">Dowiedz się więcej</a>
-            </div>
-            <div class="service-box" data-aos="fade-up" data-aos-delay="350">
-                <div class="service-icon-wrapper">
-                    <i class="fas fa-chart-line"></i>
-                </div>
-                <h3>Optymalizacja SEO</h3>
-                <p>Zwiększamy widoczność Twojej strony w wyszukiwarkach, co przekłada się na większy ruch i konwersję.</p>
-                <ul class="service-features">
-                    <li><i class="fas fa-check"></i> Audyt SEO</li>
-                    <li><i class="fas fa-check"></i> Optymalizacja treści</li>
-                </ul>
-                <a href="tworzenie-stron-internetowych-wroclaw.html" class="service-button">Dowiedz się więcej</a>
-            </div>
-        </div>
-    </section>
-<section>
-    <div id="plan" class="plan-pracy">
+
+    <div class="offer">
+      <h2>Nasza oferta</h2>
+      <p>Tworzymy strony wizytówki, sklepy internetowe oraz serwisy dostosowane do Twoich potrzeb.</p>
+    </div>
+
+    <div class="plan-pracy">
       <h2>Nasza praca w 4 krokach</h2>
       <div class="steps">
         <div class="step">1. Analiza potrzeb</div>
@@ -107,11 +76,11 @@
     </div>
 
     <div style="text-align:center;">
-      <button class="btn" onclick="document.querySelector('#pakiety').scrollIntoView({behavior:'smooth'})">Zobacz pakiety</button>
-      <button class="btn" onclick="document.querySelector('#proces').scrollIntoView({behavior:'smooth'})">Poznaj proces</button>
+      <button class="btn" onclick="alert('Pakiety - w przygotowaniu!')">Zobacz pakiety</button>
+      <button class="btn" onclick="alert('Proces tworzenia - w przygotowaniu!')">Poznaj proces</button>
     </div>
 
-    <div id="pakiety" class="packages">
+    <div class="packages">
       <div class="package">
         <div class="price">1500 zł</div>
         <div class="name">Strona wizytówka</div>
@@ -122,7 +91,7 @@
           <li>Podstawowa optymalizacja SEO</li>
           <li>3 podstrony</li>
         </ul>
-        <button class="btn">Zamów</button>
+        <button class="btn" onclick="alert('Zamów stronę wizytówkę!')">Zamów</button>
       </div>
 
       <div class="package">
@@ -135,25 +104,48 @@
           <li>Zaawansowane SEO</li>
           <li>Do 50 produktów</li>
         </ul>
-        <button class="btn">Zamów</button>
+        <button class="btn" onclick="alert('Zamów sklep internetowy!')">Zamów</button>
       </div>
     </div>
 
-    <div id="proces" class="plan-pracy">
+    <div class="plan-pracy">
       <h2>Nasza praca w 4 krokach</h2>
       <div class="steps">
-        <div class="step"><b>1. Analiza potrzeb</b> <br> Konsultacje, cele, potrzeby.</div>
-        <div class="step"><b>2. Projektowanie</b> <br> Wizualizacja, modyfikacje.</div>
-        <div class="step"><b>3. Realizacja</b> <br> Kodowanie, kontakt z klientem.</div>
-        <div class="step"><b>4. Wsparcie</b> <br> Utrzymanie strony i pomoc.</div>
+        <div class="step"><h5><b>1. Analiza potrzeb</b></h5> <br> Przeprowadzamy konsultacje, omawiamy cele i potrzeby.</div>
+        <div class="step"><h5><b>2. Projektowanie</b></h5> <br> Tworzymy wizualizację strony, w razie potrzeb modyfikujemy co trzeba </div>
+        <div class="step"><h5><b>3. Realizacja</b></h5> <br> Realizujemy projekt, stale informując cię o postępach </div>
+        <div class="step"><h5><b></b>4. Wsparcie i utrzymanie</b></h5> <br> Po zakończeniu projektu dbamy o utrzymanie strony w jak najlepszym stanie</div>
       </div>
     </div>
   </section>
 
   <!-- Portfolio -->
   <section id="portfolio">
-    <h2 class="section-header">Nasze portfolio</h2>
-    <p>Na razie brak projektów.</p>
+     <h2 class="section-header">Nasze portfolio</h2>
+     <h3 class="section"> Ta sekcja na razie jest pusta </h3>
+<!--
+    <div class="portfolio-gallery">
+      <div class="portfolio-item">
+        <a href="https://example.com/projekt1" target="_blank" rel="noopener">
+          <img src="https://via.placeholder.com/400x150?text=Projekt+1" alt="Projekt 1" />
+          <div class="desc">Strona wizytówka dla lokalnej kawiarni.</div>
+        </a>
+      </div>
+
+      <div class="portfolio-item">
+        <a href="https://example.com/projekt2" target="_blank" rel="noopener">
+          <img src="https://via.placeholder.com/400x150?text=Projekt+2" alt="Projekt 2" />
+          <div class="desc">Sklep internetowy dla sklepu z modą.</div>
+        </a>
+      </div>
+
+      <div class="portfolio-item">
+        <a href="https://example.com/projekt3" target="_blank" rel="noopener">
+          <img src="https://via.placeholder.com/400x150?text=Projekt+3" alt="Projekt 3" />
+          <div class="desc">Serwis informacyjny dla firmy eventowej.</div>
+        </a>
+      </div>
+    </div> -->
   </section>
 
   <!-- Kontakt -->
@@ -164,48 +156,65 @@
     </div>
 
     <div class="contact-buttons">
-      <button class="contact-btn" onclick="window.location.href='mailto:kubbak.business@gmail.com'">
+      <button class="contact-btn" onclick="window.location.href='mailto:kontakt@twojafirma.pl'">
         <i class="fa-solid fa-envelope"></i> Email
       </button>
       <button class="contact-btn" onclick="window.location.href='tel:+48123456789'">
         <i class="fa-solid fa-phone"></i> Telefon
       </button>
+      <!-- <button class="contact-btn" onclick="window.open('https://instagram.com/twojafirma', '_blank')">
+        <i class="fa-brands fa-instagram"></i> Instagram
+      </button> -->
     </div>
   </section>
 
   <!-- Stopka -->
   <footer>
-    <div class="footer-container">
-      <div class="footer-column">
-        <h3>Oferta</h3>
-        <ul>
-          <li><a href="#strony">Pakiety</a></li>
-          <li><a href="#proces">Proces</a></li>
-          <li><a href="#plan">Plan pracy</a></li>
-        </ul>
-      </div>
-      <div class="footer-column">
-        <h3>O nas</h3>
-        <ul>
-          <li><a href="#onas">Kim jesteśmy</a></li>
-          <li><a href="#kontakt">Kontakt</a></li>
-        </ul>
-      </div>
-      <div class="footer-column">
-        <h3>Kontakt</h3>
-        <ul>
-          <li><a href="tel:+48123456789">+48 123 456 789</a></li>
-          <li><a href="mailto:kubbak.business@gmail.com">kubbak.business@gmail.com</a></li>
-        </ul>
+  <div class="footer-container">
+    <div class="footer-column">
+      <h3>Oferta</h3>
+      <ul>
+        <li><a href="#strony">Pakiety</a></li>
+        <li><a href="#proces">Proces</a></li>
+        <li><a href="#plan">Plan pracy</a></li>
+      </ul>
+    </div>
+    <div class="footer-column">
+      <h3>O nas</h3>
+      <ul>
+        <li><a href="#onas">Kim jesteśmy</a></li>
+        <li><a href="#kontakt">Kontakt</a></li>
+      </ul>
+    </div>
+    <div class="footer-column">
+      <h3>Kontakt</h3>
+      <ul>
+        <li>Telefon: <a href="tel:+48123456789">+48 123 456 789</a></li>
+        <li>Email: <a href="mailto:kubbak.business@gmail.com">kubbak.business@gmail.com</a></li>
+      </ul>
+      <div class="footer-contact-icons">
+        <!-- <a href="https://instagram.com/twojprofil" target="_blank" aria-label="Instagram">
+          <!-- ikona Instagram SVG -->
+          <svg xmlns="http://www.w3.org/2000/svg" fill="#0056d2" viewBox="0 0 24 24" width="24" height="24"><path d="M7.75 2h8.5A5.75 5.75 0 0122 7.75v8.5A5.75 5.75 0 0116.25 22h-8.5A5.75 5.75 0 012 16.25v-8.5A5.75 5.75 0 017.75 2zm0 1.5A4.25 4.25 0 003.5 7.75v8.5A4.25 4.25 0 007.75 20.5h8.5a4.25 4.25 0 004.25-4.25v-8.5A4.25 4.25 0 0016.25 3.5h-8.5zM12 7a5 5 0 110 10 5 5 0 010-10zm0 1.5a3.5 3.5 0 100 7 3.5 3.5 0 000-7zm4.75-.88a1.12 1.12 0 110 2.25 1.12 1.12 0 010-2.25z"/></svg>
+        </a> -->
+        <a href="tel:+48123456789" aria-label="Telefon">
+          <!-- ikona telefonu SVG -->
+          <svg xmlns="http://www.w3.org/2000/svg" fill="#0056d2" viewBox="0 0 24 24" width="24" height="24"><path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.11-.21c1.2.48 2.5.75 3.85.75a1 1 0 011 1v3.25a1 1 0 01-1 1A17.927 17.927 0 013 6a1 1 0 011-1h3.25a1 1 0 011 1c0 1.35.27 2.65.75 3.85a1 1 0 01-.21 1.11l-2.17 2.18z"/></svg>
+        </a>
+        <a href="mailto:kubbak.business@gmail.com" aria-label="Email">
+          <!-- ikona email SVG -->
+          <svg xmlns="http://www.w3.org/2000/svg" fill="#0056d2" viewBox="0 0 24 24" width="24" height="24"><path d="M20 4H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2zm0 2l-8 5-8-5h16zm0 12H4V8l8 5 8-5v10z"/></svg>
+        </a>
       </div>
     </div>
-    <div class="footer-bottom">
-      &copy; 2025 Twoja Firma - Wszystkie prawa zastrzeżone
-    </div>
-  </footer>
+  </div>
+  <div class="footer-bottom">
+    &copy; 2025 Twoja Firma - Wszystkie prawa zastrzeżone
+  </div>
+</footer>
 
-  <!-- Skrypty -->
   <script>
+    // Skrypt do obsługi zakładek (tabów)
     const tabs = document.querySelectorAll('.tab-btn');
     const sections = document.querySelectorAll('section');
 
@@ -216,27 +225,15 @@
 
         const target = tab.dataset.tab;
         sections.forEach(section => {
-          section.classList.remove('active');
-          if (section.id === target) section.classList.add('active');
+          if (section.id === target) {
+            section.classList.add('active');
+          } else {
+            section.classList.remove('active');
+          }
         });
       });
     });
-
-    // Klikanie w linki typu #sekcja w footerze
-    document.querySelectorAll('a[href^="#"]').forEach(link => {
-      link.addEventListener('click', function (e) {
-        const targetId = this.getAttribute('href').substring(1);
-        const targetSection = document.getElementById(targetId);
-
-        if (targetSection) {
-          e.preventDefault();
-
-          const matchingTab = document.querySelector(`.tab-btn[data-tab="${targetId}"]`);
-          if (matchingTab) matchingTab.click();
-          else targetSection.scrollIntoView({ behavior: 'smooth' });
-        }
-      });
-    });
   </script>
+
 </body>
 </html>
