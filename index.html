@@ -234,6 +234,25 @@
         });
       });
     });
+    // Obsługa kliknięć w <a href="#sekcja"> — np. z footer'a
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    const targetId = this.getAttribute('href').substring(1);
+    const targetSection = document.getElementById(targetId);
+
+    if (targetSection) {
+      e.preventDefault();
+
+      // Znajdź odpowiedni przycisk zakładki i kliknij go programowo
+      const matchingTab = document.querySelector(`.tab-btn[data-tab="${targetId}"]`);
+      if (matchingTab) matchingTab.click();
+
+      // Opcjonalnie: przewiń do góry
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  });
+});
+
   </script>
 
 </body>
