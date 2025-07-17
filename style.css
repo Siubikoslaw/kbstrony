@@ -324,8 +324,8 @@ p {
 
 /* CTA Section */
 .cta {
-    background-color: var(--primary-color);
-    background: linear-gradient(to right, --primary-color, #d94805);;
+    /* background-color: var(--primary-color); */
+    background: linear-gradient(45deg, var(--primarrgb(255, 101, 29)), #d94805);;
     color: var(--white);
     padding: 80px 0;
     text-align: center;
