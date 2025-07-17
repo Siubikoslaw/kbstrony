@@ -32,20 +32,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Add scroll effect to navbar
-    const navbar = document.querySelector('.navbar');
-    if (navbar) {
-        window.addEventListener('scroll', function() {
-            if (window.scrollY > 50) {
-                navbar.style.backgroundColor = 'rgba(255, 255, 255, 0.95)';
-                navbar.style.backdropFilter = 'blur(10px)';
-            } else {
-                navbar.style.backgroundColor = '#ffffff';
-                navbar.style.backdropFilter = 'none';
-            }
-        });
-    }
-
     // Animation on scroll
     const observerOptions = {
         threshold: 0.1,
