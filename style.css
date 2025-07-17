@@ -127,6 +127,7 @@ p {
     justify-content: space-between;
     align-items: center;
     height: 70px;
+    font-weight: 700;
 }
 
 .nav-logo a {
