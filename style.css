@@ -24,16 +24,14 @@
 }
 
 body {
-    
+    font-family: 'Montserrat', sans-serif;
     line-height: 1.6;
     color: var(--text-primary);
     background-color: var(--white);
 }
-
-main {
-    font-family: 'Open Sans', sans-serif;
+html {
+    scroll-behavior: smooth;
 }
-
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -61,6 +59,7 @@ h3 {
 }
 
 p {
+    font-family: 'Open Sans', sans-serif;
     margin-bottom: 1rem;
     color: var(--text-secondary);
 }
@@ -107,7 +106,6 @@ p {
 
 /* Navigation */
 .navbar {
-    font-family: Montserrat, sans-serif;
     background: #04264b;
     box-shadow: var(--shadow);
     position: fixed;
@@ -119,7 +117,6 @@ p {
 }
 
 .nav-container {
-    font-family: Montserrat, sans-serif;
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
