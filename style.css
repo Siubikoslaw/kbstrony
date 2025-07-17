@@ -107,7 +107,6 @@ p {
 /* Navigation */
 .navbar {
     font-family: Montserrat, sans-serif;
-    background: linear-gradient(45deg, #007bff, #ff5722);
     box-shadow: var(--shadow);
     position: fixed;
     top: 0;
