@@ -111,7 +111,7 @@ p {
 
 /* Navigation */
 .navbar {
-    background: #04264b;
+    background: var(--gradient);
     box-shadow: var(--shadow);
     position: fixed;
     top: 0;
@@ -336,7 +336,7 @@ p {
 /* CTA Section */
 .cta {
     /* background-color: var(--primary-color); */
-    background: linear-gradient(45deg, var(--primary-color), #d94805);;
+    background: var(--gradient);
     color: var(--white);
     padding: 80px 0;
     text-align: center;
