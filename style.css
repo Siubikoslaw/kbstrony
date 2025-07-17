@@ -146,7 +146,7 @@ p {
 
 .nav-link {
     text-decoration: none;
-    color: var(--text-primary);
+    color: #fff;
     font-weight: 500;
     transition: var(--transition);
     position: relative;
