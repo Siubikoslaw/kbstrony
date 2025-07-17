@@ -22,7 +22,6 @@
     --shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
     --shadow-lg: 0 1rem 3rem rgba(0, 0, 0, 0.175);
     --transition: all 0.3s ease;
-    --gradient: linear-gradient(45deg, var(--primary-color), #d94805);;
 }
 i {
     margin-right: 5px;

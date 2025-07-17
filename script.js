@@ -167,7 +167,7 @@ document.addEventListener('DOMContentLoaded', () => {
 // Scroll to top functionality
 const createScrollToTopButton = () => {
     const button = document.createElement('button');
-    button.innerHTML = '↑';
+    button.innerHTML = '<i class="fa-solid fa-arrow-up"></i>';
     button.className = 'scroll-to-top';
     button.style.cssText = `
         position: fixed;
