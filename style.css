@@ -132,10 +132,12 @@ p {
 .nav-logo a {
     font-size: 1.5rem;
     font-weight: 700;
-    color: var(--primary-color);
+    color: var(--dark-color);
     text-decoration: none;
 }
-
+.nav-logo span {
+    color: var(--secondary-color);
+}
 .nav-menu {
     display: flex;
     list-style: none;
