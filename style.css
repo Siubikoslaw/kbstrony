@@ -108,7 +108,7 @@ p {
 /* Navigation */
 .navbar {
     font-family: Montserrat, sans-serif;
-    background: var(--gradient);
+    background: #0056b3;
     box-shadow: var(--shadow);
     position: fixed;
     top: 0;
@@ -132,12 +132,10 @@ p {
 .nav-logo a {
     font-size: 1.5rem;
     font-weight: 700;
-    color: var(--dark-color);
+    color: var(--primary-color);
     text-decoration: none;
 }
-.nav-logo span {
-    color: var(--secondary-color);
-}
+
 .nav-menu {
     display: flex;
     list-style: none;
