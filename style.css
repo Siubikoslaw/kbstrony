@@ -13,7 +13,7 @@
     --danger-color: #dc3545;
     --light-color: #f8f9fa;
     --dark-color: #343a40;
-    --white: gradient(to right, --primary-color, --danger-color);
+    --white: gradient(45deg, #007bff, #9f3514);
     --text-primary: #212529;
     --text-secondary: #6c757d;
     --border-color: #dee2e6;
