@@ -22,7 +22,10 @@
     --transition: all 0.3s ease;
     --gradient: linear-gradient(45deg, var(--primary-color), #d94805);;
 }
-
+i {
+    margin-right: 5px;
+    margin-left: 5px;
+}
 body {
     font-family: 'Montserrat', sans-serif;
     line-height: 1.6;
