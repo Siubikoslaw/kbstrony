@@ -164,7 +164,7 @@ p {
     /* margin-top: 2px; */
     content: '';
     position: absolute;
-    bottom: -3px; /* moved 2px lower */
+    bottom: -4px; /* moved 2px lower */
     left: 0;
     width: 0;
     height: 2px;
