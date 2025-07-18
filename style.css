@@ -177,7 +177,7 @@ p {
 
 .nav-link:hover,
 .nav-link.active {
-    color: var(--primary-color);
+    color: var(--dark-color);
 }
 
 /* Mobile Navigation */
