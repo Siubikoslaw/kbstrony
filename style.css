@@ -188,6 +188,15 @@ p {
     width: 100%;
 }
 
+@media (max-width: 768px) {
+    .nav-link {
+        color: var(--primary-color);
+    }
+    .nav-link.active,
+    .nav-link:hover {
+        color: var(--dark-color);
+    }
+}
 .nav-link:hover,
 .nav-link.active {
     color: var(--dark-color);
