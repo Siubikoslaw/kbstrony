@@ -162,6 +162,7 @@ p {
     display: flex;
     list-style: none;
     gap: 2rem;
+    background-color: var(--primary-color);
 }
 
 .nav-link {
