@@ -203,7 +203,7 @@ p {
 .bar {
     width: 25px;
     height: 3px;
-    background-color: var(--text-primary);
+    background-color: var(--gradient);
     margin: 3px 0;
     transition: 0.3s;
 }
