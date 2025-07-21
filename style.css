@@ -159,18 +159,11 @@ p {
 }
 
 
-/* Colorful hamburger background */
-.hamburger {
-    background: var(--gradient);
-    border-radius: 8px;
-    padding: 6px 10px;
-    box-shadow: var(--shadow);
-}
 
 /* Colorful nav-menu background when hamburger is active (mobile) */
 @media (max-width: 768px) {
     .nav-menu {
-        background: var(--gradient);
+        background: var(--primary-color);
     }
 }
 
