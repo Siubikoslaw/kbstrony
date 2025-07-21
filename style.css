@@ -156,12 +156,61 @@ p {
     display: flex;
     list-style: none;
     gap: 2rem;
+    transition: left 0.3s ease;
 }
 
-/* Colorful nav-menu background when hamburger is active (mobile) */
+/* Mobile Navigation - Fullscreen Overlay */
 @media (max-width: 768px) {
     .nav-menu {
-        background: var(--primary-color);
+        position: fixed;
+        left: -100%;
+        top: 0;
+        width: 100vw;
+        height: 100vh;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(135deg, var(--primary-color) 80%, var(--secondary-color) 100%);
+        background-blend-mode: multiply;
+        backdrop-filter: blur(8px);
+        text-align: center;
+        transition: left 0.3s ease;
+        box-shadow: 0 10px 27px rgba(0, 0, 0, 0.15);
+        z-index: 9999;
+        gap: 0;
+    }
+
+    .nav-menu.active {
+        left: 0;
+    }
+
+    .nav-item {
+        margin: 1.5rem 0;
+        font-size: 1.5rem;
+        color: #fff;
+        width: 100%;
+        text-align: center;
+        transition: color 0.2s;
+    }
+
+    .nav-link {
+        color: #fff;
+        font-size: 1.3rem;
+        padding: 1rem 2rem;
+        border-radius: 8px;
+        transition: background 0.2s, color 0.2s;
+        display: block;
+        width: 100%;
+    }
+
+    .nav-link:hover,
+    .nav-link.active {
+        background: rgba(255,255,255,0.08);
+        color: var(--light-color);
+    }
+
+    .hamburger {
+        display: flex;
     }
 }
 
@@ -204,6 +253,7 @@ p {
     display: none;
     flex-direction: column;
     cursor: pointer;
+    z-index: 10001;
 }
 
 .bar {
