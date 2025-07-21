@@ -52,23 +52,7 @@ html {
 
 /* Typography */
 h1, h2, h3, h4, h5, h6 {
-    background: var(--gradient);
-    color: var(--dark-color);
-    text-shadow: 0 4px 24px rgba(0, 123, 255, 0.15), 0 1px 0 #fff;
-    animation: modernFadeIn 0.7s cubic-bezier(0.23, 1, 0.32, 1);
-    transition: background 0.4s, color 0.4s, text-shadow 0.4s;
-    border-radius: 8px;
-    box-shadow: 0 8px 32px rgba(0, 123, 255, 0.08);
-    @keyframes modernFadeIn {
-        from {
-            opacity: 0;
-            transform: translateY(40px) scale(0.98);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0) scale(1);
-        }
-    }
+    
     font-weight: 800;
     line-height: 1.2;
     margin-bottom: 1rem;
