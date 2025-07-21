@@ -158,8 +158,6 @@ p {
     gap: 2rem;
 }
 
-
-
 /* Colorful nav-menu background when hamburger is active (mobile) */
 @media (max-width: 768px) {
     .nav-menu {
@@ -217,7 +215,7 @@ p {
 }
 
 .hamburger.active .bar:nth-child(1) {
-    transform: rotate(-45deg) translate(-5px, 5px);
+    transform: rotate(-45deg) translate(-6px, 6px);
 }
 
 .hamburger.active .bar:nth-child(2) {
@@ -225,7 +223,7 @@ p {
 }
 
 .hamburger.active .bar:nth-child(3) {
-    transform: rotate(45deg) translate(-5px, -5px);
+    transform: rotate(45deg) translate(-6px, -6px);
 }
 
 /* Hero Section */
