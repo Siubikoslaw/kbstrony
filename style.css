@@ -178,10 +178,15 @@ p {
         box-shadow: 0 10px 27px rgba(0, 0, 0, 0.15);
         z-index: 9999;
         gap: 0;
+        overflow: hidden; /* Prevent scrolling inside nav-menu */
     }
 
     .nav-menu.active {
         left: 0;
+    }
+
+    body.menu-open {
+        overflow: hidden; /* Prevent scrolling on body when menu is open */
     }
 
     .nav-item {
