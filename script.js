@@ -280,6 +280,7 @@ function typeEffect(element, text, speed = 80, callback) {
 
 document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.typing-effect').forEach(el => {
+        // Read el.textContent before clearing it in typeEffect
         const text = el.dataset.text || el.textContent;
         typeEffect(el, text);
     });
