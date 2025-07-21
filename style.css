@@ -145,6 +145,12 @@ p {
     color: #ffffff;
 }
 
+@media (max-width: 768px) {
+    .nav-menu {
+        background-color: var(--primary-color);
+    }
+}
+
 .nav-logo a {
     font-size: 1.5rem;
     font-weight: 700;
@@ -173,7 +179,6 @@ p {
 }
 
 .nav-link::before {
-    /* margin-top: 2px; */
     content: '';
     position: absolute;
     bottom: -4px;
