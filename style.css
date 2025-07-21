@@ -23,6 +23,7 @@
     --shadow-lg: 0 1rem 3rem rgba(0, 0, 0, 0.175);
     --transition: all 0.3s ease;
 }
+
 i {
     margin-right: 5px;
     margin-left: 5px;
@@ -45,7 +46,7 @@ html {
 /* Typography */
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Montserrat', sans-serif;
-    font-weight: 600;
+    font-weight: 800;
     line-height: 1.2;
     margin-bottom: 1rem;
     letter-spacing: -0.02em;
@@ -120,7 +121,10 @@ p {
     backdrop-filter: blur(20px);
     transition: all 0.3s ease;
 }
-
+.nav-item {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+}
 .nav-container {
     max-width: 1200px;
     margin: 0 auto;
