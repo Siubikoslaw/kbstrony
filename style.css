@@ -170,7 +170,7 @@ p {
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        background: linear-gradient(45deg, var(--primary-color) 80%, var(--secondary-color) 100%);
+        background: linear-gradient(-45deg, var(--secondary-color), var(--primary-color));
         background-blend-mode: multiply;
         backdrop-filter: blur(8px);
         text-align: center;
