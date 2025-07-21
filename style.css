@@ -159,10 +159,7 @@ p {
 }
 
 .nav-menu :active{
-    display: flex;
-    list-style: none;
-    background-color: var(--primary-color);
-    gap: 2rem;
+    color: var(--primary-color);
 }
 
 .nav-link {
