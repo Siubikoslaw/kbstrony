@@ -158,7 +158,7 @@ p {
     gap: 2rem;
 }
 
-.nav-menu {
+.nav-menu :active{
     display: flex;
     list-style: none;
     background-color: var(--primary-color);
