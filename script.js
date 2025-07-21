@@ -262,26 +262,22 @@ const measurePerformance = () => {
 };
 
 measurePerformance();
-// Typing effect for elements with .typing-effect
-function typeEffect(element, text, speed = 80, callback) {
+
+document.addEventListener("DOMContentLoaded", () => {
+    const el = document.querySelector(".typing-effect");
+    const text = el.textContent;
+    const speed = 50;
     let i = 0;
-    element.textContent = '';
-    function typing() {
+
+    el.textContent = ""; // Clear existing text
+
+    function typeWriter() {
         if (i < text.length) {
-            element.textContent += text.charAt(i);
+            el.textContent += text.charAt(i);
             i++;
-            setTimeout(typing, speed);
-        } else if (typeof callback === 'function') {
-            callback();
+            setTimeout(typeWriter, speed);
         }
     }
-    typing();
-}
 
-document.addEventListener('DOMContentLoaded', () => {
-    document.querySelectorAll('.typing-effect').forEach(el => {
-        // Read el.textContent before clearing it in typeEffect
-        const text = el.dataset.text || el.textContent;
-        typeEffect(el, text);
-    });
+    typeWriter();
 });
