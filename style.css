@@ -220,11 +220,11 @@ p {
     transform: rotate(45deg) translate(-5px, -6px);
 }
 
-@media (max-width: 768px) {
+
     .nav-menu {
         background: var(--gradient);
     }
-}
+
 
 /* Hero Section */
 .hero {
