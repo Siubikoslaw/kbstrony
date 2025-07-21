@@ -262,3 +262,25 @@ const measurePerformance = () => {
 };
 
 measurePerformance();
+// Typing effect for elements with .typing-effect
+function typeEffect(element, text, speed = 80, callback) {
+    let i = 0;
+    element.textContent = '';
+    function typing() {
+        if (i < text.length) {
+            element.textContent += text.charAt(i);
+            i++;
+            setTimeout(typing, speed);
+        } else if (typeof callback === 'function') {
+            callback();
+        }
+    }
+    typing();
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.typing-effect').forEach(el => {
+        const text = el.dataset.text || el.textContent;
+        typeEffect(el, text);
+    });
+});
