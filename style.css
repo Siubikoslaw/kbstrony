@@ -145,12 +145,6 @@ p {
     color: #ffffff;
 }
 
-@media (max-width: 768px) {
-    .nav-menu {
-        background-color: var(--primary-color);
-    }
-}
-
 .nav-logo a {
     font-size: 1.5rem;
     font-weight: 700;
@@ -162,7 +156,13 @@ p {
     display: flex;
     list-style: none;
     gap: 2rem;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
     background-color: var(--primary-color);
+    gap: 2rem;
 }
 
 .nav-link {
