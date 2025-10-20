@@ -58,21 +58,6 @@
         <section class="page-header">
             <video autoplay muted loop playsinline class="background-video">
                 <source src="film.mp4" type="video/mp4">
-                <source src="film.webm" type="video/webm">
-                <!-- fallback content / poster used until video loads -->
-                <img src="poster.jpg" alt="Poster" class="video-poster" style="width:100%;height:100%;object-fit:cover;">
-                <script>
-                    (function(){
-                        // set poster attribute on the <video> element (useful if you can't edit the tag)
-                        const v = document.currentScript.parentElement;
-                        if (v && !v.getAttribute('poster')) v.setAttribute('poster', 'poster.jpg');
-                        // hide the inline img once first frame is ready
-                        v.addEventListener('loadeddata', ()=> {
-                            const img = v.querySelector('.video-poster');
-                            if (img) img.style.display = 'none';
-                        });
-                    })();
-                </script>
             </video>
             <div class="container">
                 <h1>Nasza Oferta</h1>
