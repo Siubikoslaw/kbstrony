@@ -120,7 +120,7 @@ p {
 
 /* Navigation */
 .navbar {
-    background: var(--gradient);
+    background: var(--primary-color);
     box-shadow: var(--shadow);
     position: fixed;
     top: 0;
@@ -148,7 +148,7 @@ p {
 .nav-logo a {
     font-size: 1.5rem;
     font-weight: 700;
-    color: var(--primary-color);
+    color: var(--secondary-color);
     text-decoration: none;
 }
 
