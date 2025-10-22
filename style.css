@@ -1046,3 +1046,7 @@ html {
 .mt-2 {
     margin-top: 2rem;
 }
+
+#whiteH2 {
+    color: white;
+}
