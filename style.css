@@ -15,7 +15,7 @@
     --light-color: #f8f9fa;
     --dark-color: #343a40;
     --white: #ffffff;
-    --gradient: linear-gradient(90deg, var(--dark-color), var(--primary-color));
+    --gradient: linear-gradient(-90deg, var(--dark-color), var(--primary-color));
     --text-primary: #212529;
     --text-secondary: #6c757d;
     --border-color: #dee2e6;
