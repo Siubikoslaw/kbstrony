@@ -85,8 +85,11 @@
     <main>
         <!-- Hero Section -->
         <section class="hero">
-            <video autoplay muted loop playsinline class="background-video">
+            <video autoplay muted loop playsinline class="background-video" controls preload="metadata" poster="poster.jpg">
                 <source src="film.mp4" type="video/mp4">
+                <source src="film.webm" type="video/webm">
+                <!-- Fallback text shown if video cannot be played; use controls to debug playback issues -->
+                Twoja przeglądarka nie obsługuje tagu video lub plik nie został znaleziony. Sprawdź ścieżkę do pliku (np. ./film.mp4 lub ./assets/film.mp4) i upewnij się, że serwer zwraca poprawny typ MIME.
             </video>
             <div class="hero-content">
                 <h1 class="hero-title" class="typing-effect" >Profesjonalne strony internetowe</h1>
