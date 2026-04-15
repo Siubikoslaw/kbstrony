@@ -359,7 +359,7 @@ function submitForm() {
   const consent = document.getElementById('f-consent').checked;
 
   if (!name || !email || !service || !msg) {
-    alert('Proszę wypełnić wszystkie wymagane pola (oznaczone *).');
+    alert('Proszę wypełnić wszystkie wymagane pola.');
     return;
   }
   if (!consent) {
@@ -367,9 +367,26 @@ function submitForm() {
     return;
   }
 
-  document.getElementById('contact-form-wrap').style.display = 'none';
-  document.getElementById('success-state').style.display = 'block';
+  emailjs.send("service_vtmyjzd", "template_577wu0r", {
+    name: name,
+    email: email,
+    service: service,
+    message: msg
+  })
+  .then(() => {
+    document.getElementById('contact-form-wrap').style.display = 'none';
+    document.getElementById('success-state').style.display = 'block';
+  })
+  .catch(() => {
+    alert('Błąd wysyłki. Spróbuj ponownie.');
+  });
 }
+</script>
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<script>
+(function(){
+  emailjs.init("YOUR_PUBLIC_KEY");
+})();
 </script>
 </body>
 </html>
