@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Kontakt KB WebDesign — bezpłatna wycena strony internetowej. Email, telefon, WhatsApp. Odpowiedź w 24h.">
+<title>Kontakt & Wycena — KB WebDesign</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shared.css">
+<style>
+.contact-hero {
+  padding: calc(var(--nav-h) + 80px) 0 80px;
+  text-align: center;
+  background: radial-gradient(ellipse 70% 50% at 50% 0%, rgba(91,82,240,0.12), transparent 70%);
+}
+.contact-hero h1 { font-size: clamp(36px, 5vw, 62px); margin-bottom: 18px; }
+.contact-hero p { font-size: 18px; color: var(--text2); max-width: 540px; margin: 0 auto; line-height: 1.8; font-weight: 300; }
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 420px 1fr;
+  gap: 56px;
+  align-items: start;
+  padding: 80px 0 120px;
+}
+
+/* LEFT: info */
+.contact-info h2 { font-size: clamp(24px, 3vw, 36px); margin-bottom: 16px; }
+.contact-info > p { font-size: 15px; color: var(--text2); line-height: 1.85; margin-bottom: 36px; }
+
+.contact-methods { display: flex; flex-direction: column; gap: 14px; margin-bottom: 40px; }
+.cm {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  padding: 20px 22px;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+.cm:hover { border-color: rgba(91,82,240,0.3); transform: translateX(5px); }
+.cm-ico {
+  width: 46px; height: 46px;
+  background: rgba(91,82,240,0.1);
+  border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 22px;
+  flex-shrink: 0;
+}
+.cm-label { font-size: 10.5px; font-family: var(--font-display); font-weight: 700; color: var(--text3); text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 3px; }
+.cm-val { font-size: 15px; font-family: var(--font-display); font-weight: 700; color: var(--text); }
+
+.response-card {
+  background: rgba(52,211,153,0.06);
+  border: 1px solid rgba(52,211,153,0.15);
+  border-radius: var(--radius-xl);
+  padding: 20px 22px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.rc-dot { width: 10px; height: 10px; background: var(--green); border-radius: 50%; flex-shrink: 0; animation: pulse 2s infinite; }
+.rc-text { font-family: var(--font-display); font-size: 13.5px; font-weight: 600; color: var(--text2); }
+.rc-text strong { color: var(--green); }
+
+/* FORM */
+.contact-form {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-2xl);
+  padding: 48px 44px;
+}
+.form-title { font-family: var(--font-display); font-size: 22px; font-weight: 800; color: var(--text); margin-bottom: 8px; }
+.form-sub { font-size: 14px; color: var(--text3); margin-bottom: 36px; }
+
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.fg { margin-bottom: 20px; }
+.fg label {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text3);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin-bottom: 8px;
+}
+.fg input,
+.fg textarea,
+.fg select {
+  width: 100%;
+  background: var(--bg);
+  border: 1px solid var(--border2);
+  border-radius: var(--radius-sm);
+  padding: 14px 16px;
+  font-family: var(--font-body);
+  font-size: 15px;
+  color: var(--text);
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  -webkit-appearance: none;
+}
+.fg input:focus,
+.fg textarea:focus,
+.fg select:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(91,82,240,0.12);
+}
+.fg textarea { min-height: 130px; resize: vertical; }
+.fg select option { background: var(--surface2); }
+
+/* BUDGET GRID */
+.budget-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+.budget-opt {
+  background: var(--bg);
+  border: 1px solid var(--border2);
+  border-radius: var(--radius-sm);
+  padding: 12px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text2);
+}
+.budget-opt:hover,
+.budget-opt.selected {
+  background: rgba(91,82,240,0.1);
+  border-color: rgba(91,82,240,0.35);
+  color: var(--accent2);
+}
+
+.form-check { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 28px; margin-top: 4px; }
+.form-check input[type="checkbox"] {
+  width: 18px; height: 18px;
+  border: 1px solid var(--border2);
+  border-radius: 5px;
+  background: var(--bg);
+  cursor: pointer;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.form-check label { font-size: 13px; color: var(--text3); line-height: 1.6; }
+.form-check label a { color: var(--accent2); text-decoration: none; }
+
+.submit-btn {
+  width: 100%;
+  justify-content: center;
+  font-size: 16px;
+  padding: 18px;
+}
+
+/* SUCCESS STATE */
+.success-state {
+  display: none;
+  text-align: center;
+  padding: 60px 20px;
+}
+.success-icon { font-size: 64px; margin-bottom: 20px; }
+.success-state h3 { font-family: var(--font-display); font-size: 26px; font-weight: 800; color: var(--text); margin-bottom: 12px; }
+.success-state p { font-size: 15px; color: var(--text3); line-height: 1.7; }
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(0.7); opacity: 0.5; }
+}
+
+@media (max-width: 900px) {
+  .contact-grid { grid-template-columns: 1fr; }
+  .contact-form { padding: 32px 24px; }
+}
+@media (max-width: 560px) {
+  .form-row { grid-template-columns: 1fr; }
+  .budget-grid { grid-template-columns: 1fr 1fr; }
+}
+</style>
+</head>
+<body>
+
+<section class="contact-hero">
+  <div class="container">
+    <div class="eyebrow" style="justify-content:center;">Kontakt</div>
+    <h1>Zacznijmy<br>od rozmowy.</h1>
+    <p>Opisz mi swoją firmę i czego potrzebujesz. Odpiszę w ciągu 24 godzin — zwykle znacznie szybciej.</p>
+  </div>
+</section>
+
+<div style="background:var(--bg);">
+  <div class="container">
+    <div class="contact-grid">
+      <!-- INFO -->
+      <div class="reveal">
+        <h2>Skontaktuj się<br>bezpośrednio.</h2>
+        <p>Nie wysyłam zapytań do asystenta. Piszesz bezpośrednio do mnie — dostajesz odpowiedź od osoby, która będzie budować Twoją stronę.</p>
+
+        <div class="contact-methods">
+          <a href="mailto:kontakt@kbwebdesign.pl" class="cm">
+            <div class="cm-ico">✉️</div>
+            <div>
+              <div class="cm-label">Email</div>
+              <div class="cm-val">kontakt@kbwebdesign.pl</div>
+            </div>
+          </a>
+          <a href="tel:+48123456789" class="cm">
+            <div class="cm-ico">📞</div>
+            <div>
+              <div class="cm-label">Telefon & WhatsApp</div>
+              <div class="cm-val">+48 123 456 789</div>
+            </div>
+          </a>
+          <div class="cm" style="cursor:default;">
+            <div class="cm-ico">📅</div>
+            <div>
+              <div class="cm-label">Godziny pracy</div>
+              <div class="cm-val">Pon–Pt, 9:00–18:00</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="response-card">
+          <div class="rc-dot"></div>
+          <div class="rc-text">Dostępny na nowe projekty — <strong>odpowiedź w maks. 24h</strong> w dni robocze.</div>
+        </div>
+
+        <!-- MINI ABOUT -->
+        <div style="margin-top:40px; background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-xl); padding:24px; display:flex; gap:16px; align-items:center;">
+          <div style="width:52px;height:52px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent2));display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-size:18px;font-weight:800;color:#fff;flex-shrink:0;">KB</div>
+          <div>
+            <div style="font-family:var(--font-display);font-size:15px;font-weight:700;color:var(--text);">Kacper B.</div>
+            <div style="font-size:12.5px;color:var(--text3); margin-top:3px;">Web Designer & Developer · KB WebDesign</div>
+            <div style="font-size:12px;color:var(--text3); margin-top:6px; line-height:1.6;">Zbuduję dla Ciebie stronę, którą będziesz z dumą pokazywać klientom.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- FORM -->
+      <div class="reveal d1">
+        <div class="contact-form" id="contact-form-wrap">
+          <div class="form-title">Wyślij zapytanie</div>
+          <div class="form-sub">Im więcej szczegółów podasz, tym dokładniejszą wycenę mogę przygotować.</div>
+
+          <div class="form-row">
+            <div class="fg">
+              <label>Imię i nazwisko *</label>
+              <input type="text" id="f-name" placeholder="Jan Kowalski">
+            </div>
+            <div class="fg">
+              <label>Adres email *</label>
+              <input type="email" id="f-email" placeholder="jan@firma.pl">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="fg">
+              <label>Telefon (opcjonalnie)</label>
+              <input type="tel" id="f-phone" placeholder="+48 600 000 000">
+            </div>
+            <div class="fg">
+              <label>Branża / typ firmy *</label>
+              <input type="text" id="f-industry" placeholder="np. siłownia, kancelaria, coach">
+            </div>
+          </div>
+
+          <div class="fg">
+            <label>Aktualna strona (jeśli masz)</label>
+            <input type="url" id="f-website" placeholder="https://twoja-strona.pl">
+          </div>
+
+          <div class="fg">
+            <label>Czego potrzebujesz? *</label>
+            <select id="f-service">
+              <option value="">Wybierz usługę...</option>
+              <option>Nowa strona internetowa</option>
+              <option>Redesign istniejącej strony</option>
+              <option>Landing Page</option>
+              <option>Opieka techniczna / abonament</option>
+              <option>Nie wiem — potrzebuję doradztwa</option>
+            </select>
+          </div>
+
+          <div class="fg">
+            <label>Przybliżony budżet</label>
+            <div class="budget-grid" id="budget-grid">
+              <div class="budget-opt" onclick="selectBudget(this)">do 2 000 zł</div>
+              <div class="budget-opt" onclick="selectBudget(this)">2 000–4 000 zł</div>
+              <div class="budget-opt" onclick="selectBudget(this)">4 000–8 000 zł</div>
+              <div class="budget-opt" onclick="selectBudget(this)">8 000–15 000 zł</div>
+              <div class="budget-opt" onclick="selectBudget(this)">powyżej 15 000 zł</div>
+              <div class="budget-opt" onclick="selectBudget(this)">Nie wiem jeszcze</div>
+            </div>
+          </div>
+
+          <div class="fg">
+            <label>Opowiedz mi o swoim projekcie *</label>
+            <textarea id="f-msg" placeholder="Czym zajmuje się Twoja firma? Co chcesz osiągnąć dzięki nowej stronie? Kto jest Twoim klientem? Masz jakieś referencje stron, które Ci się podobają? Im więcej wiesz — tym lepiej."></textarea>
+          </div>
+
+          <div class="form-check">
+            <input type="checkbox" id="f-consent">
+            <label for="f-consent">Wyrażam zgodę na kontakt w celu przygotowania wyceny. Twoje dane nie są udostępniane osobom trzecim i będą użyte wyłącznie do odpowiedzi na Twoje zapytanie.</label>
+          </div>
+
+          <button class="btn btn-primary submit-btn" onclick="submitForm()">
+            Wyślij zapytanie
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </button>
+        </div>
+
+        <div class="success-state" id="success-state">
+          <div class="success-icon">🎉</div>
+          <h3>Wiadomość wysłana!</h3>
+          <p>Dziękuję za zapytanie.<br>Odezwę się do Ciebie w ciągu 24 godzin — zwykle znacznie szybciej.<br><br>Do zobaczenia!</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MAP / CONTACT STRIP -->
+<div style="background:var(--bg2); border-top:1px solid var(--border);">
+  <div class="container" style="padding-top:60px; padding-bottom:60px;">
+    <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:32px; text-align:center;">
+      <div class="reveal">
+        <div style="font-size:36px; margin-bottom:12px;">📍</div>
+        <div style="font-family:var(--font-display); font-size:15px; font-weight:700; color:var(--text); margin-bottom:6px;">Lokalizacja</div>
+        <div style="font-size:14px; color:var(--text3);">Polska — pracuję zdalnie z klientami z całego kraju i Europy</div>
+      </div>
+      <div class="reveal d1">
+        <div style="font-size:36px; margin-bottom:12px;">⏱️</div>
+        <div style="font-family:var(--font-display); font-size:15px; font-weight:700; color:var(--text); margin-bottom:6px;">Czas odpowiedzi</div>
+        <div style="font-size:14px; color:var(--text3);">Maksymalnie 24h w dni robocze. Zwykle w kilka godzin.</div>
+      </div>
+      <div class="reveal d2">
+        <div style="font-size:36px; margin-bottom:12px;">🤝</div>
+        <div style="font-family:var(--font-display); font-size:15px; font-weight:700; color:var(--text); margin-bottom:6px;">Pierwsza rozmowa</div>
+        <div style="font-size:14px; color:var(--text3);">Bezpłatna konsultacja 30 min — bez zobowiązań, bez sprzedaży na siłę.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="shared.js"></script>
+<script>
+function selectBudget(el) {
+  document.querySelectorAll('.budget-opt').forEach(b => b.classList.remove('selected'));
+  el.classList.add('selected');
+}
+
+function submitForm() {
+  const name = document.getElementById('f-name').value;
+  const email = document.getElementById('f-email').value;
+  const service = document.getElementById('f-service').value;
+  const msg = document.getElementById('f-msg').value;
+  const consent = document.getElementById('f-consent').checked;
+
+  if (!name || !email || !service || !msg) {
+    alert('Proszę wypełnić wszystkie wymagane pola (oznaczone *).');
+    return;
+  }
+  if (!consent) {
+    alert('Wymagana zgoda na kontakt.');
+    return;
+  }
+
+  document.getElementById('contact-form-wrap').style.display = 'none';
+  document.getElementById('success-state').style.display = 'block';
+}
+</script>
+</body>
+</html>

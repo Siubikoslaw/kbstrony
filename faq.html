@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="FAQ — KB WebDesign. Najczęstsze pytania o strony internetowe, czas realizacji, ceny i proces współpracy.">
+<title>FAQ — KB WebDesign</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shared.css">
+<style>
+.page-hero {
+  padding: calc(var(--nav-h) + 80px) 0 80px;
+  text-align: center;
+  background: radial-gradient(ellipse 70% 50% at 50% 0%, rgba(91,82,240,0.12), transparent 70%);
+}
+.page-hero h1 { font-size: clamp(38px, 5vw, 64px); margin-bottom: 18px; }
+.page-hero p { font-size: 18px; color: var(--text2); max-width: 540px; margin: 0 auto; line-height: 1.8; font-weight: 300; }
+
+/* CATEGORY TABS */
+.cat-tabs { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; margin: 44px 0 56px; }
+.cat-tab {
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 600;
+  padding: 9px 22px;
+  border-radius: 50px;
+  border: 1px solid var(--border2);
+  background: transparent;
+  color: var(--text2);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.cat-tab:hover, .cat-tab.active {
+  background: rgba(91,82,240,0.1);
+  border-color: rgba(91,82,240,0.3);
+  color: var(--accent2);
+}
+
+/* FAQ */
+.faq-section { max-width: 780px; margin: 0 auto; }
+.faq-cat { margin-bottom: 60px; display: none; }
+.faq-cat.visible { display: block; }
+.faq-cat-title {
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--accent2);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.faq-cat-title::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+
+.faq-item { border-bottom: 1px solid var(--border); }
+.faq-item:first-of-type { border-top: 1px solid var(--border); }
+.faq-q {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 22px 0;
+  cursor: pointer;
+  font-family: var(--font-display);
+  font-size: 15.5px;
+  font-weight: 600;
+  color: var(--text);
+  transition: color 0.2s;
+  gap: 16px;
+}
+.faq-q:hover { color: var(--accent2); }
+.faq-icon {
+  width: 28px; height: 28px;
+  border: 1px solid var(--border2);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 18px;
+  color: var(--text3);
+  flex-shrink: 0;
+  transition: all 0.3s;
+}
+.faq-item.open .faq-icon { background: var(--accent); border-color: var(--accent); color: #fff; transform: rotate(45deg); }
+.faq-a {
+  font-size: 14.5px;
+  color: var(--text3);
+  line-height: 1.85;
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.4s ease;
+}
+.faq-item.open .faq-a { max-height: 400px; padding-bottom: 22px; }
+</style>
+</head>
+<body>
+<section class="page-hero">
+  <div class="container">
+    <div class="eyebrow" style="justify-content:center;">FAQ</div>
+    <h1>Najczęstsze pytania.</h1>
+    <p>Zebrałem tu odpowiedzi na pytania, które słyszę od każdego nowego klienta. Nie znalazłeś swojego? Napisz do mnie.</p>
+  </div>
+</section>
+
+<section class="section" style="background:var(--bg);">
+  <div class="container">
+    <div class="cat-tabs">
+      <button class="cat-tab active" onclick="showCat('all', this)">Wszystkie</button>
+      <button class="cat-tab" onclick="showCat('proces', this)">Proces</button>
+      <button class="cat-tab" onclick="showCat('techniczne', this)">Techniczne</button>
+      <button class="cat-tab" onclick="showCat('ceny', this)">Ceny i płatności</button>
+      <button class="cat-tab" onclick="showCat('po', this)">Po publikacji</button>
+    </div>
+
+    <div class="faq-section">
+
+      <!-- PROCES -->
+      <div class="faq-cat visible" data-cat="proces">
+        <div class="faq-cat-title">⚙️ Proces współpracy</div>
+
+        <div class="faq-item reveal">
+          <div class="faq-q" onclick="toggleFaq(this)">Jak długo trwa realizacja strony? <span class="faq-icon">+</span></div>
+          <div class="faq-a">Standardowo 7–14 dni od momentu gdy mam wszystkie materiały (treści, zdjęcia, podstawowe informacje o firmie). Landing page można zrealizować w 3–5 dni. Na początku każdej współpracy podaję konkretną datę oddania strony — i jej dotrzymuję. Jeśli potrzebujesz pilnie, zapytaj o ekspresową realizację.</div>
+        </div>
+
+        <div class="faq-item reveal">
+          <div class="faq-q" onclick="toggleFaq(this)">Co muszę przygotować przed rozpoczęciem? <span class="faq-icon">+</span></div>
+          <div class="faq-a">Potrzebuję: krótki opis firmy i usług, dostęp do domeny (lub powiem Ci jak kupić), logo (jeśli masz), ewentualne zdjęcia. Resztą się zajmuję. Jeśli nie masz zdjęć — podam Ci źródła dobrych stocków lub doradzę co z tym zrobić. Jeśli nie masz logo — mogę zaproponować podstawową identyfikację lub skierować do sprawdzonego grafika.</div>
+        </div>
+
+        <div class="faq-item reveal">
+          <div class="faq-q" onclick="toggleFaq(this)">Ile razy mogę poprawiać projekt? <span class="faq-icon">+</span></div>
+          <div class="faq-a">Przed rozpoczęciem kodowania dostajesz pełny podgląd projektu wizualnego. Na tym etapie masz do 3 rund poprawek — i właśnie tu jest na to czas. Kiedy zaakceptujesz projekt i zaczynam programować, zmiany koncepcyjne są droższe (lub niemożliwe bez opóźnienia terminu). Zawsze pytam o feedback na każdym etapie, żeby unikać niespodzianek na końcu.</div>
+        </div>
+
+        <div class="faq-item reveal">
+          <div class="faq-q" onclick="toggleFaq(this)">Jak wygląda pierwsza rozmowa? <span class="faq-icon">+</span></div>
+          <div class="faq-a">30-minutowa rozmowa przez telefon lub videocall. Opowiadasz mi o swojej firmie, klientach, celach. Ja pytam, słucham i na końcu mówię Ci co zrobiłbym na Twoim miejscu — szczerze i bez sprzedawania droższego pakietu na siłę. Zero zobowiązań. Możesz potem zdecydować, że nie chcesz współpracować — i to jest okej.</div>
+        </div>
+
+        <div class="faq-item reveal">
+          <div class="faq-q" onclick="toggleFaq(this)">Czy pracujesz z klientami spoza Polski? <span class="faq-icon">+</span></div>
+          <div class="faq-a">Tak. Pracuję zdalnie z klientami z całej Europy. Komunikacja po polsku i angielsku. Wszystko odbywa się przez email, WhatsApp i videocall — żadnych barier. Czas realizacji i warunki są takie same jak dla klientów z Polski.</div>
+        </div>
+      </div>
+
+      <!-- TECHNICZNE -->
+      <div class="faq-cat visible" data-cat="techniczne">
+        <div class="faq-cat-title">💻 Techniczne</div>
+
+        <div class="faq-item reveal">
+          <div class="faq-q" onclick="toggleFaq(this)">Na czym będzie zbudowana moja strona? <span class="faq-icon">+</span></div>
+          <div class="faq-a">Zależy od projektu i Twoich potrzeb. Dla firm, które chcą samodzielnie edytować treści — WordPress lub Webflow CMS. Dla prostych stron bez CMS — czysty HTML/CSS/JS (bardzo szybkie, bardzo proste). Dla zaawansowanych animacji i dużych projektów — Webflow. Zawsze wybieram technologię dopasowaną do projektu, nie ulubioną.</div>
+        </div>
+
+        <div class="faq-item reveal">
+          <div class="faq-q" onclick="toggleFaq(this)">Czy strona będzie działać na telefonach? <span class="faq-icon">+</span></div>
+          <div class="faq-a">Tak — i to jest jeden z moich standardów, nie opcja premium. Każda strona jest projektowana mobile-first i testowana na smartfonach, tabletach i różnych przeglądarkach. Ponad 60% ruchu w internecie pochodzi z urządzeń mobilnych — strona, która nie działa na telefonie, to strona, która traci pieniądze.</div>
+        </div>
+
+        <div class="faq-item reveal">
+          <div class="faq-q" onclick="toggleFaq(this)">Czy strona będzie szybka? <span class="faq-icon">+</span></div>
+          <div class="faq-a">Tak. Optymalizuję każdą stronę pod kątem Core Web Vitals i PageSpeed. Typowy wynik to 90–97/100 w Google PageSpeed. Oznacza to szybkie ładowanie, brak "skakania" strony podczas ładowania i pozytywny sygnał dla Google. Wolna strona traci zarówno odwiedzających jak i pozycje w wyszukiwarce.</div>
+        </div>
+
+        <div class="faq-item reveal">
+          <div class="faq-q" onclick="toggleFaq(this)">Czy strona będzie widoczna w Google? <span class="faq-icon">+</span></div>
+          <div class="faq-a">Każda strona wychodzi z solidnymi podstawami SEO: poprawna struktura nagłówków H1–H3, meta tagi (tytuł, opis), sitemap.xml, robots.txt, szybkość ładowania, dane strukturalne. To fundament widoczności. SEO to długi proces — nie obiecuję pierwszej pozycji — ale daję Ci wszystko, żeby zacząć z jak najlepszej pozycji startowej.</div>
+        </div>
+
+        <div class="faq-item reveal">
+          <div class="faq-q" onclick="toggleFaq(this)">Czy będę mógł samodzielnie edytować stronę? <span class="faq-icon">+</span></div>
+          <div class="faq-a">Jeśli chcesz — tak. Buduję strony na CMS-ach (WordPress, Webflow), gdzie edycja treści jest prosta i nie wymaga znajomości kodu. Po oddaniu strony robię krótkie szkolenie — uczę Cię jak dodawać posty, zmieniać teksty, dodawać zdjęcia. Możesz też wybrać abonament opieki — wtedy ja zajmuję się wszystkimi zmianami.</div>
+        </div>
+      </div>
+
+      <!-- CENY -->
+      <div class="faq-cat visible" data-cat="ceny">
+        <div class="faq-cat-title">💰 Ceny i płatności</div>
+
+        <div class="faq-item reveal">
+          <div class="faq-q" onclick="toggleFaq(this)">Ile kosztuje strona internetowa? <span class="faq-icon">+</span></div>
+          <div class="faq-a">Strona dla małej firmy zaczyna się od 1 499 zł netto. Cena zależy od liczby podstron, funkcjonalności (np. sklep, rezerwacje), zakresu treści i pilności. Szczegółowy cennik znajdziesz na stronie Cennik. Jeśli nie wiesz od czego zacząć — napisz mi o swojej firmie, a przygotuję wycenę bez zobowiązań.</div>
+        </div>
+
+        <div class="faq-item reveal">
+          <div class="faq-q" onclick="toggleFaq(this)">Jak wygląda płatność? <span class="faq-icon">+</span></div>
+          <div class="faq-a">50% zaliczki przed rozpoczęciem (żebym mógł zarezerwować termin i zacząć pracę), 50% po zakończeniu i Twojej akceptacji. Płatność przelewem bankowym. Wystawiam fakturę VAT. Nie zaczynam pracy bez zaliczki — i Ty nie płacisz reszty zanim nie będziesz zadowolony z efektu.</div>
+        </div>
+
+        <div class="faq-item reveal">
+          <div class="faq-q" onclick="toggleFaq(this)">Czy są jakieś ukryte koszty? <span class="faq-icon">+</span></div>
+          <div class="faq-a">Nie. Cena, którą podaję, to cena projektu. Poza tym powinieneś wiedzieć, że co roku płacisz za domenę (ok. 50–100 zł) i hosting (ok. 200–500 zł rocznie w zależności od serwera). Nie zbieram tych opłat — płacisz bezpośrednio do dostawcy. Powiem Ci co kupić i gdzie — żebyś wiedział na co się decydujesz.</div>
+        </div>
+
+        <div class="faq-item reveal">
+          <div class="faq-q" onclick="toggleFaq(this)">Czy mogę zapłacić w ratach? <span class="faq-icon">+</span></div>
+          <div class="faq-a">W standardzie: 50% + 50%. Jeśli masz specyficzną sytuację — porozmawiajmy. Dla dużych projektów (powyżej 5 000 zł) mogę rozważyć inny harmonogram płatności. Zawsze jesteśmy w stanie coś wypracować — po prostu napisz mi o swojej sytuacji.</div>
+        </div>
+      </div>
+
+      <!-- PO PUBLIKACJI -->
+      <div class="faq-cat visible" data-cat="po">
+        <div class="faq-cat-title">🚀 Po publikacji</div>
+
+        <div class="faq-item reveal">
+          <div class="faq-q" onclick="toggleFaq(this)">Co się dzieje po tym jak strona trafia na serwer? <span class="faq-icon">+</span></div>
+          <div class="faq-a">Robię pełne przekazanie: konfiguruję Google Analytics i Search Console, sprawdzam indeksowanie, przeprowadzam Cię przez panel i pokazuję jak wprowadzać podstawowe zmiany. Pierwsze 2 tygodnie po publikacji jestem do dyspozycji na pytania — jeśli coś nie działa jak powinno, poprawiam za darmo.</div>
+        </div>
+
+        <div class="faq-item reveal">
+          <div class="faq-q" onclick="toggleFaq(this)">Co jeśli po czasie będę chciał zmiany? <span class="faq-icon">+</span></div>
+          <div class="faq-a">Masz kilka opcji: możesz samodzielnie edytować treści (jeśli zbuduję na CMS), możesz zlecić mi jednorazowe zmiany (stawka godzinowa od 150 zł/h), lub możesz wykupić abonament opieki technicznej (od 299 zł/mies.) gdzie masz pulę godzin na zmiany co miesiąc i priorytetowy czas reakcji.</div>
+        </div>
+
+        <div class="faq-item reveal">
+          <div class="faq-q" onclick="toggleFaq(this)">Czy strona będzie bezpieczna? <span class="faq-icon">+</span></div>
+          <div class="faq-a">Tak. Każda strona ma certyfikat SSL (HTTPS), odpowiednie nagłówki bezpieczeństwa i jest konfigurowana zgodnie z dobrymi praktykami. Dla stron na WordPress rekomenduję regularne aktualizacje i kopie zapasowe — co jest standardem w moich abonamentach opieki. Strona bez aktualizacji to strona z dziurami w bezpieczeństwie.</div>
+        </div>
+
+        <div class="faq-item reveal">
+          <div class="faq-q" onclick="toggleFaq(this)">Skąd będę wiedział czy strona przynosi efekty? <span class="faq-icon">+</span></div>
+          <div class="faq-a">Google Analytics 4 + Search Console — konfiguruję oba narzędzia przy każdym projekcie. Możesz śledzić: skąd przychodzą użytkownicy, ile czasu spędzają, które podstrony są najpopularniejsze, ile osób wypełnia formularz. W planie Pro Care i Total Care dostajesz ode mnie miesięczny raport z wnioskami i rekomendacjami.</div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- CONTACT CTA -->
+    <div class="reveal" style="text-align:center; margin-top:80px; padding:60px 40px; background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-2xl);">
+      <div class="eyebrow" style="justify-content:center;">Dalej masz pytania?</div>
+      <h2 style="font-size:clamp(24px,3.5vw,40px); margin-bottom:14px;">Napisz do mnie.<br>Odpowiadam w ciągu 24h.</h2>
+      <p style="font-size:16px; color:var(--text2); margin-bottom:36px; max-width:440px; margin-left:auto; margin-right:auto;">Nie musisz pasować do żadnej kategorii. Opisz swoją sytuację, a powiem Ci co bym zrobił.</p>
+      <div style="display:flex; gap:14px; justify-content:center; flex-wrap:wrap;">
+        <a href="kontakt.html" class="btn btn-primary">Napisz do mnie →</a>
+        <a href="mailto:kontakt@kbwebdesign.pl" class="btn btn-outline">kontakt@kbwebdesign.pl</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script src="shared.js"></script>
+<script>
+function toggleFaq(el) {
+  const item = el.parentElement;
+  const isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+  if (!isOpen) item.classList.add('open');
+}
+function showCat(cat, btn) {
+  document.querySelectorAll('.cat-tab').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.faq-cat').forEach(c => {
+    c.classList.toggle('visible', cat === 'all' || c.dataset.cat === cat);
+  });
+}
+</script>
+</body>
+</html>

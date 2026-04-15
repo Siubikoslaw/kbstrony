@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="O mnie — KB WebDesign. Kacper B., web designer i developer, tworzący premium strony internetowe dla lokalnych firm w Polsce.">
+<title>O mnie — KB WebDesign</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shared.css">
+<style>
+.about-hero {
+  padding: calc(var(--nav-h) + 80px) 0 100px;
+  background: radial-gradient(ellipse 70% 50% at 50% 0%, rgba(91,82,240,0.12), transparent 70%);
+}
+.about-hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 440px;
+  gap: 80px;
+  align-items: center;
+}
+.about-avatar-wrap {
+  position: relative;
+  height: 480px;
+}
+.av-main {
+  position: absolute;
+  inset: 0;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-2xl);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
+  overflow: hidden;
+}
+.av-main::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 50% 0%, rgba(91,82,240,0.1), transparent 60%);
+}
+.av-circle {
+  width: 130px; height: 130px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-size: 48px;
+  font-weight: 800;
+  color: #fff;
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 0 60px rgba(91,82,240,0.35);
+}
+.av-name { font-family: var(--font-display); font-size: 22px; font-weight: 800; color: var(--text); position: relative; z-index: 1; }
+.av-title { font-size: 13px; color: var(--text3); font-family: var(--font-display); position: relative; z-index: 1; }
+.av-avail {
+  display: flex; align-items: center; gap: 8px;
+  font-size: 12px; color: var(--text3); font-family: var(--font-display);
+  position: relative; z-index: 1;
+}
+.av-dot { width: 8px; height: 8px; background: var(--green); border-radius: 50%; animation: pulse 2s infinite; }
+.av-stat {
+  position: absolute;
+  background: var(--surface2);
+  border: 1px solid var(--border2);
+  border-radius: var(--radius);
+  padding: 16px 20px;
+}
+.av-stat.s1 { bottom: 36px; left: -24px; }
+.av-stat.s2 { top: 36px; right: -24px; }
+.as-num { font-family: var(--font-display); font-size: 28px; font-weight: 800; color: var(--text); }
+.as-label { font-size: 11px; color: var(--text3); font-family: var(--font-display); margin-top: 2px; }
+
+.about-text h1 { font-size: clamp(32px, 4vw, 52px); margin-bottom: 24px; }
+.about-text p { font-size: 16px; color: var(--text2); line-height: 1.85; margin-bottom: 20px; font-weight: 300; }
+.about-text p strong { color: var(--text); font-weight: 500; }
+.av-values { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 32px; }
+.val-pill {
+  display: flex; align-items: center; gap: 8px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 10px 18px;
+  border-radius: 50px;
+  font-size: 13px;
+  font-family: var(--font-display);
+  font-weight: 500;
+  color: var(--text2);
+  transition: all 0.2s;
+}
+.val-pill:hover { border-color: rgba(91,82,240,0.3); color: var(--accent2); }
+
+/* SKILLS */
+.skills-bg { background: var(--bg2); }
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+.skill-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  padding: 28px 24px;
+  transition: all 0.25s;
+}
+.skill-card:hover { border-color: rgba(91,82,240,0.25); transform: translateY(-4px); }
+.sk-icon { font-size: 28px; margin-bottom: 14px; }
+.sk-name { font-family: var(--font-display); font-size: 15px; font-weight: 700; color: var(--text); margin-bottom: 8px; }
+.sk-desc { font-size: 13.5px; color: var(--text3); line-height: 1.7; margin-bottom: 16px; }
+.sk-bar { height: 3px; background: var(--surface3); border-radius: 99px; overflow: hidden; }
+.sk-fill { height: 100%; background: linear-gradient(90deg, var(--accent), var(--accent2)); border-radius: 99px; }
+
+/* STORY TIMELINE */
+.timeline { position: relative; padding-left: 32px; }
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 8px; bottom: 0;
+  width: 1px;
+  background: linear-gradient(to bottom, var(--accent), transparent);
+  opacity: 0.3;
+}
+.tl-item { position: relative; margin-bottom: 44px; }
+.tl-dot {
+  position: absolute;
+  left: -38px; top: 4px;
+  width: 12px; height: 12px;
+  border-radius: 50%;
+  background: var(--accent);
+  border: 2px solid var(--bg);
+  box-shadow: 0 0 12px var(--accent-glow);
+}
+.tl-year { font-family: var(--font-display); font-size: 11px; font-weight: 700; color: var(--accent2); letter-spacing: 0.15em; margin-bottom: 6px; }
+.tl-title { font-family: var(--font-display); font-size: 17px; font-weight: 700; color: var(--text); margin-bottom: 8px; }
+.tl-desc { font-size: 14px; color: var(--text3); line-height: 1.75; }
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(0.7); opacity: 0.5; }
+}
+@media (max-width: 900px) {
+  .about-hero-grid { grid-template-columns: 1fr; }
+  .about-avatar-wrap { height: 320px; }
+  .av-stat.s1 { left: 0; }
+  .av-stat.s2 { right: 0; }
+  .skills-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<section class="about-hero">
+  <div class="container">
+    <div class="about-hero-grid">
+      <div class="about-text reveal">
+        <div class="eyebrow">O mnie</div>
+        <h1>Buduję strony jakbym sam prowadził Twoją firmę.</h1>
+        <p>Hej, jestem <strong>Kacper</strong> — web designer i developer, który zmęczył się oglądaniem jak małe, świetne firmy tracą klientów przez strony, które ich nie reprezentują.</p>
+        <p>Założyłem KB WebDesign bo wierzę, że <strong>każda lokalna firma zasługuje na stronę, która pracuje tak ciężko jak jej właściciel.</strong> Nie jestem agencją z 15 menedżerami projektu i tabelką w Asanie, o której nie masz pojęcia. <strong>Rozmawiasz bezpośrednio ze mną</strong> — osobą, która projektuje i buduje Twoją stronę.</p>
+        <p>W danym czasie obsługuję niewielką liczbę klientów — dlatego każdy projekt dostaje prawdziwą uwagę, nie szablon z wklejonym logo.</p>
+        <div class="av-values">
+          <div class="val-pill"><span>⚡</span> Szybka realizacja</div>
+          <div class="val-pill"><span>💬</span> Bezpośredni kontakt</div>
+          <div class="val-pill"><span>🎯</span> Fokus na wynikach</div>
+          <div class="val-pill"><span>🔍</span> Obsesja na detalu</div>
+          <div class="val-pill"><span>🤝</span> Uczciwe ceny</div>
+        </div>
+      </div>
+      <div class="about-avatar-wrap reveal d1">
+        <div class="av-main">
+          <div class="av-circle">KB</div>
+          <div class="av-name">Kacper B.</div>
+          <div class="av-title">Web Designer & Developer</div>
+          <div class="av-avail">
+            <span class="av-dot"></span>
+            Dostępny na nowe projekty
+          </div>
+        </div>
+        <div class="av-stat s1">
+          <div class="as-num">38+</div>
+          <div class="as-label">Projektów zrealizowanych</div>
+        </div>
+        <div class="av-stat s2">
+          <div class="as-num">97%</div>
+          <div class="as-label">Zadowolonych klientów</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<div class="skills-bg">
+  <section class="section">
+    <div class="container">
+      <div class="sec-head reveal">
+        <div class="eyebrow">Kompetencje</div>
+        <h2>Co potrafię i<br>z czego korzystam.</h2>
+        <p>Nie uczę się na Twoim projekcie. Wszystkich narzędzi i technologii poniżej używam na co dzień w realnych projektach.</p>
+      </div>
+      <div class="skills-grid" style="margin-top:56px;">
+        <div class="skill-card reveal">
+          <div class="sk-icon">🎨</div>
+          <div class="sk-name">UI/UX Design</div>
+          <div class="sk-desc">Figma, Adobe XD — projektuję interfejsy, które wyglądają premium i prowadzą użytkownika do działania. Nie tylko piękne, ale funkcjonalne.</div>
+          <div class="sk-bar"><div class="sk-fill" style="width:95%"></div></div>
+        </div>
+        <div class="skill-card reveal d1">
+          <div class="sk-icon">💻</div>
+          <div class="sk-name">Webflow & WordPress</div>
+          <div class="sk-desc">Specjalizuję się w Webflow (zaawansowane animacje, CMS) i WordPress (WooCommerce, szybkie witryny). Wybieram narzędzie do projektu, nie odwrotnie.</div>
+          <div class="sk-bar"><div class="sk-fill" style="width:90%"></div></div>
+        </div>
+        <div class="skill-card reveal d2">
+          <div class="sk-icon">⚡</div>
+          <div class="sk-name">Optymalizacja & SEO</div>
+          <div class="sk-desc">Core Web Vitals, PageSpeed, struktura SEO, dane strukturalne — każda strona przechodzi pełną optymalizację przed publikacją.</div>
+          <div class="sk-bar"><div class="sk-fill" style="width:85%"></div></div>
+        </div>
+        <div class="skill-card reveal">
+          <div class="sk-icon">📝</div>
+          <div class="sk-name">Copywriting konwersyjny</div>
+          <div class="sk-desc">Treści, które sprzedają. Nagłówki, które zatrzymują, opisy, które przekonują, CTA, które klikają. Piszę po polsku i angielsku.</div>
+          <div class="sk-bar"><div class="sk-fill" style="width:80%"></div></div>
+        </div>
+        <div class="skill-card reveal d1">
+          <div class="sk-icon">🛒</div>
+          <div class="sk-name">E-commerce</div>
+          <div class="sk-desc">WooCommerce, Stripe, systemy rezerwacji — sklepy i platformy, które faktycznie sprzedają. Od 5 produktów do kilkuset SKU.</div>
+          <div class="sk-bar"><div class="sk-fill" style="width:78%"></div></div>
+        </div>
+        <div class="skill-card reveal d2">
+          <div class="sk-icon">📊</div>
+          <div class="sk-name">Analityka & Tracking</div>
+          <div class="sk-desc">Google Analytics 4, Search Console, Hotjar, Meta Pixel — konfiguruję śledzenie, żebyś wiedział co działa i co nie.</div>
+          <div class="sk-bar"><div class="sk-fill" style="width:82%"></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- HISTORIA -->
+<section class="section" style="background:var(--bg);">
+  <div class="container">
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:start;">
+      <div class="reveal">
+        <div class="eyebrow">Moja historia</div>
+        <h2 style="font-size:clamp(28px,3.5vw,44px); margin-bottom:40px;">Jak tu trafiłem.</h2>
+        <div class="timeline">
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div class="tl-year">2019</div>
+            <div class="tl-title">Pierwsze kroki w web designie</div>
+            <div class="tl-desc">Zacząłem uczyć się HTML, CSS i JavaScript z czystej ciekawości. Szybko okazało się, że mam do tego głowę i oko do detali — i że sprawia mi to autentyczną radość.</div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div class="tl-year">2021</div>
+            <div class="tl-title">Pierwsze zlecenia komercyjne</div>
+            <div class="tl-desc">Zacząłem od stron dla znajomych i lokalnych firm. Szybko nauczyłem się, że dobry design to nie to samo co design, który przynosi klientów. Zacząłem łączyć estetykę z konwersją.</div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div class="tl-year">2023</div>
+            <div class="tl-title">Webflow & premium projekty</div>
+            <div class="tl-desc">Poznałem Webflow i odkryłem zupełnie nowy poziom możliwości. Zacząłem pracować z bardziej wymagającymi klientami i podnosić poprzeczkę dla siebie z każdym projektem.</div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div class="tl-year">2024 — dziś</div>
+            <div class="tl-title">KB WebDesign — oficjalnie</div>
+            <div class="tl-desc">Założyłem KB WebDesign jako własną działalność i skupiłem się na tym, co robię najlepiej: premium stronach dla lokalnych firm, które chcą konkurować z markami z większymi budżetami.</div>
+          </div>
+        </div>
+      </div>
+      <div class="reveal d1">
+        <div class="eyebrow">Jak pracuję</div>
+        <h2 style="font-size:clamp(28px,3.5vw,44px); margin-bottom:24px;">Kilka rzeczy, które są dla mnie niezbędne.</h2>
+        <div style="display:flex; flex-direction:column; gap:20px;">
+          <div style="background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-xl); padding:24px 26px;">
+            <div style="font-family:var(--font-display); font-size:15px; font-weight:700; color:var(--text); margin-bottom:8px;">Bezpośrednia komunikacja</div>
+            <p style="font-size:13.5px; color:var(--text3); line-height:1.75;">Odpisuję osobiście. Nie masz do czynienia z asystentem ani botem. Masz mój numer — możesz pisać na WhatsApp. Decyzje podejmujemy razem, bez biurokratycznych opóźnień.</p>
+          </div>
+          <div style="background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-xl); padding:24px 26px;">
+            <div style="font-family:var(--font-display); font-size:15px; font-weight:700; color:var(--text); margin-bottom:8px;">Mała liczba klientów jednocześnie</div>
+            <p style="font-size:13.5px; color:var(--text3); line-height:1.75;">Celowo nie przyjmuję zbyt wielu projektów naraz. Dzięki temu każdy dostaje 100% mojej uwagi, nie 20% rozdzielonej na pięć równoległych zleceń.</p>
+          </div>
+          <div style="background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-xl); padding:24px 26px;">
+            <div style="font-family:var(--font-display); font-size:15px; font-weight:700; color:var(--text); margin-bottom:8px;">Szczerość ponad sprzedaż</div>
+            <p style="font-size:13.5px; color:var(--text3); line-height:1.75;">Jeśli uważam, że nie potrzebujesz droższego pakietu — powiem Ci to. Moim celem jest Twój sukces, nie jednorazowa transakcja. Wolę klientów, którzy wracają, od tych, którzy czują się oszukani.</p>
+          </div>
+          <div style="text-align:center; margin-top:12px;">
+            <a href="kontakt.html" class="btn btn-primary">Porozmawiajmy →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script src="shared.js"></script>
+</body>
+</html>

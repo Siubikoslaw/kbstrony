@@ -1,178 +1,645 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KB webDesign - Profesjonalne Strony Internetowe | Tworzenie Stron WWW</title>
-    <meta name="description" content="KB webDesign - tworzymy nowoczesne, responsywne i profesjonalne strony internetowe. Profesjonalne rozwiązania webowe dla Twojego biznesu. Szybka realizacja i konkurencyjne ceny.">
-    <meta name="keywords" content="strony internetowe, tworzenie stron www, web design, responsywne strony, sklepy online, aplikacje webowe, strony internetowe Opole, projektowanie stron, programowanie, SEO, marketing internetowy">
-    
-    <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="KB webDesign - Profesjonalne Strony Internetowe">
-    <meta property="og:description" content="Tworzymy nowoczesne, responsywne strony internetowe dla Twojego biznesu. Szybka realizacja i konkurencyjne ceny.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://kbwebdesign.pl">
-    <meta property="og:locale" content="pl_PL">
-    
-    <!-- Twitter Card Meta Tags -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="KB webDesign - Profesjonalne Strony Internetowe">
-    <meta name="twitter:description" content="Tworzymy nowoczesne, responsywne strony internetowe dla Twojego biznesu.">
-    
-    <!-- Canonical URL -->
-    <link rel="canonical" href="https://kbwebdesign.pl/">
-
-    <!-- Schema.org Structured Data -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "WebSite",
-        "name": "KB webDesign",
-        "url": "https://kbwebdesign.pl/",
-        "description": "KB webDesign - tworzymy nowoczesne, responsywne i profesjonalne strony internetowe. Profesjonalne rozwiązania webowe dla Twojego biznesu.",
-        "inLanguage": "pl-PL",
-        "publisher": {
-            "@type": "Organization",
-            "name": "KB webDesign",
-            "url": "https://kbwebdesign.pl/"
-        }
-    }
-    </script>
-
-    <!-- Favicon -->
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
-
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="KB WebDesign — Strony internetowe, które przyciągają klientów. Szybka realizacja, premium design, przystępne ceny.">
+<title>KB WebDesign — Strony internetowe dla lokalnych firm</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shared.css">
+<style>
+/* ── HERO ── */
+#hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding-top: var(--nav-h);
+  position: relative;
+  overflow: hidden;
+}
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 80% 60% at 60% 30%, rgba(91,82,240,0.13) 0%, transparent 70%),
+    radial-gradient(ellipse 40% 40% at 20% 80%, rgba(91,82,240,0.07) 0%, transparent 60%);
+  pointer-events: none;
+}
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 420px;
+  gap: 64px;
+  align-items: center;
+  padding: 80px 0 100px;
+  position: relative;
+  z-index: 1;
+}
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(91,82,240,0.1);
+  border: 1px solid rgba(91,82,240,0.22);
+  border-radius: 50px;
+  padding: 8px 18px 8px 12px;
+  font-family: var(--font-display);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--accent2);
+  margin-bottom: 28px;
+  width: fit-content;
+  animation: fadeUp 0.8s ease both;
+}
+.badge-pulse { width: 8px; height: 8px; background: var(--green); border-radius: 50%; animation: pulse 2s infinite; }
+h1.hero-h1 {
+  font-size: clamp(42px, 5.5vw, 76px);
+  font-weight: 800;
+  line-height: 1.04;
+  margin-bottom: 26px;
+  animation: fadeUp 0.8s ease 0.08s both;
+}
+h1 .hl { color: var(--accent2); }
+.hero-sub {
+  font-size: 18px;
+  color: var(--text2);
+  line-height: 1.8;
+  max-width: 520px;
+  margin-bottom: 40px;
+  animation: fadeUp 0.8s ease 0.16s both;
+  font-weight: 300;
+}
+.hero-btns {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  animation: fadeUp 0.8s ease 0.24s both;
+  margin-bottom: 56px;
+}
+.trust-row {
+  display: flex;
+  gap: 28px;
+  flex-wrap: wrap;
+  animation: fadeUp 0.8s ease 0.32s both;
+}
+.trust-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-display);
+  font-size: 12.5px;
+  font-weight: 500;
+  color: var(--text3);
+}
+.trust-item svg { color: var(--accent2); flex-shrink: 0; }
+
+/* FLOATING PANEL */
+.hero-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  animation: fadeLeft 1s ease 0.4s both;
+}
+.h-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  padding: 24px;
+  position: relative;
+  overflow: hidden;
+}
+.h-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--accent2), transparent);
+  opacity: 0.45;
+}
+.hc-label { font-size: 10px; font-family: var(--font-display); font-weight: 700; text-transform: uppercase; letter-spacing: 0.15em; color: var(--text3); margin-bottom: 10px; }
+.hc-big { font-family: var(--font-display); font-size: 36px; font-weight: 800; color: var(--text); line-height: 1; }
+.hc-big span { font-size: 14px; color: var(--accent2); font-weight: 500; margin-left: 6px; }
+.hc-small { font-size: 12px; color: var(--text3); margin-top: 6px; }
+.hc-bar { margin-top: 14px; height: 4px; background: var(--surface3); border-radius: 99px; overflow: hidden; }
+.hc-fill { height: 100%; border-radius: 99px; background: linear-gradient(90deg, var(--accent), var(--accent2)); animation: grow 2s ease 1s both; }
+.hc-dots { display: flex; gap: 6px; margin-top: 12px; }
+.hc-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--surface3); }
+.hc-dot.on { background: var(--green); }
+.hc-dot.on2 { background: var(--accent2); }
+
+/* ── PROBLEM/SOLUTION ── */
+.ps-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: start;
+}
+.pain-list { display: flex; flex-direction: column; gap: 14px; margin-top: 32px; }
+.pain-item {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px 22px;
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  transition: all 0.25s;
+}
+.pain-item:hover { border-color: rgba(248,113,113,0.25); transform: translateX(5px); }
+.pi-icon { font-size: 20px; flex-shrink: 0; margin-top: 2px; }
+.pi-title { font-family: var(--font-display); font-size: 14.5px; font-weight: 600; color: var(--text); margin-bottom: 4px; }
+.pi-desc { font-size: 13px; color: var(--text3); line-height: 1.65; }
+
+.sol-list { display: flex; flex-direction: column; gap: 14px; margin-top: 32px; }
+.sol-item {
+  background: var(--surface);
+  border: 1px solid rgba(91,82,240,0.1);
+  border-radius: var(--radius);
+  padding: 20px 22px;
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  transition: all 0.25s;
+}
+.sol-item:hover { border-color: rgba(91,82,240,0.35); transform: translateX(5px); }
+.si-icon {
+  width: 38px; height: 38px;
+  background: rgba(91,82,240,0.12);
+  border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 18px;
+  flex-shrink: 0;
+}
+.si-title { font-family: var(--font-display); font-size: 14.5px; font-weight: 600; color: var(--text); margin-bottom: 4px; }
+.si-desc { font-size: 13px; color: var(--text3); line-height: 1.65; }
+
+/* ── SERVICES PREVIEW ── */
+.services-bg { background: var(--bg2); }
+.srv-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  margin-top: 56px;
+}
+.srv-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  padding: 32px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  transition: all 0.3s;
+  cursor: pointer;
+  text-decoration: none;
+}
+.srv-card:hover {
+  border-color: rgba(91,82,240,0.3);
+  transform: translateY(-8px);
+  box-shadow: 0 28px 64px rgba(0,0,0,0.45);
+}
+.srv-icon { font-size: 30px; }
+.srv-name { font-family: var(--font-display); font-size: 17px; font-weight: 700; color: var(--text); }
+.srv-desc { font-size: 13.5px; color: var(--text3); line-height: 1.7; flex: 1; }
+.srv-tag {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-size: 10.5px;
+  font-weight: 600;
+  color: var(--accent2);
+  background: rgba(91,82,240,0.1);
+  padding: 4px 12px;
+  border-radius: 50px;
+  width: fit-content;
+}
+.srv-arrow { font-size: 20px; color: var(--accent2); margin-top: auto; transition: transform 0.2s; }
+.srv-card:hover .srv-arrow { transform: translateX(6px); }
+
+/* ── PROCESS STRIP ── */
+.proc-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2px;
+  margin-top: 60px;
+  position: relative;
+}
+.proc-line {
+  position: absolute;
+  top: 36px; left: calc(12.5% + 28px); right: calc(12.5% + 28px);
+  height: 1px;
+  background: linear-gradient(90deg, var(--accent), var(--accent2));
+  opacity: 0.2;
+}
+.proc-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 0 20px;
+  position: relative;
+}
+.proc-num {
+  width: 56px; height: 56px;
+  border-radius: 50%;
+  border: 1px solid var(--border2);
+  background: var(--surface);
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-display);
+  font-size: 15px;
+  font-weight: 800;
+  color: var(--accent2);
+  margin-bottom: 20px;
+  z-index: 1;
+  transition: all 0.3s;
+}
+.proc-step:hover .proc-num {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+  box-shadow: 0 0 28px var(--accent-glow);
+}
+.proc-step h4 { font-family: var(--font-display); font-size: 15px; font-weight: 700; color: var(--text); margin-bottom: 8px; }
+.proc-step p { font-size: 13px; color: var(--text3); line-height: 1.7; }
+
+/* ── MINI PORTFOLIO ── */
+.port-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+  margin-top: 56px;
+}
+.port-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  transition: all 0.3s;
+  text-decoration: none;
+  display: block;
+}
+.port-card:hover { transform: translateY(-8px); box-shadow: 0 32px 72px rgba(0,0,0,0.5); border-color: var(--border2); }
+.port-thumb {
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+  position: relative;
+  overflow: hidden;
+}
+.pt-gym { background: linear-gradient(135deg, #0d1a2e 0%, #1a2d4a 100%); }
+.pt-law { background: linear-gradient(135deg, #1a1208 0%, #2d1f0e 100%); }
+.pt-brand { background: linear-gradient(135deg, #091c1c 0%, #0d2d2d 100%); }
+.pt-emoji { font-size: 44px; }
+.pt-name { font-family: var(--font-display); font-size: 18px; font-weight: 800; color: #fff; letter-spacing: -0.02em; }
+.pt-type { font-size: 11px; color: rgba(255,255,255,0.4); font-family: var(--font-display); }
+.port-body { padding: 24px; }
+.port-body h3 { font-family: var(--font-display); font-size: 16px; color: var(--text); margin-bottom: 6px; }
+.port-body p { font-size: 13px; color: var(--text3); margin-bottom: 14px; line-height: 1.6; }
+.port-result { font-size: 12px; font-family: var(--font-display); font-weight: 600; color: var(--accent2); }
+
+/* ── CTA BANNER ── */
+.cta-wrap { background: var(--bg2); }
+.cta-banner {
+  background: linear-gradient(135deg, rgba(91,82,240,0.12) 0%, rgba(139,131,255,0.06) 100%);
+  border: 1px solid rgba(91,82,240,0.18);
+  border-radius: var(--radius-2xl);
+  padding: 90px 60px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.cta-banner::before {
+  content: '';
+  position: absolute;
+  top: -100px; left: 50%;
+  transform: translateX(-50%);
+  width: 600px; height: 400px;
+  background: radial-gradient(ellipse, rgba(91,82,240,0.18), transparent 70%);
+  pointer-events: none;
+}
+.cta-banner h2 { font-size: clamp(28px, 4vw, 52px); margin-bottom: 18px; position: relative; }
+.cta-banner p { font-size: 17px; color: var(--text2); margin-bottom: 44px; position: relative; }
+.cta-banner .btn { position: relative; font-size: 16px; padding: 18px 44px; }
+
+/* ANIMATIONS */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(22px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeLeft {
+  from { opacity: 0; transform: translateX(22px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+@keyframes pulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(0.75); opacity: 0.5; }
+}
+@keyframes grow { from { width: 0; } }
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  .hero-grid { grid-template-columns: 1fr; }
+  .hero-panel { display: none; }
+  .ps-grid { grid-template-columns: 1fr; gap: 48px; }
+  .srv-grid { grid-template-columns: repeat(2, 1fr); }
+  .port-grid { grid-template-columns: repeat(2, 1fr); }
+  .proc-grid { grid-template-columns: repeat(2, 1fr); gap: 32px; }
+  .proc-line { display: none; }
+}
+@media (max-width: 560px) {
+  .srv-grid { grid-template-columns: 1fr; }
+  .port-grid { grid-template-columns: 1fr; }
+  .proc-grid { grid-template-columns: 1fr; }
+  .cta-banner { padding: 60px 28px; }
+  h1.hero-h1 { font-size: 38px; }
+  .hero-btns { flex-direction: column; }
+}
+</style>
 </head>
 <body>
-    <header>
-        <nav class="navbar">
-            <div class="nav-container">
-                <div class="nav-logo">
-                    <a href="index.html">
-                        <span style="font-weight:900; font-size:1.15em; display:inline-block;">KB</span>
-                        <span style="color:#fff; margin-left:6px;">webDesign</span>
-                    </a>
-                </div>
-                <ul class="nav-menu">
-                    <li class="nav-item">
-                        <a href="index.html" class="nav-link active"><i class="fa-solid fa-house"></i>Strona Główna</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="about.html" class="nav-link"><i class="fa-solid fa-users"></i>O Nas</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="services.html" class="nav-link"><i class="fa-solid fa-handshake"></i>Oferta</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="portfolio.html" class="nav-link"><i class="fa-solid fa-briefcase"></i>Portfolio</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="contact.html" class="nav-link"><i class="fa-solid fa-headphones"></i></i>Kontakt</a>
-                    </li>
-                </ul>
-                <div class="hamburger">
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                </div>
-            </div>
-        </nav>
-    </header>
 
-    <main>
-        <!-- Hero Section -->
-        <section class="hero">
-            <video autoplay muted loop playsinline preload="auto" class="background-video" poster="poster.png" loading="lazy">
-                <source src="film.mp4" type="video/mp4">
-            </video>
-            <div class="hero-content">
-                <h1 class="hero-title" class="typing-effect" >Profesjonalne strony internetowe</h1>
-                <p class="hero-subtitle" class="typing-effect">Nowoczesne rozwiązania webowe dla Twojego biznesu.</p>
-                <div class="hero-buttons">
-                    <a href="portfolio.html" class="btn btn-primary">Zobacz Portfolio</a>
-                    <a href="contact.html" class="btn btn-secondary">Kontakt</a>
-                </div>
-            </div>
-        </section>
-
-        <!-- Features Section -->
-        <section class="features">
-            <div class="container">
-                <h2 class="section-title">Dlaczego warto wybrać KB webDesign?</h2>
-                <div class="features-grid">
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
-                                <line x1="8" y1="21" x2="16" y2="21"></line>
-                                <line x1="12" y1="17" x2="12" y2="21"></line>
-                            </svg>
-                        </div>
-                        <h3>Responsywny Design</h3>
-                        <p>Strony dopasowane do wszystkich urządzeń - telefony, tablety, komputery.</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <circle cx="12" cy="12" r="10"></circle>
-                                <polyline points="12,6 12,12 16,14"></polyline>
-                            </svg>
-                        </div>
-                        <h3>Szybka Realizacja</h3>
-                        <p>Profesjonalne strony internetowe w krótkim czasie bez kompromisów jakościowych.</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M12 2L2 7V17L12 22L22 17V7L12 2Z"></path>
-                                <path d="M12 8L22 13L12 18L2 13L12 8Z"></path>
-                            </svg>
-                        </div>
-                        <h3>Wsparcie Techniczne</h3>
-                        <p>Pełne wsparcie po uruchomieniu strony i regularne aktualizacje.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- CTA Section -->
-        <section class="cta">
-            <div class="container">
-                <h2>Gotowy na nową stronę internetową?</h2>
-                <p>Skontaktuj się z nami już dziś i zacznij swój projekt!</p>
-                <a href="contact.html" class="btn btn-primary">Rozpocznij projekt</a>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <div class="footer-content">
-            <div class="footer-section">
-                <h3>KB webDesign</h3>
-                <p>Tworzymy nowoczesne strony internetowe dopasowane do Twoich potrzeb.</p>
-            </div>
-            <div class="footer-section">
-                <h3>Szybkie Linki</h3>
-                <ul>
-                    <li><a href="index.html">Strona Główna</a></li>
-                    <li><a href="about.html">O Nas</a></li>
-                    <li><a href="services.html">Oferta</a></li>
-                    <li><a href="portfolio.html">Portfolio</a></li>
-                    <li><a href="contact.html">Kontakt</a></li>
-                </ul>
-            </div>
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="container">
+    <div class="hero-grid">
+      <div>
+        <div class="hero-badge">
+          <span class="badge-pulse"></span>
+          Przyjmuję nowych klientów — 2025
         </div>
-        <div class="footer-bottom">
-            <p>&copy; 2025 KB webDesign. Wszelkie prawa zastrzeżone.</p>
+        <h1 class="hero-h1">
+          Twoja strona<br>
+          powinna <span class="hl">przyciągać</span><br>
+          klientów, nie<br>ich odstraszać.
+        </h1>
+        <p class="hero-sub">
+          KB WebDesign tworzy szybkie, nowoczesne strony internetowe, które sprawiają, że lokalne firmy wyglądają jak liderzy branży — i zamieniają odwiedzających w płacących klientów.
+        </p>
+        <div class="hero-btns">
+          <a href="kontakt.html" class="btn btn-primary">
+            Bezpłatna wycena
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="portfolio.html" class="btn btn-outline">Zobacz portfolio</a>
         </div>
-    </footer>
+        <div class="trust-row">
+          <div class="trust-item">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+            Realizacja 7–14 dni
+          </div>
+          <div class="trust-item">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            Gwarancja satysfakcji
+          </div>
+          <div class="trust-item">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3" stroke="#07070d" stroke-width="2"/></svg>
+            Bezpośredni kontakt
+          </div>
+        </div>
+      </div>
+      <div class="hero-panel">
+        <div class="h-card">
+          <div class="hc-label">Średni wzrost ruchu po redesignie</div>
+          <div class="hc-big">+214% <span>↑ organicznie</span></div>
+          <div class="hc-small">Średnia z projektów, pierwsze 6 miesięcy</div>
+          <div class="hc-bar"><div class="hc-fill" style="width:82%"></div></div>
+        </div>
+        <div class="h-card">
+          <div class="hc-label">Wynik Google PageSpeed</div>
+          <div class="hc-big">97 <span>/ 100</span></div>
+          <div class="hc-small">Wszystkie strony zoptymalizowane pod Core Web Vitals</div>
+          <div class="hc-bar"><div class="hc-fill" style="width:97%; background:linear-gradient(90deg,#34d399,#059669)"></div></div>
+        </div>
+        <div class="h-card">
+          <div class="hc-label">Zrealizowane projekty w 2025</div>
+          <div class="hc-big">38 <span>projektów</span></div>
+          <div class="hc-small">Siłownie, kancelarie, marki osobiste i więcej</div>
+          <div class="hc-dots">
+            <div class="hc-dot on"></div><div class="hc-dot on"></div><div class="hc-dot on2"></div>
+            <div class="hc-dot on"></div><div class="hc-dot on2"></div><div class="hc-dot"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <script src="script.js"></script>
+<!-- PROBLEM / SOLUTION -->
+<section class="section" style="background: var(--bg);">
+  <div class="container">
+    <div class="ps-grid">
+      <div class="reveal">
+        <div class="eyebrow">Prawdziwy problem</div>
+        <h2 style="font-size:clamp(26px,3vw,38px); margin-bottom:14px;">Większość stron małych firm aktywnie <em style="font-style:normal; color:var(--red);">traci</em> klientów.</h2>
+        <p style="font-size:15px; color:var(--text3); line-height:1.85;">Gdy potencjalny klient trafia na Twoją stronę i widzi coś przestarzałego, wolnego lub niedziałającego na telefonie — wychodzi. I idzie prosto do konkurencji.</p>
+        <div class="pain-list">
+          <div class="pain-item reveal d1">
+            <div class="pi-icon">💀</div>
+            <div>
+              <div class="pi-title">Masz stronę, której nikt nie znajdzie</div>
+              <div class="pi-desc">Strona bez podstaw SEO jest niewidoczna. Większość klientów trafia przez Google — jeśli Cię tam nie ma, nie istniejesz.</div>
+            </div>
+          </div>
+          <div class="pain-item reveal d2">
+            <div class="pi-icon">📱</div>
+            <div>
+              <div class="pi-title">60% odwiedzających jest na telefonie</div>
+              <div class="pi-desc">Szczypcowanie, powiększanie, czekanie na wolną stronę — odbiją się w mniej niż 3 sekundy. Mobile to dziś standard, nie opcja.</div>
+            </div>
+          </div>
+          <div class="pain-item reveal d3">
+            <div class="pi-icon">🏚️</div>
+            <div>
+              <div class="pi-title">Przestarzały wygląd niszczy zaufanie</div>
+              <div class="pi-desc">Ludzie oceniają Twoją firmę w ułamku sekundy. Stara strona mówi: "ta firma nie dba o jakość." Twoja konkurencja to wie.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="reveal d1">
+        <div class="eyebrow">Jak to rozwiązuję</div>
+        <h2 style="font-size:clamp(26px,3vw,38px); margin-bottom:14px;">Strona zaprojektowana żeby <em style="font-style:normal; color:var(--accent2);">działać</em>, nie tylko istnieć.</h2>
+        <p style="font-size:15px; color:var(--text3); line-height:1.85;">Każda strona, którą tworzę, jest zbudowana wokół jednego celu: zamieniania odwiedzających w zapytania. Piękny design, szybkość, treści, które konwertują.</p>
+        <div class="sol-list">
+          <div class="sol-item reveal d1">
+            <div class="si-icon">🎯</div>
+            <div>
+              <div class="si-title">SEO gotowe od pierwszego dnia</div>
+              <div class="si-desc">Szybkość strony, meta tagi, dane strukturalne, indeksowanie mobile-first — wbudowane, nie doklejone na końcu.</div>
+            </div>
+          </div>
+          <div class="sol-item reveal d2">
+            <div class="si-icon">⚡</div>
+            <div>
+              <div class="si-title">Mobile-first — zawsze</div>
+              <div class="si-desc">Każdy piksel projektowany najpierw na małe ekrany. Twoja strona wygląda świetnie na każdym urządzeniu — gwarantowane.</div>
+            </div>
+          </div>
+          <div class="sol-item reveal d3">
+            <div class="si-icon">💎</div>
+            <div>
+              <div class="si-title">Design, który buduje natychmiastowy autorytet</div>
+              <div class="si-desc">Premium estetyka komunikuje profesjonalizm zanim klient przeczyta pierwsze słowo. Pierwsze wrażenie zamyka zlecenia.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES PREVIEW -->
+<div class="services-bg">
+  <section class="section">
+    <div class="container">
+      <div class="sec-head reveal">
+        <div class="eyebrow">Czym się zajmuję</div>
+        <h2>Wszystko, czego potrzebuje<br>Twoja obecność online.</h2>
+        <p>Konkretne usługi, jasne efekty, zero zbędnych dodatków. Wiesz dokładnie co dostajesz — i kiedy.</p>
+      </div>
+      <div class="srv-grid">
+        <a href="uslugi.html" class="srv-card reveal d1">
+          <div class="srv-icon">🌐</div>
+          <div class="srv-name">Strona internetowa</div>
+          <div class="srv-desc">W pełni niestandardowa, profesjonalnie zaprojektowana strona zbudowana wokół Twojej marki i celów biznesowych. Nie szablon.</div>
+          <div class="srv-tag">Najpopularniejsza</div>
+          <div class="srv-arrow">→</div>
+        </a>
+        <a href="uslugi.html" class="srv-card reveal d2">
+          <div class="srv-icon">♻️</div>
+          <div class="srv-name">Redesign strony</div>
+          <div class="srv-desc">Masz stronę, która Cię wstydzi? Przebuduję ją od podstaw — zachowując to co działa, naprawiając resztę.</div>
+          <div class="srv-tag">Wysoki zwrot</div>
+          <div class="srv-arrow">→</div>
+        </a>
+        <a href="uslugi.html" class="srv-card reveal d3">
+          <div class="srv-icon">🚀</div>
+          <div class="srv-name">Landing Page</div>
+          <div class="srv-desc">Jedna strona zoptymalizowana pod konwersję. Idealna do kampanii reklamowych, promocji usług czy zbierania zapisów.</div>
+          <div class="srv-tag">Szybka realizacja</div>
+          <div class="srv-arrow">→</div>
+        </a>
+        <a href="uslugi.html" class="srv-card reveal d4">
+          <div class="srv-icon">🔧</div>
+          <div class="srv-name">Opieka techniczna</div>
+          <div class="srv-desc">Aktualizacje, edycje, nowe podstrony, bezpieczeństwo — zajmuję się wszystkim, żebyś Ty mógł prowadzić firmę.</div>
+          <div class="srv-tag">Abonament miesięczny</div>
+          <div class="srv-arrow">→</div>
+        </a>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- PROCESS -->
+<section class="section" style="background:var(--bg);">
+  <div class="container">
+    <div class="sec-head reveal">
+      <div class="eyebrow">Jak pracuję</div>
+      <h2>Od pierwszego kontaktu<br>do gotowej strony w 4 krokach.</h2>
+      <p>Bez ukrytych etapów. Bez nieskończonych poprawek. Przejrzysty proces, który szanuje Twój czas.</p>
+    </div>
+    <div class="proc-grid">
+      <div class="proc-line"></div>
+      <div class="proc-step reveal">
+        <div class="proc-num">01</div>
+        <h4>Bezpłatna rozmowa</h4>
+        <p>Rozmawiamy o Twojej firmie, celach i konkurencji. Słucham — potem buduję plan dopasowany do tego, czego naprawdę potrzebujesz.</p>
+      </div>
+      <div class="proc-step reveal d1">
+        <div class="proc-num">02</div>
+        <h4>Podgląd projektu</h4>
+        <p>W ciągu 3 dni dostajesz wizualny mockup Twojej nowej strony. Widzisz jak będzie wyglądać zanim napiszę linijkę kodu.</p>
+      </div>
+      <div class="proc-step reveal d2">
+        <div class="proc-num">03</div>
+        <h4>Programowanie</h4>
+        <p>Buduję stronę czystym kodem, z szybkim ładowaniem i responsywnym designem. Dostajesz regularne aktualizacje postępu.</p>
+      </div>
+      <div class="proc-step reveal d3">
+        <div class="proc-num">04</div>
+        <h4>Publikacja i przekazanie</h4>
+        <p>Strona trafia na Twoją domenę. Konfiguruję analitykę, przekazuję dostępy i upewniam się, że możesz nią zarządzać samodzielnie.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MINI PORTFOLIO -->
+<div style="background:var(--bg2);">
+  <section class="section">
+    <div class="container">
+      <div class="sec-head reveal">
+        <div class="eyebrow">Wybrane realizacje</div>
+        <h2>Prawdziwe projekty.<br>Prawdziwe wyniki.</h2>
+        <p>Każdy projekt ma konkretny cel. Tak go osiągnęliśmy.</p>
+      </div>
+      <div class="port-grid">
+        <a href="portfolio.html" class="port-card reveal">
+          <div class="port-thumb pt-gym">
+            <div class="pt-emoji">💪</div>
+            <div class="pt-name">IronPeak Gym</div>
+            <div class="pt-type">Fitness & Siłownia</div>
+          </div>
+          <div class="port-body">
+            <h3>IronPeak Fitness</h3>
+            <p>Lokalna siłownia bez systemu zapisów online i niewidoczna w Google. Przeprojektowaliśmy pod kątem konwersji karnetów.</p>
+            <div class="port-result">↑ +63% nowych zapisów w 60 dni</div>
+          </div>
+        </a>
+        <a href="portfolio.html" class="port-card reveal d1">
+          <div class="port-thumb pt-law">
+            <div class="pt-emoji">⚖️</div>
+            <div class="pt-name">Wiertz & Wspólnicy</div>
+            <div class="pt-type">Kancelaria prawna</div>
+          </div>
+          <div class="port-body">
+            <h3>Wiertz & Wspólnicy</h3>
+            <p>Kancelaria opierająca się wyłącznie na poleceniach. Potrzebowali strony, która buduje zaufanie i generuje zapytania online.</p>
+            <div class="port-result">↑ 18 nowych zapytań w pierwszym miesiącu</div>
+          </div>
+        </a>
+        <a href="portfolio.html" class="port-card reveal d2">
+          <div class="port-thumb pt-brand">
+            <div class="pt-emoji">✨</div>
+            <div class="pt-name">Marta Nowak</div>
+            <div class="pt-type">Marka osobista</div>
+          </div>
+          <div class="port-body">
+            <h3>Marta Nowak — Coach</h3>
+            <p>Coach biznesowy z imponującym dorobkiem, ale przestarzałą obecnością online. Stworzyliśmy stronę, która pozycjonuje ją jako eksperta premium.</p>
+            <div class="port-result">↑ W pełni zarezerwowana w 3 tygodnie</div>
+          </div>
+        </a>
+      </div>
+      <div style="text-align:center; margin-top:40px;">
+        <a href="portfolio.html" class="btn btn-outline">Zobacz wszystkie realizacje →</a>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- CTA -->
+<div class="cta-wrap">
+  <section class="section">
+    <div class="container">
+      <div class="cta-banner reveal">
+        <div class="eyebrow" style="justify-content:center;">Gotowy?</div>
+        <h2>Zbudujmy coś,<br>z czego będziesz dumny.</h2>
+        <p>Umów bezpłatne 30-minutowe konsultacje. Zero zobowiązań, zero presji sprzedażowej — tylko szczera rozmowa o tym, czego potrzebuje Twoja firma.</p>
+        <a href="kontakt.html" class="btn btn-primary">
+          Chcę bezpłatną wycenę
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+</div>
+
+<script src="shared.js"></script>
 </body>
 </html>

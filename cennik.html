@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Cennik KB WebDesign — przejrzyste ceny stron internetowych bez ukrytych opłat. Starter od 799 zł, Standard, Premium.">
+<title>Cennik — KB WebDesign</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shared.css">
+<style>
+.page-hero {
+  padding: calc(var(--nav-h) + 80px) 0 80px;
+  text-align: center;
+  background: radial-gradient(ellipse 70% 50% at 50% 0%, rgba(91,82,240,0.12), transparent 70%);
+}
+.page-hero h1 { font-size: clamp(38px, 5vw, 64px); margin-bottom: 18px; }
+.page-hero p { font-size: 18px; color: var(--text2); max-width: 560px; margin: 0 auto; line-height: 1.8; font-weight: 300; }
+
+.toggle-wrap {
+  display: flex;
+  justify-content: center;
+  margin: 44px 0 56px;
+}
+.toggle {
+  display: flex;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 50px;
+  padding: 4px;
+  gap: 4px;
+}
+.toggle-btn {
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 600;
+  padding: 10px 24px;
+  border-radius: 50px;
+  border: none;
+  background: transparent;
+  color: var(--text2);
+  cursor: pointer;
+  transition: all 0.25s;
+}
+.toggle-btn.active {
+  background: var(--accent);
+  color: #fff;
+  box-shadow: 0 0 20px var(--accent-glow);
+}
+
+/* PRICING GRID */
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  align-items: start;
+  margin-bottom: 48px;
+}
+.pc-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-2xl);
+  padding: 40px 32px;
+  position: relative;
+  transition: all 0.3s;
+  overflow: hidden;
+}
+.pc-card:hover { border-color: var(--border2); transform: translateY(-4px); }
+.pc-card.pop {
+  background: linear-gradient(145deg, #12112a, #18163a);
+  border-color: rgba(91,82,240,0.3);
+  box-shadow: 0 0 60px rgba(91,82,240,0.1);
+  transform: scale(1.04);
+}
+.pc-card.pop:hover { transform: scale(1.04) translateY(-4px); }
+.pc-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--accent), transparent);
+  opacity: 0;
+}
+.pc-card.pop::before { opacity: 0.5; }
+
+.pop-badge {
+  position: absolute;
+  top: 20px; right: 20px;
+  background: var(--accent);
+  color: #fff;
+  font-family: var(--font-display);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 5px 12px;
+  border-radius: 50px;
+}
+.pc-tier { font-family: var(--font-display); font-size: 11px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent2); margin-bottom: 10px; }
+.pc-name { font-family: var(--font-display); font-size: 26px; font-weight: 800; color: var(--text); margin-bottom: 8px; }
+.pc-desc { font-size: 13.5px; color: var(--text3); line-height: 1.7; margin-bottom: 28px; }
+
+.pc-price { display: flex; align-items: flex-end; gap: 4px; margin-bottom: 8px; }
+.pp-from { font-size: 12px; color: var(--text3); font-family: var(--font-display); margin-bottom: 8px; }
+.pp-curr { font-size: 22px; font-family: var(--font-display); font-weight: 700; color: var(--text2); margin-bottom: 10px; }
+.pp-amt { font-family: var(--font-display); font-size: 52px; font-weight: 800; color: var(--text); letter-spacing: -0.03em; line-height: 1; }
+.pp-period { font-size: 13px; color: var(--text3); margin-bottom: 8px; font-family: var(--font-display); }
+.pp-note { font-size: 12px; color: var(--text3); margin-bottom: 28px; }
+
+.pc-divider { height: 1px; background: var(--border); margin: 24px 0; }
+.feat-list { list-style: none; display: flex; flex-direction: column; gap: 11px; margin-bottom: 36px; }
+.feat-list li { display: flex; align-items: flex-start; gap: 10px; font-size: 13.5px; color: var(--text2); line-height: 1.5; }
+.feat-list li.yes::before { content: '✓'; color: var(--accent2); font-family: var(--font-display); font-weight: 700; flex-shrink: 0; }
+.feat-list li.no { color: var(--text3); }
+.feat-list li.no::before { content: '–'; color: var(--text3); font-family: var(--font-display); flex-shrink: 0; }
+
+/* COMPARISON */
+.comp-table { width: 100%; border-collapse: collapse; margin-top: 56px; }
+.comp-table th {
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text);
+  padding: 16px 20px;
+  text-align: center;
+  border-bottom: 1px solid var(--border);
+}
+.comp-table th:first-child { text-align: left; }
+.comp-table th.pop-col { color: var(--accent2); }
+.comp-table td {
+  padding: 14px 20px;
+  font-size: 13.5px;
+  color: var(--text2);
+  border-bottom: 1px solid var(--border);
+  text-align: center;
+}
+.comp-table td:first-child { text-align: left; color: var(--text2); font-weight: 500; }
+.comp-table tr:last-child td { border-bottom: none; }
+.comp-table tr:hover td { background: rgba(255,255,255,0.02); }
+.comp-check { color: var(--green); font-size: 16px; }
+.comp-no { color: var(--text3); }
+.comp-val { font-family: var(--font-display); font-weight: 600; color: var(--text); font-size: 13px; }
+
+/* MAINT PLANS */
+.maint-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 48px; }
+.maint-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-xl); padding: 32px 26px; transition: all 0.25s; }
+.maint-card:hover { border-color: rgba(91,82,240,0.25); transform: translateY(-4px); }
+
+@media (max-width: 900px) {
+  .pricing-grid { grid-template-columns: 1fr; }
+  .pc-card.pop { transform: none; }
+  .pc-card.pop:hover { transform: translateY(-4px); }
+  .maint-grid { grid-template-columns: 1fr; }
+  .comp-table { font-size: 12px; }
+}
+</style>
+</head>
+<body>
+
+<section class="page-hero">
+  <div class="container">
+    <div class="eyebrow" style="justify-content:center;">Cennik</div>
+    <h1>Przejrzyste ceny.<br>Żadnych niespodzianek.</h1>
+    <p>Każdy pakiet zawiera bezpłatną konsultację, niestandardowy design, optymalizację mobilną i podstawy SEO. Inwestujesz w wyniki — nie tylko w ładną stronę.</p>
+  </div>
+</section>
+
+<!-- PAKIETY JEDNORAZOWE -->
+<section class="section" style="background:var(--bg);">
+  <div class="container">
+    <div class="sec-head reveal">
+      <div class="eyebrow">Projekty jednorazowe</div>
+      <h2>Wybierz pakiet<br>dopasowany do Twojej firmy</h2>
+    </div>
+
+    <div class="pricing-grid">
+
+      <!-- STARTER -->
+      <div class="pc-card reveal">
+        <div class="pc-tier">Starter</div>
+        <div class="pc-name">Essential</div>
+        <div class="pc-desc">Dla freelancerów i nowych firm, które potrzebują profesjonalnej obecności online — szybko i w rozsądnej cenie.</div>
+        <div class="pc-price">
+          <span class="pp-from">od</span>
+          <span class="pp-curr">zł</span>
+          <span class="pp-amt">1 499</span>
+        </div>
+        <div class="pp-note">Cena netto + VAT</div>
+        <div class="pc-divider"></div>
+        <ul class="feat-list">
+          <li class="yes">Do 5 podstron</li>
+          <li class="yes">Responsywny design niestandardowy</li>
+          <li class="yes">Formularz kontaktowy</li>
+          <li class="yes">Podstawy SEO on-page</li>
+          <li class="yes">Google Analytics</li>
+          <li class="yes">Realizacja w 7 dni</li>
+          <li class="no">Pomoc w copywritingu</li>
+          <li class="no">Blog / CMS</li>
+          <li class="no">Animacje i efekty interaktywne</li>
+        </ul>
+        <a href="kontakt.html" class="btn btn-outline" style="width:100%; justify-content:center;">Zapytaj o wycenę</a>
+      </div>
+
+      <!-- STANDARD -->
+      <div class="pc-card pop reveal d1">
+        <span class="pop-badge">Najpopularniejszy</span>
+        <div class="pc-tier">Standard</div>
+        <div class="pc-name">Professional</div>
+        <div class="pc-desc">Dla firm lokalnych gotowych rywalizować online i zacząć generować stały napływ klientów z internetu.</div>
+        <div class="pc-price">
+          <span class="pp-from">od</span>
+          <span class="pp-curr">zł</span>
+          <span class="pp-amt">2 999</span>
+        </div>
+        <div class="pp-note">Cena netto + VAT</div>
+        <div class="pc-divider"></div>
+        <ul class="feat-list">
+          <li class="yes">Do 10 podstron</li>
+          <li class="yes">Premium design system</li>
+          <li class="yes">Pomoc w copywritingu</li>
+          <li class="yes">Blog lub panel CMS</li>
+          <li class="yes">Zaawansowane SEO i szybkość</li>
+          <li class="yes">Google Business Profile</li>
+          <li class="yes">System rezerwacji / zapytań</li>
+          <li class="yes">Realizacja w 10–14 dni</li>
+          <li class="no">Animacje premium</li>
+        </ul>
+        <a href="kontakt.html" class="btn btn-primary" style="width:100%; justify-content:center;">Zapytaj o wycenę</a>
+      </div>
+
+      <!-- PREMIUM -->
+      <div class="pc-card reveal d2">
+        <div class="pc-tier">Premium</div>
+        <div class="pc-name">Authority</div>
+        <div class="pc-desc">Dla firm, które chcą wyglądać jak liderzy branży i nie mogą sobie pozwolić na przeciętną stronę.</div>
+        <div class="pc-price">
+          <span class="pp-from">od</span>
+          <span class="pp-curr">zł</span>
+          <span class="pp-amt">5 999</span>
+        </div>
+        <div class="pp-note">Cena netto + VAT</div>
+        <div class="pc-divider"></div>
+        <ul class="feat-list">
+          <li class="yes">Nieograniczona liczba podstron</li>
+          <li class="yes">Integracja pełnej identyfikacji wizualnej</li>
+          <li class="yes">Profesjonalny copywriting</li>
+          <li class="yes">E-commerce lub zaawansowany system rezerwacji</li>
+          <li class="yes">Animacje premium i interakcje</li>
+          <li class="yes">3 miesiące opieki po publikacji</li>
+          <li class="yes">Raport wyników co miesiąc</li>
+          <li class="yes">Priorytetowa realizacja (7 dni)</li>
+        </ul>
+        <a href="kontakt.html" class="btn btn-outline" style="width:100%; justify-content:center;">Porozmawiajmy</a>
+      </div>
+
+    </div>
+
+    <p style="text-align:center; font-size:13px; color:var(--text3); margin-top: 8px;">Wszystkie ceny netto. Płatność: 50% zaliczki, 50% po zakończeniu projektu. Możliwość rozliczenia faktury VAT.</p>
+
+    <!-- COMPARISON TABLE -->
+    <div class="reveal" style="margin-top:80px;">
+      <h3 style="font-family:var(--font-display); font-size:22px; font-weight:700; text-align:center; margin-bottom:8px;">Szczegółowe porównanie</h3>
+      <p style="text-align:center; color:var(--text3); font-size:14px; margin-bottom:0;">Co dokładnie zawiera każdy pakiet?</p>
+      <div style="background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-xl); overflow:hidden; margin-top:32px;">
+        <table class="comp-table">
+          <thead>
+            <tr>
+              <th>Funkcja</th>
+              <th>Essential</th>
+              <th class="pop-col">Professional ★</th>
+              <th>Authority</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Liczba podstron</td><td class="comp-val">do 5</td><td class="comp-val">do 10</td><td class="comp-val">nielimitowane</td></tr>
+            <tr><td>Niestandardowy design</td><td><span class="comp-check">✓</span></td><td><span class="comp-check">✓</span></td><td><span class="comp-check">✓</span></td></tr>
+            <tr><td>Responsywność mobile</td><td><span class="comp-check">✓</span></td><td><span class="comp-check">✓</span></td><td><span class="comp-check">✓</span></td></tr>
+            <tr><td>SSL + konfiguracja hostingu</td><td><span class="comp-check">✓</span></td><td><span class="comp-check">✓</span></td><td><span class="comp-check">✓</span></td></tr>
+            <tr><td>Podstawy SEO on-page</td><td><span class="comp-check">✓</span></td><td><span class="comp-check">✓</span></td><td><span class="comp-check">✓</span></td></tr>
+            <tr><td>Google Analytics</td><td><span class="comp-check">✓</span></td><td><span class="comp-check">✓</span></td><td><span class="comp-check">✓</span></td></tr>
+            <tr><td>Pomoc w copywritingu</td><td><span class="comp-no">–</span></td><td><span class="comp-check">✓</span></td><td><span class="comp-check">✓ pełny</span></td></tr>
+            <tr><td>Blog / Panel CMS</td><td><span class="comp-no">–</span></td><td><span class="comp-check">✓</span></td><td><span class="comp-check">✓</span></td></tr>
+            <tr><td>System rezerwacji/zapytań</td><td><span class="comp-no">–</span></td><td><span class="comp-check">✓</span></td><td><span class="comp-check">✓ zaawansowany</span></td></tr>
+            <tr><td>Google Business Profile</td><td><span class="comp-no">–</span></td><td><span class="comp-check">✓</span></td><td><span class="comp-check">✓</span></td></tr>
+            <tr><td>Animacje i efekty premium</td><td><span class="comp-no">–</span></td><td><span class="comp-no">–</span></td><td><span class="comp-check">✓</span></td></tr>
+            <tr><td>E-commerce</td><td><span class="comp-no">–</span></td><td><span class="comp-no">–</span></td><td><span class="comp-check">✓</span></td></tr>
+            <tr><td>Opieka po publikacji</td><td><span class="comp-val">–</span></td><td><span class="comp-val">–</span></td><td><span class="comp-val">3 miesiące</span></td></tr>
+            <tr><td>Czas realizacji</td><td class="comp-val">7 dni</td><td class="comp-val">10–14 dni</td><td class="comp-val">7 dni (priorytet)</td></tr>
+            <tr><td>Cena od</td><td class="comp-val">1 499 zł</td><td class="comp-val" style="color:var(--accent2);">2 999 zł</td><td class="comp-val">5 999 zł</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OPIEKA TECHNICZNA -->
+<div style="background:var(--bg2);">
+  <section class="section">
+    <div class="container">
+      <div class="sec-head reveal">
+        <div class="eyebrow">Abonamenty miesięczne</div>
+        <h2>Opieka techniczna.<br>Twoja strona zawsze sprawna.</h2>
+        <p>Strona to inwestycja, która wymaga regularnej uwagi. Zdaj to na mnie i skup się na prowadzeniu firmy.</p>
+      </div>
+      <div class="maint-grid">
+        <div class="maint-card reveal">
+          <div class="pc-tier">Podstawowy</div>
+          <div class="pc-name" style="font-size:22px; margin-bottom:8px;">Basic Care</div>
+          <div class="pc-price" style="margin-bottom:6px;">
+            <span class="pp-curr">zł</span>
+            <span class="pp-amt" style="font-size:40px;">299</span>
+            <span class="pp-period">/ mies.</span>
+          </div>
+          <div class="pc-divider"></div>
+          <ul class="feat-list" style="margin-bottom:28px;">
+            <li class="yes">2h edycji treści miesięcznie</li>
+            <li class="yes">Aktualizacje systemu i wtyczek</li>
+            <li class="yes">Tygodniowe kopie zapasowe</li>
+            <li class="yes">Monitoring dostępności 24/7</li>
+            <li class="no">Raport miesięczny SEO</li>
+            <li class="no">Priorytetowy czas reakcji</li>
+          </ul>
+          <a href="kontakt.html" class="btn btn-outline" style="width:100%; justify-content:center; font-size:13px;">Wybierz plan</a>
+        </div>
+        <div class="maint-card reveal d1" style="border-color:rgba(91,82,240,0.25); background:linear-gradient(145deg,#12112a,#18163a);">
+          <div class="pc-tier">Zalecany</div>
+          <div class="pc-name" style="font-size:22px; margin-bottom:8px;">Pro Care</div>
+          <div class="pc-price" style="margin-bottom:6px;">
+            <span class="pp-curr">zł</span>
+            <span class="pp-amt" style="font-size:40px;">549</span>
+            <span class="pp-period">/ mies.</span>
+          </div>
+          <div class="pc-divider"></div>
+          <ul class="feat-list" style="margin-bottom:28px;">
+            <li class="yes">4h edycji treści miesięcznie</li>
+            <li class="yes">Aktualizacje systemu i wtyczek</li>
+            <li class="yes">Codzienne kopie zapasowe</li>
+            <li class="yes">Monitoring dostępności 24/7</li>
+            <li class="yes">Raport miesięczny (ruch, SEO)</li>
+            <li class="yes">Priorytet odpowiedzi (maks. 12h)</li>
+          </ul>
+          <a href="kontakt.html" class="btn btn-primary" style="width:100%; justify-content:center; font-size:13px;">Wybierz plan</a>
+        </div>
+        <div class="maint-card reveal d2">
+          <div class="pc-tier">Pełna opieka</div>
+          <div class="pc-name" style="font-size:22px; margin-bottom:8px;">Total Care</div>
+          <div class="pc-price" style="margin-bottom:6px;">
+            <span class="pp-curr">zł</span>
+            <span class="pp-amt" style="font-size:40px;">999</span>
+            <span class="pp-period">/ mies.</span>
+          </div>
+          <div class="pc-divider"></div>
+          <ul class="feat-list" style="margin-bottom:28px;">
+            <li class="yes">8h edycji treści miesięcznie</li>
+            <li class="yes">Pełna opieka techniczna</li>
+            <li class="yes">Codzienne kopie zapasowe</li>
+            <li class="yes">Monitoring 24/7 z alertami SMS</li>
+            <li class="yes">Raport wyników + rekomendacje SEO</li>
+            <li class="yes">Reakcja w maks. 4h robocze</li>
+          </ul>
+          <a href="kontakt.html" class="btn btn-outline" style="width:100%; justify-content:center; font-size:13px;">Wybierz plan</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- FAQ PRICING -->
+<section class="section" style="background:var(--bg);">
+  <div class="container" style="max-width:760px;">
+    <div class="sec-head reveal">
+      <div class="eyebrow">Pytania o ceny</div>
+      <h2>Często pytacie.</h2>
+    </div>
+    <div style="display:flex; flex-direction:column; gap:0; border-top:1px solid var(--border);">
+
+      <div class="faq-item reveal" style="border-bottom:1px solid var(--border);">
+        <div class="faq-q" onclick="toggleFaq(this)" style="display:flex; justify-content:space-between; align-items:center; padding:22px 0; cursor:pointer; font-family:var(--font-display); font-size:16px; font-weight:600; color:var(--text); transition:color 0.2s;">
+          Czy podane ceny to ceny końcowe?
+          <span class="faq-icon" style="width:28px; height:28px; border:1px solid var(--border2); border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:18px; color:var(--text3); flex-shrink:0; transition:all 0.3s;">+</span>
+        </div>
+        <div class="faq-a" style="font-size:14.5px; color:var(--text3); line-height:1.8; max-height:0; overflow:hidden; transition:all 0.4s ease;">Podane ceny są cenami netto. Do każdej faktury doliczamy VAT 23%. Wystawiamy pełne faktury VAT — koszt możesz zaksięgować jako koszt firmowy.</div>
+      </div>
+
+      <div class="faq-item reveal" style="border-bottom:1px solid var(--border);">
+        <div class="faq-q" onclick="toggleFaq(this)" style="display:flex; justify-content:space-between; align-items:center; padding:22px 0; cursor:pointer; font-family:var(--font-display); font-size:16px; font-weight:600; color:var(--text); transition:color 0.2s;">
+          Jak wygląda płatność?
+          <span class="faq-icon" style="width:28px; height:28px; border:1px solid var(--border2); border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:18px; color:var(--text3); flex-shrink:0; transition:all 0.3s;">+</span>
+        </div>
+        <div class="faq-a" style="font-size:14.5px; color:var(--text3); line-height:1.8; max-height:0; overflow:hidden; transition:all 0.4s ease;">50% zaliczki przed rozpoczęciem prac, 50% po publikacji strony i Twojej akceptacji. Płatność przelewem bankowym. Nie zacznę pracy bez zaliczki — i Ty nie płacisz reszty zanim nie będziesz zadowolony.</div>
+      </div>
+
+      <div class="faq-item reveal" style="border-bottom:1px solid var(--border);">
+        <div class="faq-q" onclick="toggleFaq(this)" style="display:flex; justify-content:space-between; align-items:center; padding:22px 0; cursor:pointer; font-family:var(--font-display); font-size:16px; font-weight:600; color:var(--text); transition:color 0.2s;">
+          Czy mogę zamówić coś spoza pakietu?
+          <span class="faq-icon" style="width:28px; height:28px; border:1px solid var(--border2); border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:18px; color:var(--text3); flex-shrink:0; transition:all 0.3s;">+</span>
+        </div>
+        <div class="faq-a" style="font-size:14.5px; color:var(--text3); line-height:1.8; max-height:0; overflow:hidden; transition:all 0.4s ease;">Oczywiście. Pakiety to punkt startowy, nie sztywne ramy. Napisz mi co potrzebujesz, a przygotuję indywidualną wycenę. Każdy projekt jest inny — nie ma sensu dopasowywać się na siłę do gotowego cennika.</div>
+      </div>
+
+    </div>
+    <div style="text-align:center; margin-top:48px;">
+      <a href="faq.html" style="color:var(--accent2); font-family:var(--font-display); font-size:14px; font-weight:600; text-decoration:none;">Zobacz wszystkie pytania →</a>
+    </div>
+  </div>
+</section>
+
+<script src="shared.js"></script>
+<script>
+function toggleFaq(el) {
+  const item = el.parentElement;
+  const icon = el.querySelector('.faq-icon');
+  const ans = item.querySelector('.faq-a');
+  const isOpen = ans.style.maxHeight && ans.style.maxHeight !== '0px';
+  document.querySelectorAll('.faq-a').forEach(a => { a.style.maxHeight = '0'; a.style.paddingBottom = '0'; });
+  document.querySelectorAll('.faq-icon').forEach(ic => { ic.style.background=''; ic.style.borderColor=''; ic.style.color=''; ic.style.transform=''; });
+  if (!isOpen) {
+    ans.style.maxHeight = '300px';
+    ans.style.paddingBottom = '20px';
+    icon.style.background = 'var(--accent)';
+    icon.style.borderColor = 'var(--accent)';
+    icon.style.color = '#fff';
+    icon.style.transform = 'rotate(45deg)';
+  }
+}
+</script>
+</body>
+</html>
