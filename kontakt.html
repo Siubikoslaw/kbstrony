@@ -354,23 +354,38 @@ function selectBudget(el) {
 function submitForm() {
   const name = document.getElementById('f-name').value;
   const email = document.getElementById('f-email').value;
+  const phone = document.getElementById('f-phone').value;
+  const industry = document.getElementById('f-industry').value;
+  const website = document.getElementById('f-website').value;
   const service = document.getElementById('f-service').value;
   const msg = document.getElementById('f-msg').value;
   const consent = document.getElementById('f-consent').checked;
 
-  if (!name || !email || !service || !msg) {
+  const budget = document.querySelector('.budget-opt.selected')?.innerText || "Nie podano";
+
+  if (!name || !email || !service || !msg || !industry) {
     alert('Proszę wypełnić wszystkie wymagane pola.');
     return;
   }
+
   if (!consent) {
     alert('Wymagana zgoda na kontakt.');
     return;
   }
 
-  emailjs.send("service_vtmyjzd", "template_577wu0r", {
+  // loading UX
+  const btn = document.querySelector('.submit-btn');
+  btn.innerText = "Wysyłanie...";
+  btn.disabled = true;
+
+  emailjs.send("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", {
     name: name,
     email: email,
+    phone: phone,
+    industry: industry,
+    website: website,
     service: service,
+    budget: budget,
     message: msg
   })
   .then(() => {
@@ -379,6 +394,8 @@ function submitForm() {
   })
   .catch(() => {
     alert('Błąd wysyłki. Spróbuj ponownie.');
+    btn.innerText = "Wyślij zapytanie";
+    btn.disabled = false;
   });
 }
 </script>
