@@ -69,8 +69,8 @@ function injectFooter() {
       </div>
       <div class="footer-col">
         <h5>Kontakt</h5>
-        <a href="mailto:kontakt@kbwebdesign.pl">kontakt@kbwebdesign.pl</a>
-        <a href="tel:+48123456789">+48 123 456 789</a>
+        <a href="mailto:kbwebdesign.opole@gmail.com">kbwebdesign.opole@gmail.com</a>
+        <a href="tel:+48572070483">+48 572 070 483</a>
         <a href="kontakt.html">Formularz kontaktowy</a>
         <a href="kontakt.html" style="color:var(--accent2); margin-top:8px; display:block;">→ Bezpłatna wycena</a>
       </div>
