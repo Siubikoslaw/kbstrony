@@ -148,12 +148,14 @@
 .maint-card:hover { border-color: rgba(91,82,240,0.25); transform: translateY(-4px); }
 
 @media (max-width: 900px) {
-  .pricing-grid { grid-template-columns: 1fr; }
+  .pricing-grid { grid-template-columns: 1fr !important; }
+  .pricing-grid > .pc-card { grid-column: auto !important; }
   .pc-card { padding: 32px 24px; }
   .pc-price { flex-wrap: wrap; align-items: flex-start; }
   .pc-card.pop { transform: none; }
   .pc-card.pop:hover { transform: translateY(-4px); }
-  .maint-grid { grid-template-columns: 1fr; }
+  .maint-grid { grid-template-columns: 1fr !important; }
+  .maint-grid > .maint-card { grid-column: auto !important; }
   .comp-table { font-size: 12px; }
 }
 </style>
