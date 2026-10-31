@@ -3,330 +3,256 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Usługi KB WebDesign — strony internetowe, redesign, landing page, opieka techniczna dla lokalnych firm.">
-<title>Usługi — KB WebDesign</title>
+<title>Strony www, social media i obsługa techniczna | KB WebDesign</title>
+<meta name="description" content="Cztery usługi dla firm: tworzenie nowych stron internetowych, obsługa techniczna, prowadzenie social mediów i setup profili. Opole i cała Polska.">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<link rel="canonical" href="https://kbwebdesign.pl/uslugi.html">
+<meta name="theme-color" content="#0a3d2a">
+<meta name="author" content="KB WebDesign">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pl_PL">
+<meta property="og:site_name" content="KB WebDesign">
+<meta property="og:title" content="Strony www, social media i obsługa techniczna | KB WebDesign">
+<meta property="og:description" content="Cztery usługi dla firm: tworzenie nowych stron internetowych, obsługa techniczna, prowadzenie social mediów i setup profili. Opole i cała Polska.">
+<meta property="og:url" content="https://kbwebdesign.pl/uslugi.html">
+<meta property="og:image" content="https://kbwebdesign.pl/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="KB WebDesign: strony internetowe i social media dla firm z Opola">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Strony www, social media i obsługa techniczna | KB WebDesign">
+<meta name="twitter:description" content="Cztery usługi dla firm: tworzenie nowych stron internetowych, obsługa techniczna, prowadzenie social mediów i setup profili. Opole i cała Polska.">
+<meta name="twitter:image" content="https://kbwebdesign.pl/og-image.png">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&family=Newsreader:opsz,wght@6..72,400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="shared.css">
-<style>
-.page-hero {
-  padding: calc(var(--nav-h) + 80px) 0 80px;
-  text-align: center;
-  background: radial-gradient(ellipse 70% 50% at 50% 0%, rgba(91,82,240,0.12), transparent 70%);
-}
-.page-hero h1 { font-size: clamp(38px, 5vw, 66px); margin-bottom: 18px; }
-.page-hero p { font-size: 18px; color: var(--text2); max-width: 560px; margin: 0 auto; line-height: 1.8; font-weight: 300; }
-
-.srv-full {
-  display: flex;
-  flex-direction: column;
-  gap: 100px;
-  padding: 80px 0 120px;
-}
-.srv-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
-  align-items: center;
-}
-.srv-row.reverse { direction: rtl; }
-.srv-row.reverse > * { direction: ltr; }
-.srv-visual {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-2xl);
-  height: 340px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  gap: 16px;
-  position: relative;
-  overflow: hidden;
-}
-.srv-visual::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(ellipse at 50% 0%, rgba(91,82,240,0.1), transparent 70%);
-}
-.srv-visual-emoji { font-size: 64px; position: relative; z-index: 1; }
-.srv-visual-label {
-  font-family: var(--font-display);
-  font-size: 13px;
-  font-weight: 600;
-  color: var(--text3);
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  position: relative; z-index: 1;
-}
-.srv-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 20px; }
-.tag {
-  display: inline-block;
-  font-family: var(--font-display);
-  font-size: 11px;
-  font-weight: 600;
-  padding: 5px 14px;
-  border-radius: 50px;
-  border: 1px solid var(--border2);
-  color: var(--text2);
-}
-.tag.accent { background: rgba(91,82,240,0.1); border-color: rgba(91,82,240,0.25); color: var(--accent2); }
-.srv-info h2 { font-size: clamp(26px, 3vw, 38px); margin-bottom: 16px; }
-.srv-info > p { font-size: 15.5px; color: var(--text2); line-height: 1.85; margin-bottom: 28px; }
-.srv-features { list-style: none; display: flex; flex-direction: column; gap: 10px; margin-bottom: 32px; }
-.srv-features li { display: flex; gap: 12px; align-items: flex-start; font-size: 14.5px; color: var(--text2); }
-.sf-check { color: var(--accent2); font-weight: 700; flex-shrink: 0; margin-top: 2px; }
-.srv-price {
-  display: inline-flex;
-  align-items: baseline;
-  gap: 4px;
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 14px 22px;
-  margin-bottom: 28px;
-}
-.sp-from { font-size: 12px; color: var(--text3); font-family: var(--font-display); }
-.sp-amount { font-family: var(--font-display); font-size: 32px; font-weight: 800; color: var(--text); }
-.sp-period { font-size: 13px; color: var(--text3); font-family: var(--font-display); }
-
-/* INCLUDE BOX */
-.includes-section { background: var(--bg2); }
-.includes-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 18px;
-  margin-top: 56px;
-}
-.inc-card {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-xl);
-  padding: 28px 24px;
-  transition: all 0.25s;
-}
-.inc-card:hover { border-color: rgba(91,82,240,0.25); transform: translateY(-4px); }
-.inc-icon { font-size: 28px; margin-bottom: 14px; }
-.inc-card h4 { font-family: var(--font-display); font-size: 15px; font-weight: 700; color: var(--text); margin-bottom: 8px; }
-.inc-card p { font-size: 13.5px; color: var(--text3); line-height: 1.7; }
-
-@media (max-width: 900px) {
-  .srv-row { grid-template-columns: 1fr; gap: 40px; }
-  .srv-row.reverse { direction: ltr; }
-  .includes-grid { grid-template-columns: 1fr; }
-}
-@media (max-width: 560px) {
-  .includes-grid { grid-template-columns: 1fr; }
-}
-</style>
+<script>document.documentElement.classList.add('js')</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://kbwebdesign.pl/uslugi.html#webpage","url":"https://kbwebdesign.pl/uslugi.html","name":"Usługi KB WebDesign","description":"Cztery usługi dla firm: tworzenie nowych stron internetowych, obsługa techniczna, prowadzenie social mediów i setup profili. Opole i cała Polska.","inLanguage":"pl-PL","isPartOf":{"@id":"https://kbwebdesign.pl/#website"},"about":{"@id":"https://kbwebdesign.pl/#business"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Strona główna","item":"https://kbwebdesign.pl/"},{"@type":"ListItem","position":2,"name":"Usługi","item":"https://kbwebdesign.pl/uslugi.html"}]},{"@type":"Service","name":"Nowa strona internetowa","description":"W pełni niestandardowa strona firmowa: nowa od zera, redesign lub landing page, z SEO i responsywnym designem.","url":"https://kbwebdesign.pl/uslugi.html#nowa-strona","provider":{"@id":"https://kbwebdesign.pl/#business"},"areaServed":{"@type":"Country","name":"Polska"},"offers":{"@type":"Offer","priceCurrency":"PLN","priceSpecification":{"@type":"PriceSpecification","minPrice":1500,"priceCurrency":"PLN"}}},{"@type":"Service","name":"Obsługa techniczna strony","description":"Aktualizacje, kopie zapasowe, edycje treści i monitoring dostępności strony w abonamencie miesięcznym.","url":"https://kbwebdesign.pl/uslugi.html#obsluga-techniczna","provider":{"@id":"https://kbwebdesign.pl/#business"},"areaServed":{"@type":"Country","name":"Polska"},"offers":{"@type":"Offer","priceCurrency":"PLN","priceSpecification":{"@type":"PriceSpecification","minPrice":300,"priceCurrency":"PLN"}}},{"@type":"Service","name":"Prowadzenie social mediów","description":"Plan publikacji, posty, grafiki i opieka nad profilami firmowymi w mediach społecznościowych.","url":"https://kbwebdesign.pl/uslugi.html#social-media","provider":{"@id":"https://kbwebdesign.pl/#business"},"areaServed":{"@type":"Country","name":"Polska"}},{"@type":"Service","name":"Setup social mediów","description":"Założenie i konfiguracja profili firmowych: grafiki, opis, dane kontaktowe i spójny wygląd ze stroną.","url":"https://kbwebdesign.pl/uslugi.html#setup-social-mediow","provider":{"@id":"https://kbwebdesign.pl/#business"},"areaServed":{"@type":"Country","name":"Polska"}}]}</script>
 </head>
 <body>
-<section class="page-hero">
-  <div class="container">
-    <div class="eyebrow" style="justify-content:center;">Usługi</div>
-    <h1>Wszystko, czego potrzebuje<br>Twoja firma w sieci.</h1>
-    <p>Konkretne usługi, jasne rezultaty, zero zbędnych dodatków. Ty wiesz co dostajesz — i kiedy.</p>
+<a class="skip-link" href="#main">Przejdź do treści</a>
+<div id="progress" aria-hidden="true"></div>
+<header>
+<nav class="site-nav" id="main-nav" aria-label="Główna nawigacja">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo" aria-label="KB WebDesign, strona główna"><span class="mark">KB</span>WebDesign</a>
+    <ul class="nav-links"><li><a href="index.html">Strona główna</a></li><li><a href="uslugi.html" class="active" aria-current="page">Usługi</a></li><li><a href="portfolio.html">Portfolio</a></li><li><a href="cennik.html">Cennik</a></li><li><a href="o-mnie.html">O mnie</a></li><li><a href="faq.html">FAQ</a></li><li><a href="kontakt.html" class="nav-cta">Bezpłatna wycena</a></li></ul>
+    <button class="nav-burger" id="nav-burger" type="button" aria-label="Menu" aria-expanded="false" aria-controls="nav-mobile"><span></span><span></span><span></span></button>
   </div>
-</section>
+</nav>
+<div class="nav-mobile" id="nav-mobile"><a href="index.html">Strona główna</a><a href="uslugi.html">Usługi</a><a href="portfolio.html">Portfolio</a><a href="cennik.html">Cennik</a><a href="o-mnie.html">O mnie</a><a href="faq.html">FAQ</a><a href="kontakt.html">Bezpłatna wycena</a></div>
+</header>
+<main id="main">
 
-<section class="section" style="background:var(--bg);">
+<header class="page-hero wide">
+  <div class="container">
+    <nav class="crumbs" aria-label="Okruszki"><a href="index.html">Strona główna</a><span aria-hidden="true">/</span><span>Usługi</span></nav>
+    <h1>Strony www, social media i opieka nad nimi.</h1>
+    <p>Cztery konkretne usługi dla firm, które chcą wyglądać profesjonalnie w sieci. Jasny zakres, jasny efekt, bez zbędnych dodatków.</p>
+  </div>
+</header>
+
+<section class="section" aria-label="Lista usług">
   <div class="container">
     <div class="srv-full">
 
-      <!-- STRONA INTERNETOWA -->
-      <div class="srv-row reveal">
-        <div class="srv-visual">
-          <div class="srv-visual-emoji">🌐</div>
-          <div class="srv-visual-label">Strona internetowa</div>
-        </div>
-        <div class="srv-info">
-          <div class="srv-tags">
-            <span class="tag accent">Najpopularniejsza usługa</span>
-            <span class="tag">7–14 dni</span>
+      <!-- NOWA STRONA -->
+      <article class="srv-row" id="nowa-strona">
+        <div class="srv-visual reveal">
+          <div class="panel" style="padding:0; overflow:hidden;">
+            <div class="mock-bar"><i></i><i></i><i></i><span></span></div>
+            <div class="mock-body"><div class="l"><b></b><b></b><s></s><s></s><u></u></div><div class="r"></div></div>
           </div>
-          <h2>Strona internetowa<br>na miarę Twojej firmy</h2>
-          <p>Nie szablon, nie kreator stron. W pełni niestandardowy projekt stworzony wokół Twojej marki, Twoich klientów i Twoich celów biznesowych. Strona, która działa 24/7 jak najlepszy pracownik sprzedaży.</p>
+        </div>
+        <div class="srv-info reveal" style="--d:.12s">
+          <div class="srv-tags"><span class="tag accent">Najpopularniejsza usługa</span><span class="tag">7–14 dni</span></div>
+          <h2>Nowa strona internetowa na miarę Twojej firmy</h2>
+          <p>Nie szablon i nie kreator stron. W pełni niestandardowy projekt zbudowany wokół Twojej marki, klientów i celów biznesowych. Strona, która działa 24/7 jak najlepszy pracownik sprzedaży.</p>
           <ul class="srv-features">
-            <li><span class="sf-check">✓</span> Do 10 podstron (start, o nas, usługi, kontakt i więcej)</li>
-            <li><span class="sf-check">✓</span> W pełni responsywny design (mobile, tablet, desktop)</li>
-            <li><span class="sf-check">✓</span> Formularz kontaktowy z powiadomieniami email</li>
-            <li><span class="sf-check">✓</span> Optymalizacja SEO na stronie (meta tagi, szybkość, struktura)</li>
-            <li><span class="sf-check">✓</span> Integracja z Google Analytics i Google Search Console</li>
-            <li><span class="sf-check">✓</span> Certyfikat SSL (HTTPS) i hosting setup</li>
-            <li><span class="sf-check">✓</span> Szkolenie z zarządzania treścią</li>
+            <li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.2 4.2L19 7"/></svg> Nowa od zera, redesign istniejącej strony albo landing page pod kampanię</li>
+            <li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.2 4.2L19 7"/></svg> Do 10 podstron (start, o nas, usługi, kontakt i więcej)</li>
+            <li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.2 4.2L19 7"/></svg> W pełni responsywny design (mobile, tablet, desktop)</li>
+            <li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.2 4.2L19 7"/></svg> Formularz kontaktowy z powiadomieniami e-mail</li>
+            <li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.2 4.2L19 7"/></svg> Optymalizacja SEO na stronie: meta tagi, szybkość, dane strukturalne</li>
+            <li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.2 4.2L19 7"/></svg> Integracja z Google Analytics i Google Search Console</li>
+            <li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.2 4.2L19 7"/></svg> Certyfikat SSL (HTTPS) i konfiguracja hostingu</li>
           </ul>
-          <div class="srv-price">
-            <span class="sp-from">od</span>
-            <span class="sp-amount">1 499 zł</span>
-            <span class="sp-period">/ projekt</span>
-          </div>
-          <div>
-            <a href="kontakt.html" class="btn btn-primary">Zapytaj o wycenę →</a>
+          <div class="srv-foot">
+            <div class="srv-price"><span class="sp-from">od</span><span class="sp-amount">1 500 zł</span><span class="sp-period">/ projekt</span></div>
+            <a href="kontakt.html" class="btn btn-primary">Zapytaj o wycenę <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
           </div>
         </div>
-      </div>
+      </article>
 
-      <!-- REDESIGN -->
-      <div class="srv-row reverse reveal">
-        <div class="srv-visual">
-          <div class="srv-visual-emoji">♻️</div>
-          <div class="srv-visual-label">Redesign strony</div>
-        </div>
-        <div class="srv-info">
-          <div class="srv-tags">
-            <span class="tag accent">Wysoki zwrot z inwestycji</span>
-            <span class="tag">10–14 dni</span>
+      <!-- OBSLUGA TECHNICZNA -->
+      <article class="srv-row reverse" id="obsluga-techniczna">
+        <div class="srv-visual reveal">
+          <div class="panel">
+            <div class="panel-title">Twoja strona <small>Działa poprawnie</small></div>
+            <div class="status-row"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6l7-3z"/><path d="M9 12l2.2 2.2L15.5 10"/></svg> Kopie zapasowe <span class="ok"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.2 4.2L19 7"/></svg></span></div>
+            <div class="status-row"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 3L5 13.5h6L10 21l8-10.5h-6L13 3z"/></svg> Aktualizacje systemu <span class="ok"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.2 4.2L19 7"/></svg></span></div>
+            <div class="status-row"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="10.5" width="14" height="10" rx="2.5"/><path d="M8 10.5V8a4 4 0 0 1 8 0v2.5M12 15v2"/></svg> Certyfikat SSL <span class="ok"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.2 4.2L19 7"/></svg></span></div>
+            <div class="status-row"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M21 20H3"/></svg> Monitoring 24/7 <span class="ok"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.2 4.2L19 7"/></svg></span></div>
           </div>
-          <h2>Odśwież stronę,<br>odmień wyniki</h2>
-          <p>Masz stronę, która Cię zawstydza albo po prostu nie przynosi efektów? Przebuduję ją od podstaw — zachowując to, co działa, naprawiając resztę i dodając to, czego brakuje. Klienci odwiedzający Twoją nową stronę nie uwierzą, że to ta sama firma.</p>
+        </div>
+        <div class="srv-info reveal" style="--d:.12s">
+          <div class="srv-tags"><span class="tag accent">Abonament miesięczny</span><span class="tag">Stała opieka</span></div>
+          <h2>Obsługa techniczna, dzięki której strona jest zawsze sprawna</h2>
+          <p>Strona internetowa to nie jednorazowy produkt, wymaga regularnej uwagi. Aktualizacje, kopie zapasowe, nowe treści i nowe podstrony. Zamiast zajmować się tym samemu, przekaż to mnie i skup się na prowadzeniu firmy.</p>
           <ul class="srv-features">
-            <li><span class="sf-check">✓</span> Pełna analiza obecnej strony i konkurencji</li>
-            <li><span class="sf-check">✓</span> Nowa architektura informacji i hierarchia wizualna</li>
-            <li><span class="sf-check">✓</span> Migracja treści i optymalizacja copywritingu</li>
-            <li><span class="sf-check">✓</span> Nowoczesny, mobilny-first design</li>
-            <li><span class="sf-check">✓</span> Poprawa szybkości i wyników Core Web Vitals</li>
-            <li><span class="sf-check">✓</span> Przekierowania 301 — żadnego tracenia pozycji SEO</li>
+            <li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.2 4.2L19 7"/></svg> Edycje treści i nowe podstrony w ramach wybranego planu</li>
+            <li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.2 4.2L19 7"/></svg> Aktualizacje oprogramowania, wtyczek i zabezpieczeń</li>
+            <li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.2 4.2L19 7"/></svg> Regularne kopie zapasowe</li>
+            <li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.2 4.2L19 7"/></svg> Monitoring dostępności strony 24/7 (plany Pro i Total)</li>
+            <li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.2 4.2L19 7"/></svg> Raport z wynikami i rekomendacjami SEO (plan Total)</li>
+            <li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.2 4.2L19 7"/></svg> Priorytetowy czas reakcji, nawet do 8 godzin roboczych</li>
           </ul>
-          <div class="srv-price">
-            <span class="sp-from">od</span>
-            <span class="sp-amount">1 299 zł</span>
-            <span class="sp-period">/ projekt</span>
-          </div>
-          <div>
-            <a href="kontakt.html" class="btn btn-primary">Zapytaj o wycenę →</a>
+          <div class="srv-foot">
+            <div class="srv-price"><span class="sp-from">od</span><span class="sp-amount">300 zł</span><span class="sp-period">/ miesiąc</span></div>
+            <a href="cennik.html#opieka" class="btn btn-primary">Zobacz plany <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
           </div>
         </div>
-      </div>
+      </article>
 
-      <!-- LANDING PAGE -->
-      <div class="srv-row reveal">
-        <div class="srv-visual">
-          <div class="srv-visual-emoji">🚀</div>
-          <div class="srv-visual-label">Landing Page</div>
-        </div>
-        <div class="srv-info">
-          <div class="srv-tags">
-            <span class="tag accent">Idealna do kampanii</span>
-            <span class="tag">3–5 dni</span>
+      <!-- SOCIAL MEDIA -->
+      <article class="srv-row" id="social-media">
+        <div class="srv-visual reveal">
+          <div class="panel">
+            <div class="panel-title">Plan publikacji <small>Ten miesiąc</small></div>
+            <div class="cal" aria-hidden="true">
+              <b>Pn</b><b>Wt</b><b>Śr</b><b>Cz</b><b>Pt</b><b>So</b><b>Nd</b>
+              <i class="q"></i><i></i><i class="r"></i><i></i><i class="q"></i><i class="p"></i><i></i>
+              <i></i><i class="r"></i><i></i><i class="q"></i><i></i><i class="r"></i><i></i>
+              <i class="q"></i><i></i><i class="r"></i><i></i><i class="q"></i><i></i><i class="p"></i>
+              <i></i><i class="r"></i><i></i><i class="q"></i><i></i><i class="r"></i><i></i>
+            </div>
+            <div class="cal-legend"><span>Post</span><span>Rolka lub grafika</span></div>
           </div>
-          <h2>Jedna strona,<br>jeden cel: konwersja</h2>
-          <p>Jeśli prowadzisz kampanię reklamową, promujesz konkretną usługę albo zbierasz zapisy — landing page wyprzedza pełną stronę pod względem konwersji. Zaprojektowany wokół jednego działania, bez rozpraszaczy, które odpychają klientów.</p>
+        </div>
+        <div class="srv-info reveal" style="--d:.12s">
+          <div class="srv-tags"><span class="tag accent">Prowadzenie profili</span><span class="tag">Abonament miesięczny</span></div>
+          <h2>Social media, które pracują na Twoją markę</h2>
+          <p>Regularne publikacje budują zaufanie i przypominają klientom, że istniejesz. Przejmuję plan, grafiki i opiekę nad profilami, a Ty dostajesz spójny, profesjonalny wizerunek bez codziennej bieganiny.</p>
           <ul class="srv-features">
-            <li><span class="sf-check">✓</span> Jedna strona zoptymalizowana pod jedno działanie (CTA)</li>
-            <li><span class="sf-check">✓</span> Copywriting sprzedażowy (w pakiecie Standard/Premium)</li>
-            <li><span class="sf-check">✓</span> Formularz zapisu lub przycisk „zadzwoń"</li>
-            <li><span class="sf-check">✓</span> Tracking konwersji (Google Ads, Meta Pixel)</li>
-            <li><span class="sf-check">✓</span> Testy A/B setup (na żądanie)</li>
-            <li><span class="sf-check">✓</span> Realizacja w 3–5 dni roboczych</li>
+            <li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.2 4.2L19 7"/></svg> Plan publikacji dopasowany do Twojej branży i klientów</li>
+            <li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.2 4.2L19 7"/></svg> Posty i grafiki w stylu Twojej marki i strony internetowej</li>
+            <li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.2 4.2L19 7"/></svg> Publikacja w ustalonych terminach</li>
+            <li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.2 4.2L19 7"/></svg> Opieka nad profilami: komentarze i wiadomości w uzgodnionym zakresie</li>
+            <li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.2 4.2L19 7"/></svg> Linki z profili do strony i kontaktu, żeby ruch zamieniał się w zapytania</li>
+            <li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.2 4.2L19 7"/></svg> Miesięczne podsumowanie wyników</li>
           </ul>
-          <div class="srv-price">
-            <span class="sp-from">od</span>
-            <span class="sp-amount">799 zł</span>
-            <span class="sp-period">/ projekt</span>
-          </div>
-          <div>
-            <a href="kontakt.html" class="btn btn-primary">Zapytaj o wycenę →</a>
+          <div class="srv-foot">
+            <div class="srv-price"><span class="sp-amount" style="font-size:22px;">Wycena indywidualna</span></div>
+            <a href="kontakt.html" class="btn btn-primary">Zapytaj o wycenę <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
           </div>
         </div>
-      </div>
+      </article>
 
-      <!-- OPIEKA TECHNICZNA -->
-      <div class="srv-row reverse reveal">
-        <div class="srv-visual">
-          <div class="srv-visual-emoji">🔧</div>
-          <div class="srv-visual-label">Opieka techniczna</div>
-        </div>
-        <div class="srv-info">
-          <div class="srv-tags">
-            <span class="tag accent">Abonament miesięczny</span>
-            <span class="tag">Stała opieka</span>
+      <!-- SETUP SOCIAL MEDIOW -->
+      <article class="srv-row reverse" id="setup-social-mediow">
+        <div class="srv-visual reveal">
+          <div class="panel prof">
+            <div class="ph-av">KB</div>
+            <div class="bar" style="width:55%"></div>
+            <div class="bar" style="width:38%; background:var(--mint-2)"></div>
+            <div class="btnrow"><i></i><i></i></div>
+            <div class="links"><span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c2.5 2.4 3.6 5.2 3.6 8.5S14.5 18.1 12 20.5C9.5 18.1 8.4 15.3 8.4 12S9.5 5.9 12 3.5z"/></svg></span><span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4l1.5 4-2 1.3a11 11 0 0 0 5.2 5.2L15 12.5l4 1.5v4a2 2 0 0 1-2 2A13 13 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg></span><span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5.5" width="18" height="13" rx="2.5"/><path d="M4 8l8 5.5L20 8"/></svg></span><span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s6.5-5.4 6.5-11A6.5 6.5 0 0 0 5.5 10C5.5 15.6 12 21 12 21z"/><circle cx="12" cy="10" r="2.3"/></svg></span></div>
           </div>
-          <h2>Twoja strona<br>zawsze sprawna</h2>
-          <p>Strona internetowa to nie jednorazowy produkt — wymaga regularnej uwagi. Aktualizacje oprogramowania, kopie zapasowe, nowe treści, nowe podstrony. Zamiast sam się tym zajmować, przekaż to mnie i skup się na prowadzeniu firmy.</p>
+        </div>
+        <div class="srv-info reveal" style="--d:.12s">
+          <div class="srv-tags"><span class="tag accent">Jednorazowa usługa</span><span class="tag">Szybki start</span></div>
+          <h2>Setup social mediów od podstaw</h2>
+          <p>Nie masz jeszcze profili albo wyglądają przypadkowo? Zakładam i konfiguruję je tak, żeby od pierwszego dnia robiły dobre wrażenie i prowadziły klientów prosto do Twojej strony.</p>
           <ul class="srv-features">
-            <li><span class="sf-check">✓</span> Miesięczne aktualizacje treści i edycje (do 4h/mies.)</li>
-            <li><span class="sf-check">✓</span> Aktualizacje wtyczek, motywów i rdzenia CMS</li>
-            <li><span class="sf-check">✓</span> Cotygodniowe kopie zapasowe</li>
-            <li><span class="sf-check">✓</span> Monitoring dostępności strony 24/7</li>
-            <li><span class="sf-check">✓</span> Raport miesięczny z wynikami (ruch, pozycje SEO)</li>
-            <li><span class="sf-check">✓</span> Priorytetowy czas reakcji (maks. 24h)</li>
+            <li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.2 4.2L19 7"/></svg> Założenie profili firmowych na wybranych platformach, np. Facebook i Instagram</li>
+            <li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.2 4.2L19 7"/></svg> Awatar, okładka i opis w stylu Twojej marki</li>
+            <li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.2 4.2L19 7"/></svg> Dane kontaktowe, godziny otwarcia i przyciski kontaktu</li>
+            <li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.2 4.2L19 7"/></svg> Spójna nazwa profilu i link do Twojej strony</li>
+            <li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.2 4.2L19 7"/></svg> Pakiet grafik startowych na pierwsze publikacje</li>
+            <li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.2 4.2L19 7"/></svg> Przekazanie dostępów i krótka instrukcja obsługi</li>
           </ul>
-          <div class="srv-price">
-            <span class="sp-from">od</span>
-            <span class="sp-amount">299 zł</span>
-            <span class="sp-period">/ miesiąc</span>
-          </div>
-          <div>
-            <a href="kontakt.html" class="btn btn-primary">Zapytaj o wycenę →</a>
+          <div class="srv-foot">
+            <div class="srv-price"><span class="sp-amount" style="font-size:22px;">Wycena indywidualna</span></div>
+            <a href="kontakt.html" class="btn btn-primary">Zapytaj o wycenę <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
           </div>
         </div>
-      </div>
+      </article>
 
     </div>
   </div>
 </section>
 
-<!-- WHAT'S INCLUDED -->
-<div class="includes-section">
-  <section class="section">
-    <div class="container">
-      <div class="sec-head reveal">
-        <div class="eyebrow">W każdym projekcie</div>
-        <h2>To dostaje każdy klient.<br>Bez wyjątków.</h2>
-        <p>Standardy, które dla innych są dodatkami — u mnie są w cenie od pierwszego dnia.</p>
-      </div>
-      <div class="includes-grid">
-        <div class="inc-card reveal">
-          <div class="inc-icon">📱</div>
-          <h4>Pełna responsywność</h4>
-          <p>Każda strona jest testowana na smartfonach, tabletach i komputerach. Twoi klienci korzystają ze wszystkich — Ty też powinieneś.</p>
-        </div>
-        <div class="inc-card reveal d1">
-          <div class="inc-icon">⚡</div>
-          <h4>Wysoka szybkość ładowania</h4>
-          <p>Optymalizacja obrazów, minifikacja kodu, szybki hosting — Twoja strona ładuje się błyskawicznie. Google to docenia, klienci też.</p>
-        </div>
-        <div class="inc-card reveal d2">
-          <div class="inc-icon">🔒</div>
-          <h4>Certyfikat SSL (HTTPS)</h4>
-          <p>Każda strona jest zabezpieczona certyfikatem SSL. Przeglądarki i Google nagradzają bezpieczne strony — brak SSL to strata pozycji i zaufania.</p>
-        </div>
-        <div class="inc-card reveal d3">
-          <div class="inc-icon">📊</div>
-          <h4>Google Analytics</h4>
-          <p>Widzisz skąd przychodzą Twoi klienci, co robią na stronie i które strony najlepiej konwertują. Dane, które pomagają Ci rosnąć.</p>
-        </div>
-        <div class="inc-card reveal">
-          <div class="inc-icon">🎯</div>
-          <h4>Podstawy SEO</h4>
-          <p>Poprawna struktura nagłówków, meta tagi, sitemap.xml, robots.txt — solidny fundament widoczności w Google od pierwszego dnia online.</p>
-        </div>
-        <div class="inc-card reveal d1">
-          <div class="inc-icon">🤝</div>
-          <h4>Bezpośrednia komunikacja</h4>
-          <p>Rozmawiasz ze mną bezpośrednio — nie z asystentem czy menedżerem projektu. Szybka odpowiedź, jasne decyzje, bez biurokratycznych opóźnień.</p>
-        </div>
-      </div>
+<!-- W KAZDYM PROJEKCIE -->
+<section class="section section-mist" aria-labelledby="inc-h">
+  <div class="container">
+    <div class="sec-head reveal">
+      <h2 id="inc-h">To dostaje każdy klient. Bez wyjątków.</h2>
+      <p>Standardy, które u innych są dodatkami, u mnie są w cenie od pierwszego dnia.</p>
     </div>
-  </section>
-</div>
+    <div class="inc-grid" data-stagger="0.08">
+      <div class="inc-card reveal"><div class="ic-box"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="7" y="3" width="10" height="18" rx="2.5"/><path d="M11 18h2"/></svg></div><h3>Pełna responsywność</h3><p>Każda strona jest testowana na smartfonach, tabletach i komputerach. Twoi klienci korzystają ze wszystkich.</p></div>
+      <div class="inc-card reveal"><div class="ic-box"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 3L5 13.5h6L10 21l8-10.5h-6L13 3z"/></svg></div><h3>Wysoka szybkość ładowania</h3><p>Optymalizacja obrazów, minifikacja kodu i szybki hosting. Google to docenia, klienci też.</p></div>
+      <div class="inc-card reveal"><div class="ic-box"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="10.5" width="14" height="10" rx="2.5"/><path d="M8 10.5V8a4 4 0 0 1 8 0v2.5M12 15v2"/></svg></div><h3>Certyfikat SSL (HTTPS)</h3><p>Każda strona jest zabezpieczona certyfikatem SSL. Brak HTTPS to strata pozycji i zaufania.</p></div>
+      <div class="inc-card reveal"><div class="ic-box"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M21 20H3"/></svg></div><h3>Google Analytics</h3><p>Widzisz, skąd przychodzą klienci, co robią na stronie i które podstrony najlepiej konwertują.</p></div>
+      <div class="inc-card reveal"><div class="ic-box"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4.5 4.5"/></svg></div><h3>Podstawy SEO</h3><p>Poprawna struktura nagłówków, meta tagi, sitemap.xml i robots.txt. Solidny fundament widoczności w Google.</p></div>
+      <div class="inc-card reveal"><div class="ic-box"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8.5" r="3"/><circle cx="17" cy="9.5" r="2.4"/><path d="M3.5 19c.5-3 2.7-4.8 5.5-4.8s5 1.8 5.5 4.8"/><path d="M15.5 14.4c2.4-.2 4.3 1.2 5 3.6"/></svg></div><h3>Bezpośrednia komunikacja</h3><p>Rozmawiasz ze mną, a nie z asystentem czy menedżerem projektu. Szybka odpowiedź i jasne decyzje.</p></div>
+    </div>
+  </div>
+</section>
 
 <!-- CTA -->
-<section class="section" style="background:var(--bg);">
+<section class="section" aria-label="Kontakt">
   <div class="container">
-    <div class="cta-banner reveal" style="background:linear-gradient(135deg,rgba(91,82,240,0.12),rgba(139,131,255,0.06)); border:1px solid rgba(91,82,240,0.18); border-radius:var(--radius-2xl); padding:80px 60px; text-align:center; position:relative; overflow:hidden;">
-      <div class="eyebrow" style="justify-content:center;">Następny krok</div>
-      <h2 style="font-size:clamp(26px,4vw,48px); margin-bottom:16px;">Nie wiesz, czego potrzebujesz?<br>Zapytaj — to nic nie kosztuje.</h2>
-      <p style="font-size:17px; color:var(--text2); margin-bottom:40px; max-width:500px; margin-left:auto; margin-right:auto;">Opowiedz mi o swojej firmie. Powiem Ci co zrobiłbym na Twoim miejscu — szczerze, bez naciągania na droższą usługę.</p>
-      <a href="kontakt.html" class="btn btn-primary" style="font-size:16px; padding:18px 44px;">
-        Umów bezpłatną rozmowę →
-      </a>
+    <div class="cta-banner reveal">
+      <div>
+        <h2>Nie wiesz, czego potrzebujesz? Zapytaj, to nic nie kosztuje.</h2>
+        <p>Opowiedz mi o swojej firmie. Powiem Ci, co zrobiłbym na Twoim miejscu, szczerze i bez naciągania na droższą usługę.</p>
+      </div>
+      <div class="cta-actions">
+        <a href="kontakt.html" class="btn btn-light">Umów bezpłatną rozmowę <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <div class="cta-contact"><a href="tel:+48572070483">+48 572 070 483</a></div>
+      </div>
     </div>
   </div>
 </section>
 
-<script src="shared.js"></script>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a href="index.html" class="nav-logo" aria-label="KB WebDesign, strona główna"><span class="mark">KB</span>WebDesign</a>
+      <p>Strony internetowe i social media dla firm z Opola i całej Polski. Bezpośredni kontakt, szybka realizacja, gwarancja satysfakcji.</p>
+    </div>
+    <div class="footer-col">
+      <h2>Usługi</h2>
+      <a href="uslugi.html#nowa-strona">Nowa strona internetowa</a>
+      <a href="uslugi.html#obsluga-techniczna">Obsługa techniczna</a>
+      <a href="uslugi.html#social-media">Social media</a>
+      <a href="uslugi.html#setup-social-mediow">Setup social mediów</a>
+    </div>
+    <div class="footer-col">
+      <h2>Firma</h2>
+      <a href="o-mnie.html">O mnie</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="cennik.html">Cennik</a>
+      <a href="faq.html">FAQ</a>
+    </div>
+    <div class="footer-col">
+      <h2>Kontakt</h2>
+      <a href="mailto:kbwebdesign.opole@gmail.com">kbwebdesign.opole@gmail.com</a>
+      <a href="tel:+48572070483">+48 572 070 483</a>
+      <a href="kontakt.html">Formularz kontaktowy</a>
+      <a href="kontakt.html">Bezpłatna wycena</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© <span id="year">2026</span> KB WebDesign. Wszelkie prawa zastrzeżone.</span>
+    <span>Projektuję i buduję w Opolu.</span>
+  </div>
+</footer>
+<script src="shared.js" defer></script>
 </body>
 </html>

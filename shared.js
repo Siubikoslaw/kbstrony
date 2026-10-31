@@ -1,98 +1,150 @@
-// shared.js — inject nav, footer, scroll reveal, mobile menu
+// shared.js: nav behaviour, scroll motion, FAQ, consent-gated analytics
+(function () {
+  'use strict';
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var finePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
 
-function getPage() {
-  const p = location.pathname.split('/').pop() || 'index.html';
-  return p;
-}
+  /* NAV + PROGRESS */
+  var nav = document.getElementById('main-nav');
+  var bar = document.getElementById('progress');
+  var ticking = false;
+  function onScroll() {
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(function () {
+      var y = window.scrollY;
+      if (nav) nav.classList.toggle('scrolled', y > 40);
+      if (bar) {
+        var h = document.documentElement.scrollHeight - window.innerHeight;
+        bar.style.transform = 'scaleX(' + (h > 0 ? Math.min(y / h, 1) : 0) + ')';
+      }
+      ticking = false;
+    });
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
 
-function injectNav() {
-  const page = getPage();
-  const links = [
-    { href: 'index.html', label: 'Strona główna' },
-    { href: 'uslugi.html', label: 'Usługi' },
-    { href: 'portfolio.html', label: 'Portfolio' },
-    { href: 'cennik.html', label: 'Cennik' },
-    { href: 'o-mnie.html', label: 'O mnie' },
-    { href: 'faq.html', label: 'FAQ' },
-  ];
+  var burger = document.getElementById('nav-burger');
+  var mobile = document.getElementById('nav-mobile');
+  function setMenu(open) {
+    if (!burger || !mobile) return;
+    burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+    mobile.classList.toggle('open', open);
+    document.body.style.overflow = open ? 'hidden' : '';
+  }
+  if (burger) {
+    burger.addEventListener('click', function () { setMenu(burger.getAttribute('aria-expanded') !== 'true'); });
+    mobile.addEventListener('click', function (e) { if (e.target.closest('a')) setMenu(false); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') setMenu(false); });
+  }
 
-  const navHTML = `
-  <nav id="main-nav">
-    <div class="nav-inner">
-      <a href="index.html" class="nav-logo">KB<em>.</em>WebDesign</a>
-      <ul class="nav-links">
-        ${links.map(l => `<li><a href="${l.href}" class="${page === l.href ? 'active' : ''}">${l.label}</a></li>`).join('')}
-        <li class="nav-cta-wrap"><a href="kontakt.html" class="nav-cta">Bezpłatna wycena</a></li>
-      </ul>
-      <div class="nav-burger" onclick="toggleMenu()">
-        <span></span><span></span><span></span>
-      </div>
-    </div>
-  </nav>
-  <div class="nav-mobile" id="nav-mobile">
-    ${links.map(l => `<a href="${l.href}" onclick="toggleMenu()">${l.label}</a>`).join('')}
-    <a href="kontakt.html" style="color:var(--accent2)!important;" onclick="toggleMenu()">→ Bezpłatna wycena</a>
-  </div>`;
-
-  document.body.insertAdjacentHTML('afterbegin', navHTML);
-
-  window.addEventListener('scroll', () => {
-    document.getElementById('main-nav').classList.toggle('scrolled', scrollY > 60);
+  /* REVEAL (with optional stagger on containers) */
+  document.querySelectorAll('[data-stagger]').forEach(function (box) {
+    var step = parseFloat(box.getAttribute('data-stagger')) || 0.08;
+    box.querySelectorAll(':scope > .reveal').forEach(function (el, i) { el.style.setProperty('--d', (i * step).toFixed(2) + 's'); });
   });
-}
+  var targets = document.querySelectorAll('.reveal, .proc-grid');
+  if ('IntersectionObserver' in window && !reduce) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
+    targets.forEach(function (el) { io.observe(el); });
+  } else {
+    targets.forEach(function (el) { el.classList.add('in'); });
+  }
 
-function toggleMenu() {
-  document.getElementById('nav-mobile').classList.toggle('open');
-}
+  /* COUNT UP */
+  var counters = document.querySelectorAll('[data-count]');
+  function runCount(el) {
+    var end = parseFloat(el.getAttribute('data-count'));
+    var suffix = el.getAttribute('data-suffix') || '';
+    if (reduce) { el.textContent = end + suffix; return; }
+    var t0 = null, dur = 1400;
+    function step(t) {
+      if (!t0) t0 = t;
+      var p = Math.min((t - t0) / dur, 1);
+      var eased = 1 - Math.pow(1 - p, 4);
+      el.textContent = Math.round(end * eased) + suffix;
+      if (p < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+  if (counters.length && 'IntersectionObserver' in window) {
+    var co = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) { if (e.isIntersecting) { runCount(e.target); co.unobserve(e.target); } });
+    }, { threshold: 0.6 });
+    counters.forEach(function (el) { co.observe(el); });
+  }
 
-function injectFooter() {
-  const footerHTML = `
-  <footer>
-    <div class="footer-inner">
-      <div class="footer-brand">
-        <div class="nav-logo" style="font-size:20px; font-family:var(--font-display); font-weight:800; letter-spacing:-0.05em; color:var(--text);">KB<em style="color:var(--accent2); font-style:normal;">.</em>WebDesign</div>
-        <p>Tworzę strony internetowe, które wyglądają premium i realnie przyciągają klientów. Bezpośredni kontakt, szybka realizacja, gwarancja satysfakcji.</p>
-      </div>
-      <div class="footer-col">
-        <h5>Usługi</h5>
-        <a href="uslugi.html">Strony internetowe</a>
-        <a href="uslugi.html">Redesign strony</a>
-        <a href="uslugi.html">Landing Page</a>
-        <a href="uslugi.html">Opieka techniczna</a>
-      </div>
-      <div class="footer-col">
-        <h5>Firma</h5>
-        <a href="o-mnie.html">O mnie</a>
-        <a href="portfolio.html">Portfolio</a>
-        <a href="cennik.html">Cennik</a>
-        <a href="faq.html">FAQ</a>
-      </div>
-      <div class="footer-col">
-        <h5>Kontakt</h5>
-        <a href="mailto:kbwebdesign.opole@gmail.com">kbwebdesign.opole@gmail.com</a>
-        <a href="tel:+48572070483">+48 572 070 483</a>
-        <a href="kontakt.html">Formularz kontaktowy</a>
-        <a href="kontakt.html" style="color:var(--accent2); margin-top:8px; display:block;">→ Bezpłatna wycena</a>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <span>© 2025 KB WebDesign. Wszelkie prawa zastrzeżone.</span>
-      <span>Zrealizowano z pasją w Polsce 🇵🇱</span>
-    </div>
-  </footer>`;
-  document.body.insertAdjacentHTML('beforeend', footerHTML);
-}
+  /* FAQ (accessible accordion) */
+  document.querySelectorAll('.faq-q').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var item = btn.closest('.faq-item');
+      var open = item.classList.contains('open');
+      var scope = btn.closest('.faq-wrap') || document;
+      scope.querySelectorAll('.faq-item.open').forEach(function (i) {
+        i.classList.remove('open');
+        i.querySelector('.faq-q').setAttribute('aria-expanded', 'false');
+      });
+      if (!open) { item.classList.add('open'); btn.setAttribute('aria-expanded', 'true'); }
+    });
+  });
+  document.querySelectorAll('.cat-tab').forEach(function (tab) {
+    tab.addEventListener('click', function () {
+      var cat = tab.getAttribute('data-cat');
+      document.querySelectorAll('.cat-tab').forEach(function (t) {
+        t.classList.toggle('active', t === tab);
+        t.setAttribute('aria-pressed', t === tab ? 'true' : 'false');
+      });
+      document.querySelectorAll('.faq-cat').forEach(function (c) {
+        c.hidden = !(cat === 'all' || c.getAttribute('data-cat') === cat);
+      });
+    });
+  });
 
-function initReveal() {
-  const els = document.querySelectorAll('.reveal');
-  const obs = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('up'); });
-  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-  els.forEach(el => obs.observe(el));
-}
+  /* FOOTER YEAR */
+  var y = document.getElementById('year');
+  if (y) y.textContent = new Date().getFullYear();
 
-document.addEventListener('DOMContentLoaded', () => {
-  injectNav();
-  injectFooter();
-  initReveal();
-});
+  /* CONSENT-GATED ANALYTICS (Google Tag Manager loads only after acceptance) */
+  var GTM_ID = 'GTM-PT43JN3P';
+  var KEY = 'kb-cookie-consent';
+  function loadGTM() {
+    if (window.__gtmLoaded) return;
+    window.__gtmLoaded = true;
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+    var s = document.createElement('script');
+    s.async = true;
+    s.src = 'https://www.googletagmanager.com/gtm.js?id=' + GTM_ID;
+    document.head.appendChild(s);
+  }
+  var saved = null;
+  try { saved = localStorage.getItem(KEY); } catch (e) {}
+  if (saved === 'granted') {
+    loadGTM();
+  } else if (saved !== 'denied') {
+    var box = document.createElement('div');
+    box.className = 'cookie';
+    box.setAttribute('role', 'dialog');
+    box.setAttribute('aria-label', 'Zgoda na pliki cookie');
+    box.innerHTML =
+      '<h2>Pliki cookie</h2>' +
+      '<p>Używam analityki (Google Tag Manager), żeby sprawdzać, które podstrony działają najlepiej. Włączam ją tylko za Twoją zgodą.</p>' +
+      '<div class="row"><button class="btn btn-primary btn-sm" data-c="granted" type="button">Zgadzam się</button>' +
+      '<button class="btn btn-ghost btn-sm" data-c="denied" type="button">Odrzucam</button></div>';
+    document.body.appendChild(box);
+    setTimeout(function () { box.classList.add('show'); }, 1200);
+    box.addEventListener('click', function (e) {
+      var b = e.target.closest('button[data-c]');
+      if (!b) return;
+      var v = b.getAttribute('data-c');
+      try { localStorage.setItem(KEY, v); } catch (err) {}
+      if (v === 'granted') loadGTM();
+      box.classList.remove('show');
+      setTimeout(function () { box.remove(); }, 800);
+    });
+  }
+})();

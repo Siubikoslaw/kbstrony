@@ -3,301 +3,135 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Kontakt KB WebDesign — bezpłatna wycena strony internetowej. Email, telefon, WhatsApp. Odpowiedź w 24h.">
-<title>Kontakt & Wycena — KB WebDesign</title>
+<title>Kontakt i bezpłatna wycena | KB WebDesign</title>
+<meta name="description" content="Napisz lub zadzwoń: +48 572 070 483, kbwebdesign.opole@gmail.com. Bezpłatna wycena strony internetowej i social mediów. Odpowiedź w 24 godziny.">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<link rel="canonical" href="https://kbwebdesign.pl/kontakt.html">
+<meta name="theme-color" content="#0a3d2a">
+<meta name="author" content="KB WebDesign">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pl_PL">
+<meta property="og:site_name" content="KB WebDesign">
+<meta property="og:title" content="Kontakt i bezpłatna wycena | KB WebDesign">
+<meta property="og:description" content="Napisz lub zadzwoń: +48 572 070 483, kbwebdesign.opole@gmail.com. Bezpłatna wycena strony internetowej i social mediów. Odpowiedź w 24 godziny.">
+<meta property="og:url" content="https://kbwebdesign.pl/kontakt.html">
+<meta property="og:image" content="https://kbwebdesign.pl/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="KB WebDesign: strony internetowe i social media dla firm z Opola">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Kontakt i bezpłatna wycena | KB WebDesign">
+<meta name="twitter:description" content="Napisz lub zadzwoń: +48 572 070 483, kbwebdesign.opole@gmail.com. Bezpłatna wycena strony internetowej i social mediów. Odpowiedź w 24 godziny.">
+<meta name="twitter:image" content="https://kbwebdesign.pl/og-image.png">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&family=Newsreader:opsz,wght@6..72,400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="shared.css">
-<style>
-.contact-hero {
-  padding: calc(var(--nav-h) + 80px) 0 80px;
-  text-align: center;
-  background: radial-gradient(ellipse 70% 50% at 50% 0%, rgba(91,82,240,0.12), transparent 70%);
-}
-.contact-hero h1 { font-size: clamp(36px, 5vw, 62px); margin-bottom: 18px; }
-.contact-hero p { font-size: 18px; color: var(--text2); max-width: 540px; margin: 0 auto; line-height: 1.8; font-weight: 300; }
-
-.contact-grid {
-  display: grid;
-  grid-template-columns: 420px 1fr;
-  gap: 56px;
-  align-items: start;
-  padding: 80px 0 120px;
-}
-
-/* LEFT: info */
-.contact-info h2 { font-size: clamp(24px, 3vw, 36px); margin-bottom: 16px; }
-.contact-info > p { font-size: 15px; color: var(--text2); line-height: 1.85; margin-bottom: 36px; }
-
-.contact-methods { display: flex; flex-direction: column; gap: 14px; margin-bottom: 40px; }
-.cm {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-xl);
-  padding: 20px 22px;
-  text-decoration: none;
-  transition: all 0.2s;
-}
-.cm:hover { border-color: rgba(91,82,240,0.3); transform: translateX(5px); }
-.cm-ico {
-  width: 46px; height: 46px;
-  background: rgba(91,82,240,0.1);
-  border-radius: 12px;
-  display: flex; align-items: center; justify-content: center;
-  font-size: 22px;
-  flex-shrink: 0;
-}
-.cm-label { font-size: 10.5px; font-family: var(--font-display); font-weight: 700; color: var(--text3); text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 3px; }
-.cm-val { font-size: 15px; font-family: var(--font-display); font-weight: 700; color: var(--text); }
-
-.response-card {
-  background: rgba(52,211,153,0.06);
-  border: 1px solid rgba(52,211,153,0.15);
-  border-radius: var(--radius-xl);
-  padding: 20px 22px;
-  display: flex;
-  align-items: center;
-  gap: 14px;
-}
-.rc-dot { width: 10px; height: 10px; background: var(--green); border-radius: 50%; flex-shrink: 0; animation: pulse 2s infinite; }
-.rc-text { font-family: var(--font-display); font-size: 13.5px; font-weight: 600; color: var(--text2); }
-.rc-text strong { color: var(--green); }
-
-/* FORM */
-.contact-form {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-2xl);
-  padding: 48px 44px;
-}
-.form-title { font-family: var(--font-display); font-size: 22px; font-weight: 800; color: var(--text); margin-bottom: 8px; }
-.form-sub { font-size: 14px; color: var(--text3); margin-bottom: 36px; }
-
-.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-.fg { margin-bottom: 20px; }
-.fg label {
-  display: block;
-  font-family: var(--font-display);
-  font-size: 11px;
-  font-weight: 700;
-  color: var(--text3);
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  margin-bottom: 8px;
-}
-.fg input,
-.fg textarea,
-.fg select {
-  width: 100%;
-  background: var(--bg);
-  border: 1px solid var(--border2);
-  border-radius: var(--radius-sm);
-  padding: 14px 16px;
-  font-family: var(--font-body);
-  font-size: 15px;
-  color: var(--text);
-  outline: none;
-  transition: border-color 0.2s, box-shadow 0.2s;
-  -webkit-appearance: none;
-}
-.fg input:focus,
-.fg textarea:focus,
-.fg select:focus {
-  border-color: var(--accent);
-  box-shadow: 0 0 0 3px rgba(91,82,240,0.12);
-}
-.fg textarea { min-height: 130px; resize: vertical; }
-.fg select option { background: var(--surface2); }
-
-/* BUDGET GRID */
-.budget-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
-.budget-opt {
-  background: var(--bg);
-  border: 1px solid var(--border2);
-  border-radius: var(--radius-sm);
-  padding: 12px;
-  text-align: center;
-  cursor: pointer;
-  transition: all 0.2s;
-  font-family: var(--font-display);
-  font-size: 13px;
-  font-weight: 600;
-  color: var(--text2);
-}
-.budget-opt:hover,
-.budget-opt.selected {
-  background: rgba(91,82,240,0.1);
-  border-color: rgba(91,82,240,0.35);
-  color: var(--accent2);
-}
-
-.form-check { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 28px; margin-top: 4px; }
-.form-check input[type="checkbox"] {
-  width: 18px; height: 18px;
-  border: 1px solid var(--border2);
-  border-radius: 5px;
-  background: var(--bg);
-  cursor: pointer;
-  flex-shrink: 0;
-  margin-top: 2px;
-}
-.form-check label { font-size: 13px; color: var(--text3); line-height: 1.6; }
-.form-check label a { color: var(--accent2); text-decoration: none; }
-
-.submit-btn {
-  width: 100%;
-  justify-content: center;
-  font-size: 16px;
-  padding: 18px;
-}
-
-/* SUCCESS STATE */
-.success-state {
-  display: none;
-  text-align: center;
-  padding: 60px 20px;
-}
-.success-icon { font-size: 64px; margin-bottom: 20px; }
-.success-state h3 { font-family: var(--font-display); font-size: 26px; font-weight: 800; color: var(--text); margin-bottom: 12px; }
-.success-state p { font-size: 15px; color: var(--text3); line-height: 1.7; }
-
-@keyframes pulse {
-  0%, 100% { transform: scale(1); opacity: 1; }
-  50% { transform: scale(0.7); opacity: 0.5; }
-}
-
-@media (max-width: 900px) {
-  .contact-grid { grid-template-columns: 1fr; }
-  .contact-form { padding: 32px 24px; }
-}
-@media (max-width: 560px) {
-  .form-row { grid-template-columns: 1fr; }
-  .budget-grid { grid-template-columns: 1fr 1fr; }
-}
-</style>
+<script>document.documentElement.classList.add('js')</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"ContactPage","@id":"https://kbwebdesign.pl/kontakt.html#webpage","url":"https://kbwebdesign.pl/kontakt.html","name":"Kontakt KB WebDesign","description":"Napisz lub zadzwoń: +48 572 070 483, kbwebdesign.opole@gmail.com. Bezpłatna wycena strony internetowej i social mediów. Odpowiedź w 24 godziny.","inLanguage":"pl-PL","isPartOf":{"@id":"https://kbwebdesign.pl/#website"},"about":{"@id":"https://kbwebdesign.pl/#business"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Strona główna","item":"https://kbwebdesign.pl/"},{"@type":"ListItem","position":2,"name":"Kontakt","item":"https://kbwebdesign.pl/kontakt.html"}]}]}</script>
 </head>
 <body>
-
-<section class="contact-hero">
-  <div class="container">
-    <div class="eyebrow" style="justify-content:center;">Kontakt</div>
-    <h1>Zacznijmy<br>od rozmowy.</h1>
-    <p>Opisz mi swoją firmę i czego potrzebujesz. Odpiszę w ciągu 24 godzin — zwykle znacznie szybciej.</p>
+<a class="skip-link" href="#main">Przejdź do treści</a>
+<div id="progress" aria-hidden="true"></div>
+<header>
+<nav class="site-nav" id="main-nav" aria-label="Główna nawigacja">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo" aria-label="KB WebDesign, strona główna"><span class="mark">KB</span>WebDesign</a>
+    <ul class="nav-links"><li><a href="index.html">Strona główna</a></li><li><a href="uslugi.html">Usługi</a></li><li><a href="portfolio.html">Portfolio</a></li><li><a href="cennik.html">Cennik</a></li><li><a href="o-mnie.html">O mnie</a></li><li><a href="faq.html">FAQ</a></li><li><a href="kontakt.html" class="nav-cta">Bezpłatna wycena</a></li></ul>
+    <button class="nav-burger" id="nav-burger" type="button" aria-label="Menu" aria-expanded="false" aria-controls="nav-mobile"><span></span><span></span><span></span></button>
   </div>
-</section>
+</nav>
+<div class="nav-mobile" id="nav-mobile"><a href="index.html">Strona główna</a><a href="uslugi.html">Usługi</a><a href="portfolio.html">Portfolio</a><a href="cennik.html">Cennik</a><a href="o-mnie.html">O mnie</a><a href="faq.html">FAQ</a><a href="kontakt.html">Bezpłatna wycena</a></div>
+</header>
+<main id="main">
 
-<div style="background:var(--bg);">
+<header class="page-hero">
+  <div class="container">
+    <nav class="crumbs" aria-label="Okruszki"><a href="index.html">Strona główna</a><span aria-hidden="true">/</span><span>Kontakt</span></nav>
+    <h1>Zacznijmy od rozmowy.</h1>
+    <p>Opisz mi swoją firmę i czego potrzebujesz: strony, social mediów czy obu naraz. Odpiszę w ciągu 24 godzin, zwykle znacznie szybciej.</p>
+  </div>
+</header>
+
+<section class="section" style="padding-top:80px;" aria-label="Formularz kontaktowy">
   <div class="container">
     <div class="contact-grid">
-      <!-- INFO -->
-      <div class="reveal">
-        <h2>Skontaktuj się<br>bezpośrednio.</h2>
-        <p>Nie wysyłam zapytań do asystenta. Piszesz bezpośrednio do mnie — dostajesz odpowiedź od osoby, która będzie budować Twoją stronę.</p> <br>
+
+      <div class="contact-info reveal">
+        <h2>Skontaktuj się bezpośrednio.</h2>
+        <p>Nie wysyłam zapytań do asystenta. Piszesz bezpośrednio do mnie i dostajesz odpowiedź od osoby, która będzie budować Twoją stronę.</p>
 
         <div class="contact-methods">
           <a href="mailto:kbwebdesign.opole@gmail.com" class="cm">
-            <div class="cm-ico">✉️</div>
-            <div>
-              <div class="cm-label">Email</div>
-              <div class="cm-val">kbwebdesign.opole@gmail.com</div>
-            </div>
+            <div class="ic-box"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5.5" width="18" height="13" rx="2.5"/><path d="M4 8l8 5.5L20 8"/></svg></div>
+            <div><div class="cm-label">E-mail</div><div class="cm-val">kbwebdesign.opole@gmail.com</div></div>
           </a>
           <a href="tel:+48572070483" class="cm">
-            <div class="cm-ico">📞</div>
-            <div>
-              <div class="cm-label">Telefon</div>
-              <div class="cm-val">+48 572 070 483</div>
-            </div>
+            <div class="ic-box"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4l1.5 4-2 1.3a11 11 0 0 0 5.2 5.2L15 12.5l4 1.5v4a2 2 0 0 1-2 2A13 13 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg></div>
+            <div><div class="cm-label">Telefon</div><div class="cm-val">+48 572 070 483</div></div>
           </a>
-          <!-- <div class="cm" style="cursor:default;">
-            <div class="cm-ico">📅</div>
-            <div>
-              <div class="cm-label">Godziny pracy</div>
-              <div class="cm-val">Pon–Sb, 15:00–18:00</div>
-            </div>
-          </div> -->
         </div>
 
         <div class="response-card">
           <div class="rc-dot"></div>
-          <div class="rc-text">Otwarty na nowe projekty — <strong>odpowiedź w maks. 24h</strong> w dni robocze.</div>
+          <div class="rc-text">Otwarty na nowe projekty. <strong>Odpowiedź w maks. 24 h</strong> w dni robocze.</div>
         </div>
 
-        <!-- MINI ABOUT -->
-        <div style="margin-top:40px; background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-xl); padding:24px; display:flex; gap:16px; align-items:center;">
-          <div style="width:52px;height:52px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent2));display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-size:18px;font-weight:800;color:#fff;flex-shrink:0;">KB</div>
+        <div class="social-note">
+          <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 11.5a7.5 7.5 0 0 1-10.8 6.7L4 20l1.4-4.6A7.5 7.5 0 1 1 20 11.5z"/><path d="M12 14.5s-3-1.8-3-3.9a1.7 1.7 0 0 1 3-1.1 1.7 1.7 0 0 1 3 1.1c0 2.1-3 3.9-3 3.9z"/></svg>
           <div>
-            <div style="font-family:var(--font-display);font-size:15px;font-weight:700;color:var(--text);">Kuba B.</div>
-            <div style="font-size:12.5px;color:var(--text3); margin-top:3px;">Web Designer & Developer · KB WebDesign</div>
-            <div style="font-size:12px;color:var(--text3); margin-top:6px; line-height:1.6;">Zbuduję dla Ciebie stronę, którą będziesz z dumą pokazywać klientom.</div>
+            <h3>Social media? Napisz, co masz.</h3>
+            <p>Podaj, na jakich platformach jesteś i co chcesz osiągnąć. Wycenię setup profili albo prowadzenie, także razem ze stroną.</p>
           </div>
         </div>
       </div>
 
-      <!-- FORM -->
-      <div class="reveal d1">
+      <div class="reveal" style="--d:.12s">
         <div class="contact-form" id="contact-form-wrap">
-          <div class="form-title">Wyślij zapytanie</div>
-          <div class="form-sub">Im więcej szczegółów podasz, tym dokładniejszą wycenę mogę przygotować.</div>
+          <h2 class="form-title">Wyślij zapytanie</h2>
+          <p class="form-sub">Im więcej szczegółów podasz, tym dokładniejszą wycenę mogę przygotować.</p>
 
           <div class="form-row">
-            <div class="fg">
-              <label>Imię i nazwisko *</label>
-              <input type="text" id="f-name" placeholder="Jan Kowalski">
-            </div>
-            <div class="fg">
-              <label>Adres email *</label>
-              <input type="email" id="f-email" placeholder="jan@firma.pl">
-            </div>
+            <div class="fg"><label for="f-name">Imię i nazwisko *</label><input type="text" id="f-name" placeholder="Jan Kowalski" autocomplete="name"></div>
+            <div class="fg"><label for="f-email">Adres e-mail *</label><input type="email" id="f-email" placeholder="jan@firma.pl" autocomplete="email"></div>
           </div>
 
           <div class="form-row">
-            <div class="fg">
-              <label>Telefon (opcjonalnie)</label>
-              <input type="tel" id="f-phone" placeholder="+48 600 000 000">
-            </div>
-            <div class="fg">
-              <label>Branża / typ firmy *</label>
-              <input type="text" id="f-industry" placeholder="np. siłownia, kancelaria, coach">
-            </div>
+            <div class="fg"><label for="f-phone">Telefon (opcjonalnie)</label><input type="tel" id="f-phone" placeholder="+48 600 000 000" autocomplete="tel"></div>
+            <div class="fg"><label for="f-industry">Branża / typ firmy *</label><input type="text" id="f-industry" placeholder="np. hydraulik, kancelaria, gabinet"></div>
           </div>
 
-          <div class="fg">
-            <label>Aktualna strona (jeśli masz)</label>
-            <input type="url" id="f-website" placeholder="https://twoja-strona.pl">
-          </div>
+          <div class="fg"><label for="f-website">Aktualna strona (jeśli masz)</label><input type="url" id="f-website" placeholder="https://twoja-strona.pl"></div>
 
           <div class="fg">
-            <label>Czego potrzebujesz? *</label>
+            <label for="f-service">Czego potrzebujesz? *</label>
             <select id="f-service">
               <option value="">Wybierz usługę...</option>
-              <option>Nowa strona internetowa</option>
-              <option>Redesign istniejącej strony</option>
-              <option>Landing Page</option>
-              <option>Opieka techniczna / abonament</option>
-              <option>Nie wiem — potrzebuję doradztwa</option>
+              <option>Nowa strona internetowa (także redesign lub landing page)</option>
+              <option>Obsługa techniczna strony</option>
+              <option>Prowadzenie social mediów</option>
+              <option>Setup social mediów</option>
+              <option>Strona i social media razem</option>
+              <option>Nie wiem, potrzebuję doradztwa</option>
             </select>
           </div>
 
           <div class="fg">
-            <label>Przybliżony budżet</label>
-            <div class="budget-grid" id="budget-grid">
-              <div class="budget-opt" onclick="selectBudget(this)">do 2 000 zł</div>
-              <div class="budget-opt" onclick="selectBudget(this)">2 000–4 000 zł</div>
-              <div class="budget-opt" onclick="selectBudget(this)">4 000–8 000 zł</div>
-              <div class="budget-opt" onclick="selectBudget(this)">8 000–15 000 zł</div>
-              <div class="budget-opt" onclick="selectBudget(this)">powyżej 15 000 zł</div>
-              <div class="budget-opt" onclick="selectBudget(this)">Jeszcze nie wiem</div>
+            <div class="lab" id="budget-label">Przybliżony budżet</div>
+            <div class="budget-grid" id="budget-grid" role="group" aria-labelledby="budget-label">
+              <div class="budget-opt" role="button" tabindex="0">do 2 000 zł</div>
+              <div class="budget-opt" role="button" tabindex="0">2 000–4 000 zł</div>
+              <div class="budget-opt" role="button" tabindex="0">4 000–8 000 zł</div>
+              <div class="budget-opt" role="button" tabindex="0">8 000–15 000 zł</div>
+              <div class="budget-opt" role="button" tabindex="0">powyżej 15 000 zł</div>
+              <div class="budget-opt" role="button" tabindex="0">Jeszcze nie wiem</div>
             </div>
           </div>
 
           <div class="fg">
-            <label>Opowiedz mi o swoim projekcie *</label>
-            <textarea id="f-msg" placeholder="Czym zajmuje się Twoja firma? Co chcesz osiągnąć dzięki nowej stronie? Kto jest Twoim klientem? Masz jakieś referencje stron, które Ci się podobają? Im więcej wiesz — tym lepiej."></textarea>
+            <label for="f-msg">Opowiedz mi o swoim projekcie *</label>
+            <textarea id="f-msg" placeholder="Czym zajmuje się Twoja firma? Co chcesz osiągnąć? Kto jest Twoim klientem? Na jakich platformach społecznościowych jesteś? Im więcej wiem, tym lepiej."></textarea>
           </div>
 
           <div class="form-check">
@@ -305,80 +139,69 @@
             <label for="f-consent">Wyrażam zgodę na kontakt w celu przygotowania wyceny. Twoje dane nie są udostępniane osobom trzecim i będą użyte wyłącznie do odpowiedzi na Twoje zapytanie.</label>
           </div>
 
-          <button class="btn btn-primary submit-btn" onclick="submitForm()">
-            Wyślij zapytanie
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </button>
+          <button class="btn btn-primary submit-btn" type="button" onclick="submitForm()">Wyślij zapytanie <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
         </div>
 
-        <div class="success-state" id="success-state">
-          <div class="success-icon">🎉</div>
-          <h3>Wiadomość wysłana!</h3>
-          <p>Dziękuję za zapytanie.<br>Odezwę się do Ciebie w ciągu 24 godzin — zwykle znacznie szybciej.<br><br>Do zobaczenia!</p>
+        <div class="success-state" id="success-state" role="status">
+          <div class="success-icon"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.2 4.2L19 7"/></svg></div>
+          <h2>Wiadomość wysłana!</h2>
+          <p>Dziękuję za zapytanie. Odezwę się do Ciebie w ciągu 24 godzin, zwykle znacznie szybciej.</p>
         </div>
       </div>
+
     </div>
   </div>
-</div>
+</section>
 
-<!-- MAP / CONTACT STRIP -->
-<div style="background:var(--bg2); border-top:1px solid var(--border);">
-  <div class="container" style="padding-top:60px; padding-bottom:60px;">
-    <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:32px; text-align:center;">
-      <div class="reveal">
-        <div style="font-size:36px; margin-bottom:12px;">📍</div>
-        <div style="font-family:var(--font-display); font-size:15px; font-weight:700; color:var(--text); margin-bottom:6px;">Lokalizacja</div>
-        <div style="font-size:14px; color:var(--text3);">Opole — pracuję zdalnie z klientami z całego kraju.</div>
-      </div>
-      <div class="reveal d1">
-        <div style="font-size:36px; margin-bottom:12px;">⏱️</div>
-        <div style="font-family:var(--font-display); font-size:15px; font-weight:700; color:var(--text); margin-bottom:6px;">Czas odpowiedzi</div>
-        <div style="font-size:14px; color:var(--text3);">Maksymalnie 24h w dni robocze. Zwykle w kilka godzin.</div>
-      </div>
-      <div class="reveal d2">
-        <div style="font-size:36px; margin-bottom:12px;">🤝</div>
-        <div style="font-family:var(--font-display); font-size:15px; font-weight:700; color:var(--text); margin-bottom:6px;">Pierwsza rozmowa</div>
-        <div style="font-size:14px; color:var(--text3);">Bezpłatna konsultacja 10 min — bez zobowiązań, bez sprzedaży na siłę.</div>
-      </div>
+<section class="section section-mist" style="padding:72px 0;" aria-label="Informacje praktyczne">
+  <div class="container">
+    <div class="strip" data-stagger="0.1">
+      <div class="strip-item reveal"><div class="ic-box"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s6.5-5.4 6.5-11A6.5 6.5 0 0 0 5.5 10C5.5 15.6 12 21 12 21z"/><circle cx="12" cy="10" r="2.3"/></svg></div><h3>Lokalizacja</h3><p>Opole. Pracuję zdalnie z klientami z całego kraju.</p></div>
+      <div class="strip-item reveal"><div class="ic-box"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg></div><h3>Czas odpowiedzi</h3><p>Maksymalnie 24 h w dni robocze, zwykle w kilka godzin.</p></div>
+      <div class="strip-item reveal"><div class="ic-box"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 5h14a1.5 1.5 0 0 1 1.5 1.5v9A1.5 1.5 0 0 1 19 17H10l-4.5 3.5V17H5a1.5 1.5 0 0 1-1.5-1.5v-9A1.5 1.5 0 0 1 5 5z"/></svg></div><h3>Pierwsza rozmowa</h3><p>Bezpłatna, 15-minutowa konsultacja bez zobowiązań i bez sprzedaży na siłę.</p></div>
     </div>
   </div>
-</div>
+</section>
 
-<script src="shared.js"></script>
+</main>
+
 <script>
 function selectBudget(el) {
-  document.querySelectorAll('.budget-opt').forEach(b => b.classList.remove('selected'));
+  document.querySelectorAll('.budget-opt').forEach(function (b) { b.classList.remove('selected'); b.setAttribute('aria-pressed', 'false'); });
   el.classList.add('selected');
+  el.setAttribute('aria-pressed', 'true');
 }
+document.querySelectorAll('.budget-opt').forEach(function (b) {
+  b.addEventListener('click', function () { selectBudget(b); });
+  b.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); selectBudget(b); } });
+});
 
 function submitForm() {
-  const name = document.getElementById('f-name').value;
-  const email = document.getElementById('f-email').value;
-  const phone = document.getElementById('f-phone').value;
-  const industry = document.getElementById('f-industry').value;
-  const website = document.getElementById('f-website').value;
-  const service = document.getElementById('f-service').value;
-  const msg = document.getElementById('f-msg').value;
-  const consent = document.getElementById('f-consent').checked;
-
-  const budget = document.querySelector('.budget-opt.selected')?.innerText || "Nie podano";
+  var name = document.getElementById('f-name').value;
+  var email = document.getElementById('f-email').value;
+  var phone = document.getElementById('f-phone').value;
+  var industry = document.getElementById('f-industry').value;
+  var website = document.getElementById('f-website').value;
+  var service = document.getElementById('f-service').value;
+  var msg = document.getElementById('f-msg').value;
+  var consent = document.getElementById('f-consent').checked;
+  var sel = document.querySelector('.budget-opt.selected');
+  var budget = sel ? sel.innerText : 'Nie podano';
 
   if (!name || !email || !service || !msg || !industry) {
     alert('Proszę wypełnić wszystkie wymagane pola.');
     return;
   }
-
   if (!consent) {
     alert('Wymagana zgoda na kontakt.');
     return;
   }
 
-  // loading UX
-  const btn = document.querySelector('.submit-btn');
-  btn.innerText = "Wysyłanie...";
+  var btn = document.querySelector('.submit-btn');
+  btn.innerText = 'Wysyłanie...';
   btn.disabled = true;
 
-  emailjs.send("service_vtmyjzd", "template_577wu0r", {
+  emailjs.send('service_vtmyjzd', 'template_577wu0r', {
     name: name,
     email: email,
     phone: phone,
@@ -388,22 +211,55 @@ function submitForm() {
     budget: budget,
     message: msg
   })
-  .then(() => {
+  .then(function () {
     document.getElementById('contact-form-wrap').style.display = 'none';
     document.getElementById('success-state').style.display = 'block';
   })
-  .catch(() => {
+  .catch(function () {
     alert('Błąd wysyłki. Spróbuj ponownie.');
-    btn.innerText = "Wyślij zapytanie";
+    btn.innerText = 'Wyślij zapytanie';
     btn.disabled = false;
   });
 }
 </script>
 <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 <script>
-(function(){
-  emailjs.init("OCk9VFG3c_pXMxneR");
-})();
+(function () { emailjs.init('OCk9VFG3c_pXMxneR'); })();
 </script>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a href="index.html" class="nav-logo" aria-label="KB WebDesign, strona główna"><span class="mark">KB</span>WebDesign</a>
+      <p>Strony internetowe i social media dla firm z Opola i całej Polski. Bezpośredni kontakt, szybka realizacja, gwarancja satysfakcji.</p>
+    </div>
+    <div class="footer-col">
+      <h2>Usługi</h2>
+      <a href="uslugi.html#nowa-strona">Nowa strona internetowa</a>
+      <a href="uslugi.html#obsluga-techniczna">Obsługa techniczna</a>
+      <a href="uslugi.html#social-media">Social media</a>
+      <a href="uslugi.html#setup-social-mediow">Setup social mediów</a>
+    </div>
+    <div class="footer-col">
+      <h2>Firma</h2>
+      <a href="o-mnie.html">O mnie</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="cennik.html">Cennik</a>
+      <a href="faq.html">FAQ</a>
+    </div>
+    <div class="footer-col">
+      <h2>Kontakt</h2>
+      <a href="mailto:kbwebdesign.opole@gmail.com">kbwebdesign.opole@gmail.com</a>
+      <a href="tel:+48572070483">+48 572 070 483</a>
+      <a href="kontakt.html">Formularz kontaktowy</a>
+      <a href="kontakt.html">Bezpłatna wycena</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© <span id="year">2026</span> KB WebDesign. Wszelkie prawa zastrzeżone.</span>
+    <span>Projektuję i buduję w Opolu.</span>
+  </div>
+</footer>
+<script src="shared.js" defer></script>
 </body>
 </html>

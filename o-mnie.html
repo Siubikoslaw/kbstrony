@@ -3,309 +3,155 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="O mnie — KB WebDesign. Kacper B., web designer i developer, tworzący premium strony internetowe dla lokalnych firm w Polsce.">
-<title>O mnie — KB WebDesign</title>
+<title>O mnie: Kuba B., web designer z Opola | KB WebDesign</title>
+<meta name="description" content="Cześć, jestem Kuba. Projektuję strony internetowe i zakładam profile w social mediach dla lokalnych firm. Rozmawiasz bezpośrednio ze mną, bez pośredników.">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<link rel="canonical" href="https://kbwebdesign.pl/o-mnie.html">
+<meta name="theme-color" content="#0a3d2a">
+<meta name="author" content="KB WebDesign">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pl_PL">
+<meta property="og:site_name" content="KB WebDesign">
+<meta property="og:title" content="O mnie: Kuba B., web designer z Opola | KB WebDesign">
+<meta property="og:description" content="Cześć, jestem Kuba. Projektuję strony internetowe i zakładam profile w social mediach dla lokalnych firm. Rozmawiasz bezpośrednio ze mną, bez pośredników.">
+<meta property="og:url" content="https://kbwebdesign.pl/o-mnie.html">
+<meta property="og:image" content="https://kbwebdesign.pl/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="KB WebDesign: strony internetowe i social media dla firm z Opola">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="O mnie: Kuba B., web designer z Opola | KB WebDesign">
+<meta name="twitter:description" content="Cześć, jestem Kuba. Projektuję strony internetowe i zakładam profile w social mediach dla lokalnych firm. Rozmawiasz bezpośrednio ze mną, bez pośredników.">
+<meta name="twitter:image" content="https://kbwebdesign.pl/og-image.png">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&family=Newsreader:opsz,wght@6..72,400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="shared.css">
-<style>
-.about-hero {
-  padding: calc(var(--nav-h) + 80px) 0 100px;
-  background: radial-gradient(ellipse 70% 50% at 50% 0%, rgba(91,82,240,0.12), transparent 70%);
-}
-.about-hero-grid {
-  display: grid;
-  grid-template-columns: 1fr 440px;
-  gap: 80px;
-  align-items: center;
-}
-.about-avatar-wrap {
-  position: relative;
-  height: 480px;
-}
-.av-main {
-  position: absolute;
-  inset: 0;
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-2xl);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  gap: 20px;
-  overflow: hidden;
-}
-.av-main::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(ellipse at 50% 0%, rgba(91,82,240,0.1), transparent 60%);
-}
-.av-circle {
-  width: 130px; height: 130px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, var(--accent), var(--accent2));
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: var(--font-display);
-  font-size: 48px;
-  font-weight: 800;
-  color: #fff;
-  position: relative;
-  z-index: 1;
-  box-shadow: 0 0 60px rgba(91,82,240,0.35);
-}
-.av-name { font-family: var(--font-display); font-size: 22px; font-weight: 800; color: var(--text); position: relative; z-index: 1; }
-.av-title { font-size: 13px; color: var(--text3); font-family: var(--font-display); position: relative; z-index: 1; }
-.av-avail {
-  display: flex; align-items: center; gap: 8px;
-  font-size: 12px; color: var(--text3); font-family: var(--font-display);
-  position: relative; z-index: 1;
-}
-.av-dot { width: 8px; height: 8px; background: var(--green); border-radius: 50%; animation: pulse 2s infinite; }
-.av-stat {
-  position: absolute;
-  background: var(--surface2);
-  border: 1px solid var(--border2);
-  border-radius: var(--radius);
-  padding: 16px 20px;
-}
-.av-stat.s1 { bottom: 36px; left: -24px; }
-.av-stat.s2 { top: 36px; right: -24px; }
-.as-num { font-family: var(--font-display); font-size: 28px; font-weight: 800; color: var(--text); }
-.as-label { font-size: 11px; color: var(--text3); font-family: var(--font-display); margin-top: 2px; }
-
-.about-text h1 { font-size: clamp(32px, 4vw, 52px); margin-bottom: 24px; }
-.about-text p { font-size: 16px; color: var(--text2); line-height: 1.85; margin-bottom: 20px; font-weight: 300; }
-.about-text p strong { color: var(--text); font-weight: 500; }
-.av-values { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 32px; }
-.val-pill {
-  display: flex; align-items: center; gap: 8px;
-  background: var(--surface);
-  border: 1px solid var(--border);
-  padding: 10px 18px;
-  border-radius: 50px;
-  font-size: 13px;
-  font-family: var(--font-display);
-  font-weight: 500;
-  color: var(--text2);
-  transition: all 0.2s;
-}
-.val-pill:hover { border-color: rgba(91,82,240,0.3); color: var(--accent2); }
-
-/* SKILLS */
-.skills-bg { background: var(--bg2); }
-.skills-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 18px;
-}
-.skill-card {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-xl);
-  padding: 28px 24px;
-  transition: all 0.25s;
-}
-.skill-card:hover { border-color: rgba(91,82,240,0.25); transform: translateY(-4px); }
-.sk-icon { font-size: 28px; margin-bottom: 14px; }
-.sk-name { font-family: var(--font-display); font-size: 15px; font-weight: 700; color: var(--text); margin-bottom: 8px; }
-.sk-desc { font-size: 13.5px; color: var(--text3); line-height: 1.7; margin-bottom: 16px; }
-.sk-bar { height: 3px; background: var(--surface3); border-radius: 99px; overflow: hidden; }
-.sk-fill { height: 100%; background: linear-gradient(90deg, var(--accent), var(--accent2)); border-radius: 99px; }
-
-/* STORY TIMELINE */
-.timeline { position: relative; padding-left: 32px; }
-.timeline::before {
-  content: '';
-  position: absolute;
-  left: 0; top: 8px; bottom: 0;
-  width: 1px;
-  background: linear-gradient(to bottom, var(--accent), transparent);
-  opacity: 0.3;
-}
-.tl-item { position: relative; margin-bottom: 44px; }
-.tl-dot {
-  position: absolute;
-  left: -38px; top: 4px;
-  width: 12px; height: 12px;
-  border-radius: 50%;
-  background: var(--accent);
-  border: 2px solid var(--bg);
-  box-shadow: 0 0 12px var(--accent-glow);
-}
-.tl-year { font-family: var(--font-display); font-size: 11px; font-weight: 700; color: var(--accent2); letter-spacing: 0.15em; margin-bottom: 6px; }
-.tl-title { font-family: var(--font-display); font-size: 17px; font-weight: 700; color: var(--text); margin-bottom: 8px; }
-.tl-desc { font-size: 14px; color: var(--text3); line-height: 1.75; }
-
-@keyframes pulse {
-  0%, 100% { transform: scale(1); opacity: 1; }
-  50% { transform: scale(0.7); opacity: 0.5; }
-}
-@media (max-width: 900px) {
-  .about-hero-grid { grid-template-columns: 1fr; }
-  .about-avatar-wrap { height: 320px; }
-  .av-stat.s1 { left: 0; }
-  .av-stat.s2 { right: 0; }
-  .skills-grid { grid-template-columns: 1fr; }
-}
-</style>
+<script>document.documentElement.classList.add('js')</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"AboutPage","@id":"https://kbwebdesign.pl/o-mnie.html#webpage","url":"https://kbwebdesign.pl/o-mnie.html","name":"O mnie","description":"Cześć, jestem Kuba. Projektuję strony internetowe i zakładam profile w social mediach dla lokalnych firm. Rozmawiasz bezpośrednio ze mną, bez pośredników.","inLanguage":"pl-PL","isPartOf":{"@id":"https://kbwebdesign.pl/#website"},"about":{"@id":"https://kbwebdesign.pl/#business"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Strona główna","item":"https://kbwebdesign.pl/"},{"@type":"ListItem","position":2,"name":"O mnie","item":"https://kbwebdesign.pl/o-mnie.html"}]}]}</script>
 </head>
 <body>
+<a class="skip-link" href="#main">Przejdź do treści</a>
+<div id="progress" aria-hidden="true"></div>
+<header>
+<nav class="site-nav" id="main-nav" aria-label="Główna nawigacja">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo" aria-label="KB WebDesign, strona główna"><span class="mark">KB</span>WebDesign</a>
+    <ul class="nav-links"><li><a href="index.html">Strona główna</a></li><li><a href="uslugi.html">Usługi</a></li><li><a href="portfolio.html">Portfolio</a></li><li><a href="cennik.html">Cennik</a></li><li><a href="o-mnie.html" class="active" aria-current="page">O mnie</a></li><li><a href="faq.html">FAQ</a></li><li><a href="kontakt.html" class="nav-cta">Bezpłatna wycena</a></li></ul>
+    <button class="nav-burger" id="nav-burger" type="button" aria-label="Menu" aria-expanded="false" aria-controls="nav-mobile"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="nav-mobile" id="nav-mobile"><a href="index.html">Strona główna</a><a href="uslugi.html">Usługi</a><a href="portfolio.html">Portfolio</a><a href="cennik.html">Cennik</a><a href="o-mnie.html">O mnie</a><a href="faq.html">FAQ</a><a href="kontakt.html">Bezpłatna wycena</a></div>
+</header>
+<main id="main">
 
-<section class="about-hero">
+<header class="page-hero">
   <div class="container">
-    <div class="about-hero-grid">
-      <div class="about-text reveal">
-        <div class="eyebrow">O mnie</div>
-        <h1>Buduję strony jakbym sam prowadził Twoją firmę.</h1>
-        <p>Cześć, jestem <strong>Kuba</strong> — web designer i developer, który zmęczył się oglądaniem jak małe, świetne firmy tracą klientów przez strony, które ich nie reprezentują.</p>
-        <p>Założyłem KB WebDesign bo wierzę, że <strong>każda lokalna firma zasługuje na stronę, która pracuje tak ciężko jak jej właściciel.</strong> Nie jestem agencją z 15 menedżerami projektu i tabelką w Asanie, o której nie masz pojęcia. <strong>Rozmawiasz bezpośrednio ze mną</strong> — osobą, która projektuje i buduje Twoją stronę.</p>
-        <p>W danym czasie obsługuję niewielką liczbę klientów — dlatego każdy projekt dostaje prawdziwą uwagę, nie szablon z wklejonym logo.</p>
-        <div class="av-values">
-          <div class="val-pill"><span>⚡</span> Szybka realizacja</div>
-          <div class="val-pill"><span>💬</span> Bezpośredni kontakt</div>
-          <div class="val-pill"><span>🎯</span> Fokus na wynikach</div>
-          <div class="val-pill"><span>🔍</span> Obsesja na detalu</div>
-          <div class="val-pill"><span>🤝</span> Uczciwe ceny</div>
+    <div class="about-grid">
+      <div class="about-text">
+        <nav class="crumbs" aria-label="Okruszki"><a href="index.html">Strona główna</a><span aria-hidden="true">/</span><span>O mnie</span></nav>
+        <h1 style="max-width:none; font-size:clamp(34px,4.6vw,58px); margin-bottom:24px;">Buduję strony i profile tak, jakbym sam prowadził Twoją firmę.</h1>
+        <p>Cześć, jestem <strong>Kuba</strong>, web designer i developer z Opola. Zmęczyło mnie patrzenie, jak małe, świetne firmy tracą klientów przez strony i profile, które ich nie reprezentują.</p>
+        <p>Założyłem KB WebDesign, bo wierzę, że <strong>każda lokalna firma zasługuje na wizerunek, który pracuje tak ciężko jak jej właściciel.</strong> Nie jestem agencją z 15 menedżerami projektu. <strong>Rozmawiasz bezpośrednio ze mną</strong>, czyli osobą, która projektuje i buduje Twoją stronę, zakłada profile w social mediach i dba o to, żeby wyglądały spójnie.</p>
+        <p>W danym czasie obsługuję niewielką liczbę klientów, dlatego każdy projekt dostaje prawdziwą uwagę, a nie szablon z wklejonym logo.</p>
+        <div class="pills">
+          <span class="pill"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 3L5 13.5h6L10 21l8-10.5h-6L13 3z"/></svg> Szybka realizacja</span>
+          <span class="pill"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 5h14a1.5 1.5 0 0 1 1.5 1.5v9A1.5 1.5 0 0 1 19 17H10l-4.5 3.5V17H5a1.5 1.5 0 0 1-1.5-1.5v-9A1.5 1.5 0 0 1 5 5z"/></svg> Bezpośredni kontakt</span>
+          <span class="pill"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4.5 4.5"/></svg> Fokus na wynikach</span>
+          <span class="pill"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 11.5a7.5 7.5 0 0 1-10.8 6.7L4 20l1.4-4.6A7.5 7.5 0 1 1 20 11.5z"/><path d="M12 14.5s-3-1.8-3-3.9a1.7 1.7 0 0 1 3-1.1 1.7 1.7 0 0 1 3 1.1c0 2.1-3 3.9-3 3.9z"/></svg> Strona i social media</span>
+          <span class="pill"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8.5" r="3"/><circle cx="17" cy="9.5" r="2.4"/><path d="M3.5 19c.5-3 2.7-4.8 5.5-4.8s5 1.8 5.5 4.8"/><path d="M15.5 14.4c2.4-.2 4.3 1.2 5 3.6"/></svg> Uczciwe ceny</span>
         </div>
       </div>
-      <div class="about-avatar-wrap reveal d1">
+      <div class="avatar-card reveal" style="--d:.12s">
         <div class="av-main">
           <div class="av-circle">KB</div>
           <div class="av-name">Kuba B.</div>
-          <div class="av-title">Web Designer & Developer</div>
-          <div class="av-avail">
-            <span class="av-dot"></span>
-            Dostępny na nowe projekty
-          </div>
-        </div>
-        <div class="av-stat s1">
-          <div class="as-num">4+</div>
-          <div class="as-label">Projektów zrealizowanych</div>
-        </div>
-        <div class="av-stat s2">
-          <div class="as-num">100%</div>
-          <div class="as-label">Zadowolonych klientów</div>
+          <div class="av-title">Web Designer i Developer</div>
+          <div class="av-avail"><span class="av-dot"></span>Dostępny na nowe projekty</div>
         </div>
       </div>
     </div>
   </div>
-</section>
+</header>
 
-<!-- SKILLS -->
-<div class="skills-bg">
-  <section class="section">
-    <div class="container">
-      <div class="sec-head reveal">
-        <div class="eyebrow">Kompetencje</div>
-        <h2>Co potrafię i<br>z czego korzystam.</h2>
-        <p>Uczę się na Swoich projektach. Wszystkich narzędzi i technologii poniżej używam na co dzień w praktyce.</p>
-      </div>
-      <div class="skills-grid" style="margin-top:56px;">
-        <div class="skill-card reveal">
-          <div class="sk-icon">🎨</div>
-          <div class="sk-name">UI/UX Design</div>
-          <div class="sk-desc">Figma, Adobe XD — projektuję interfejsy, które wyglądają premium i prowadzą użytkownika do działania. Nie tylko piękne, ale funkcjonalne.</div>
-          <div class="sk-bar"><div class="sk-fill" style="width:95%"></div></div>
-        </div>
-        <div class="skill-card reveal d1">
-          <div class="sk-icon">💻</div>
-          <div class="sk-name">Webflow</div>
-          <div class="sk-desc">Specjalizuję się w Webflow (zaawansowane animacje, CMS). Wybieram narzędzie do projektu, nie odwrotnie.</div>
-          <div class="sk-bar"><div class="sk-fill" style="width:90%"></div></div>
-        </div>
-        <div class="skill-card reveal d2">
-          <div class="sk-icon">⚡</div>
-          <div class="sk-name">Optymalizacja & SEO</div>
-          <div class="sk-desc">Core Web Vitals, PageSpeed, struktura SEO, dane strukturalne — każda strona przechodzi pełną optymalizację przed publikacją.</div>
-          <div class="sk-bar"><div class="sk-fill" style="width:85%"></div></div>
-        </div>
-        <div class="skill-card reveal">
-          <div class="sk-icon">📝</div>
-          <div class="sk-name">Copywriting konwersyjny</div>
-          <div class="sk-desc">Treści, które sprzedają. Nagłówki, które zatrzymują, opisy, które przekonują, CTA, które klikają. Piszę po polsku i angielsku.</div>
-          <div class="sk-bar"><div class="sk-fill" style="width:80%"></div></div>
-        </div>
-        <div class="skill-card reveal d1">
-          <div class="sk-icon">🛒</div>
-          <div class="sk-name">E-commerce</div>
-          <div class="sk-desc">Shopify — sklepy i platformy, które faktycznie sprzedają. Od 5 produktów do kilkuset SKU.</div>
-          <div class="sk-bar"><div class="sk-fill" style="width:78%"></div></div>
-        </div>
-        <div class="skill-card reveal d2">
-          <div class="sk-icon">📊</div>
-          <div class="sk-name">Analityka & Tracking</div>
-          <div class="sk-desc">Google Analytics 4, Search Console, Meta Pixel — konfiguruję śledzenie, żebyś wiedział co działa i co nie.</div>
-          <div class="sk-bar"><div class="sk-fill" style="width:82%"></div></div>
-        </div>
-      </div>
+<!-- KOMPETENCJE -->
+<section class="section" aria-labelledby="sk-h">
+  <div class="container">
+    <div class="sec-head reveal">
+      <h2 id="sk-h">Co potrafię i z czego korzystam.</h2>
+      <p>Uczę się na własnych projektach. Wszystkich narzędzi i technologii poniżej używam na co dzień w praktyce.</p>
     </div>
-  </section>
-</div>
+    <div class="skills-grid" data-stagger="0.08">
+      <div class="inc-card reveal"><div class="ic-box"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20l4-1 11-11a2.1 2.1 0 0 0-3-3L5 16l-1 4z"/><path d="M14 7l3 3"/></svg></div><h3>UI/UX Design</h3><p>Figma, Adobe XD. Projektuję interfejsy, które wyglądają premium i prowadzą użytkownika do działania. Nie tylko piękne, ale funkcjonalne.</p></div>
+      <div class="inc-card reveal"><div class="ic-box"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 8l-4 4 4 4M16 8l4 4-4 4M13.5 5l-3 14"/></svg></div><h3>Webflow i kod</h3><p>Specjalizuję się w Webflow (zaawansowane animacje, CMS) oraz w czystym HTML, CSS i JavaScript. Wybieram narzędzie do projektu, nie odwrotnie.</p></div>
+      <div class="inc-card reveal"><div class="ic-box"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 3L5 13.5h6L10 21l8-10.5h-6L13 3z"/></svg></div><h3>Optymalizacja i SEO</h3><p>Core Web Vitals, PageSpeed, struktura SEO, dane strukturalne. Każda strona przechodzi pełną optymalizację przed publikacją.</p></div>
+      <div class="inc-card reveal"><div class="ic-box"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 11.5a7.5 7.5 0 0 1-10.8 6.7L4 20l1.4-4.6A7.5 7.5 0 1 1 20 11.5z"/><path d="M12 14.5s-3-1.8-3-3.9a1.7 1.7 0 0 1 3-1.1 1.7 1.7 0 0 1 3 1.1c0 2.1-3 3.9-3 3.9z"/></svg></div><h3>Social media i copywriting</h3><p>Setup profili, plan publikacji, grafiki i teksty, które zatrzymują, przekonują i prowadzą do kontaktu. Piszę po polsku i angielsku.</p></div>
+      <div class="inc-card reveal"><div class="ic-box"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="20" r="1.3"/><circle cx="17" cy="20" r="1.3"/><path d="M3 4h2.4l2 11h10.2l1.9-8H6.2"/></svg></div><h3>E-commerce</h3><p>Shopify. Sklepy i platformy, które faktycznie sprzedają. Od 5 produktów do kilkuset SKU.</p></div>
+      <div class="inc-card reveal"><div class="ic-box"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M21 20H3"/></svg></div><h3>Analityka i tracking</h3><p>Google Analytics 4, Search Console, Meta Pixel. Konfiguruję śledzenie, żebyś wiedział, co działa, a co nie.</p></div>
+    </div>
+  </div>
+</section>
 
 <!-- HISTORIA -->
-<section class="section" style="background:var(--bg);">
+<section class="section section-mist" aria-labelledby="hi-h">
   <div class="container">
-    <div style="display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:start;">
-      <div class="reveal">
-        <div class="eyebrow">Moja historia</div>
-        <h2 style="font-size:clamp(28px,3.5vw,44px); margin-bottom:40px;">Jak tu trafiłem.</h2>
+    <div class="how-grid">
+      <div class="how-col reveal">
+        <h2 id="hi-h">Jak tu trafiłem.</h2>
         <div class="timeline">
-          <div class="tl-item">
-            <div class="tl-dot"></div>
-            <div class="tl-year">2021</div>
-            <div class="tl-title">Pierwsze kroki w web designie</div>
-            <div class="tl-desc">Zacząłem uczyć się HTML, CSS i JavaScript z czystej ciekawości. Szybko okazało się, że mam do tego głowę i oko do detali — i że sprawia mi to autentyczną radość.</div>
-          </div>
-          <div class="tl-item">
-            <div class="tl-dot"></div>
-            <div class="tl-year">2022</div>
-            <div class="tl-title">Pierwsze większe projekty</div>
-            <div class="tl-desc">Zacząłem od stron dla znajomych i projektów. Szybko nauczyłem się, że dobry design to nie to samo co design, który robi robotę.</div>
-          </div>
-          <div class="tl-item">
-            <div class="tl-dot"></div>
-            <div class="tl-year">2024</div>
-            <div class="tl-title">Webflow & premium projekty</div>
-            <div class="tl-desc">Poznałem Webflow i odkryłem zupełnie nowy poziom możliwości. Zacząłem pracować z bardziej wymagającymi klientami i podnosić poprzeczkę dla siebie z każdym projektem.</div>
-          </div>
-          <div class="tl-item">
-            <div class="tl-dot"></div>
-            <div class="tl-year">2025 — dziś</div>
-            <div class="tl-title">KB WebDesign — oficjalnie</div>
-            <div class="tl-desc">Założyłem KB WebDesign i skupiłem się na tym, co robię najlepiej: premium stronach dla lokalnych firm, które chcą konkurować z markami z większymi budżetami.</div>
-          </div>
+          <div class="tl-item"><div class="tl-dot"></div><div class="tl-year">2021</div><h3>Pierwsze kroki w web designie</h3><p>Zacząłem uczyć się HTML, CSS i JavaScriptu z czystej ciekawości. Szybko okazało się, że mam do tego głowę i oko do detali, a praca sprawia mi autentyczną radość.</p></div>
+          <div class="tl-item"><div class="tl-dot"></div><div class="tl-year">2022</div><h3>Pierwsze większe projekty</h3><p>Zacząłem od stron dla znajomych. Szybko nauczyłem się, że dobry design to nie to samo co design, który robi robotę.</p></div>
+          <div class="tl-item"><div class="tl-dot"></div><div class="tl-year">2024</div><h3>Webflow i premium projekty</h3><p>Poznałem Webflow i odkryłem zupełnie nowy poziom możliwości. Zacząłem pracować z bardziej wymagającymi klientami i podnosić poprzeczkę z każdym projektem.</p></div>
+          <div class="tl-item"><div class="tl-dot"></div><div class="tl-year">2025 do dziś</div><h3>KB WebDesign, oficjalnie</h3><p>Założyłem KB WebDesign i skupiłem się na tym, co robię najlepiej: premium stronach i spójnym wizerunku w social mediach dla lokalnych firm, które chcą konkurować z markami z większymi budżetami.</p></div>
         </div>
       </div>
-      <div class="reveal d1">
-        <div class="eyebrow">Jak pracuję</div>
-        <h2 style="font-size:clamp(28px,3.5vw,44px); margin-bottom:24px;">Kilka rzeczy, które są dla mnie niezbędne.</h2>
-        <div style="display:flex; flex-direction:column; gap:20px;">
-          <div style="background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-xl); padding:24px 26px;">
-            <div style="font-family:var(--font-display); font-size:15px; font-weight:700; color:var(--text); margin-bottom:8px;">Bezpośrednia komunikacja</div>
-            <p style="font-size:13.5px; color:var(--text3); line-height:1.75;">Odpisuję osobiście. Nie masz do czynienia z asystentem ani botem. Masz mój numer — możesz pisać na WhatsApp. Decyzje podejmujemy razem, bez biurokratycznych opóźnień.</p>
-          </div>
-          <div style="background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-xl); padding:24px 26px;">
-            <div style="font-family:var(--font-display); font-size:15px; font-weight:700; color:var(--text); margin-bottom:8px;">Mała liczba klientów jednocześnie</div>
-            <p style="font-size:13.5px; color:var(--text3); line-height:1.75;">Celowo nie przyjmuję zbyt wielu projektów naraz. Dzięki temu każdy dostaje 100% mojej uwagi, nie 20% rozdzielonej na pięć równoległych zleceń.</p>
-          </div>
-          <div style="background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-xl); padding:24px 26px;">
-            <div style="font-family:var(--font-display); font-size:15px; font-weight:700; color:var(--text); margin-bottom:8px;">Szczerość ponad sprzedaż</div>
-            <p style="font-size:13.5px; color:var(--text3); line-height:1.75;">Jeśli uważam, że nie potrzebujesz droższego pakietu — powiem Ci to. Moim celem jest Twój sukces, nie jednorazowa transakcja. Wolę klientów, którzy wracają, od tych, którzy czują się oszukani.</p>
-          </div>
-          <div style="text-align:center; margin-top:12px;">
-            <a href="kontakt.html" class="btn btn-primary">Porozmawiajmy →</a>
-          </div>
-        </div>
+      <div class="how-col reveal" style="--d:.12s">
+        <h2>Kilka rzeczy, które są dla mnie niezbędne.</h2>
+        <div class="how-card"><h3>Bezpośrednia komunikacja</h3><p>Odpisuję osobiście. Nie masz do czynienia z asystentem ani botem. Masz mój numer i możesz pisać na WhatsApp. Decyzje podejmujemy razem, bez biurokratycznych opóźnień.</p></div>
+        <div class="how-card"><h3>Mała liczba klientów jednocześnie</h3><p>Celowo nie przyjmuję zbyt wielu projektów naraz. Dzięki temu każdy dostaje 100% mojej uwagi, a nie 20% rozdzielone na pięć równoległych zleceń.</p></div>
+        <div class="how-card"><h3>Szczerość ponad sprzedaż</h3><p>Jeśli uważam, że nie potrzebujesz droższego pakietu, powiem Ci to. Moim celem jest Twój sukces, nie jednorazowa transakcja. Wolę klientów, którzy wracają, od tych, którzy czują się oszukani.</p></div>
+        <a href="kontakt.html" class="btn btn-primary" style="margin-top:12px;">Porozmawiajmy <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
       </div>
     </div>
   </div>
 </section>
 
-<script src="shared.js"></script>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a href="index.html" class="nav-logo" aria-label="KB WebDesign, strona główna"><span class="mark">KB</span>WebDesign</a>
+      <p>Strony internetowe i social media dla firm z Opola i całej Polski. Bezpośredni kontakt, szybka realizacja, gwarancja satysfakcji.</p>
+    </div>
+    <div class="footer-col">
+      <h2>Usługi</h2>
+      <a href="uslugi.html#nowa-strona">Nowa strona internetowa</a>
+      <a href="uslugi.html#obsluga-techniczna">Obsługa techniczna</a>
+      <a href="uslugi.html#social-media">Social media</a>
+      <a href="uslugi.html#setup-social-mediow">Setup social mediów</a>
+    </div>
+    <div class="footer-col">
+      <h2>Firma</h2>
+      <a href="o-mnie.html">O mnie</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="cennik.html">Cennik</a>
+      <a href="faq.html">FAQ</a>
+    </div>
+    <div class="footer-col">
+      <h2>Kontakt</h2>
+      <a href="mailto:kbwebdesign.opole@gmail.com">kbwebdesign.opole@gmail.com</a>
+      <a href="tel:+48572070483">+48 572 070 483</a>
+      <a href="kontakt.html">Formularz kontaktowy</a>
+      <a href="kontakt.html">Bezpłatna wycena</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© <span id="year">2026</span> KB WebDesign. Wszelkie prawa zastrzeżone.</span>
+    <span>Projektuję i buduję w Opolu.</span>
+  </div>
+</footer>
+<script src="shared.js" defer></script>
 </body>
 </html>

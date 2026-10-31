@@ -3,654 +3,303 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="KB WebDesign — Strony internetowe, które przyciągają klientów. Szybka realizacja, premium design, przystępne ceny.">
-<title>KB WebDesign — Strony internetowe dla lokalnych firm</title>
+<title>Strony internetowe Opole i social media dla firm | KB WebDesign</title>
+<meta name="description" content="Tworzenie stron internetowych w Opolu, setup i prowadzenie social mediów oraz obsługa techniczna. Realizacja w 7–14 dni, SEO od startu. Bezpłatna wycena.">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<link rel="canonical" href="https://kbwebdesign.pl/">
+<meta name="theme-color" content="#0a3d2a">
+<meta name="author" content="KB WebDesign">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pl_PL">
+<meta property="og:site_name" content="KB WebDesign">
+<meta property="og:title" content="Strony internetowe Opole i social media dla firm | KB WebDesign">
+<meta property="og:description" content="Tworzenie stron internetowych w Opolu, setup i prowadzenie social mediów oraz obsługa techniczna. Realizacja w 7–14 dni, SEO od startu. Bezpłatna wycena.">
+<meta property="og:url" content="https://kbwebdesign.pl/">
+<meta property="og:image" content="https://kbwebdesign.pl/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="KB WebDesign: strony internetowe i social media dla firm z Opola">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Strony internetowe Opole i social media dla firm | KB WebDesign">
+<meta name="twitter:description" content="Tworzenie stron internetowych w Opolu, setup i prowadzenie social mediów oraz obsługa techniczna. Realizacja w 7–14 dni, SEO od startu. Bezpłatna wycena.">
+<meta name="twitter:image" content="https://kbwebdesign.pl/og-image.png">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&family=Newsreader:opsz,wght@6..72,400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="shared.css">
-<style>
-/* ── HERO ── */
-#hero {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  padding-top: var(--nav-h);
-  position: relative;
-  overflow: hidden;
-}
-.hero-bg {
-  position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(ellipse 80% 60% at 60% 30%, rgba(91,82,240,0.13) 0%, transparent 70%),
-    radial-gradient(ellipse 40% 40% at 20% 80%, rgba(91,82,240,0.07) 0%, transparent 60%);
-  pointer-events: none;
-}
-.hero-grid {
-  display: grid;
-  grid-template-columns: 1fr 420px;
-  gap: 64px;
-  align-items: center;
-  padding: 80px 0 100px;
-  position: relative;
-  z-index: 1;
-}
-.hero-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  background: rgba(91,82,240,0.1);
-  border: 1px solid rgba(91,82,240,0.22);
-  border-radius: 50px;
-  padding: 8px 18px 8px 12px;
-  font-family: var(--font-display);
-  font-size: 12px;
-  font-weight: 600;
-  color: var(--accent2);
-  margin-bottom: 28px;
-  width: fit-content;
-  animation: fadeUp 0.8s ease both;
-}
-.badge-pulse { width: 8px; height: 8px; background: var(--green); border-radius: 50%; animation: pulse 2s infinite; }
-h1.hero-h1 {
-  font-size: clamp(42px, 5.5vw, 76px);
-  font-weight: 800;
-  line-height: 1.04;
-  margin-bottom: 26px;
-  animation: fadeUp 0.8s ease 0.08s both;
-}
-h1 .hl { color: var(--accent2); }
-.hero-sub {
-  font-size: 18px;
-  color: var(--text2);
-  line-height: 1.8;
-  max-width: 520px;
-  margin-bottom: 40px;
-  animation: fadeUp 0.8s ease 0.16s both;
-  font-weight: 300;
-}
-.hero-btns {
-  display: flex;
-  gap: 14px;
-  flex-wrap: wrap;
-  animation: fadeUp 0.8s ease 0.24s both;
-  margin-bottom: 56px;
-}
-.trust-row {
-  display: flex;
-  gap: 28px;
-  flex-wrap: wrap;
-  animation: fadeUp 0.8s ease 0.32s both;
-}
-.trust-item {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-family: var(--font-display);
-  font-size: 12.5px;
-  font-weight: 500;
-  color: var(--text3);
-}
-.trust-item svg { color: var(--accent2); flex-shrink: 0; }
-
-/* FLOATING PANEL */
-.hero-panel {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  animation: fadeLeft 1s ease 0.4s both;
-}
-.h-card {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-xl);
-  padding: 24px;
-  position: relative;
-  overflow: hidden;
-}
-.h-card::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, var(--accent2), transparent);
-  opacity: 0.45;
-}
-.hc-label { font-size: 10px; font-family: var(--font-display); font-weight: 700; text-transform: uppercase; letter-spacing: 0.15em; color: var(--text3); margin-bottom: 10px; }
-.hc-big { font-family: var(--font-display); font-size: 36px; font-weight: 800; color: var(--text); line-height: 1; }
-.hc-big span { font-size: 14px; color: var(--accent2); font-weight: 500; margin-left: 6px; }
-.hc-small { font-size: 12px; color: var(--text3); margin-top: 6px; }
-.hc-bar { margin-top: 14px; height: 4px; background: var(--surface3); border-radius: 99px; overflow: hidden; }
-.hc-fill { height: 100%; border-radius: 99px; background: linear-gradient(90deg, var(--accent), var(--accent2)); animation: grow 2s ease 1s both; }
-.hc-dots { display: flex; gap: 6px; margin-top: 12px; }
-.hc-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--surface3); }
-.hc-dot.on { background: var(--green); }
-.hc-dot.on2 { background: var(--accent2); }
-
-/* ── PROBLEM/SOLUTION ── */
-.ps-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 64px;
-  align-items: start;
-}
-.pain-list { display: flex; flex-direction: column; gap: 14px; margin-top: 32px; }
-.pain-item {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 20px 22px;
-  display: flex;
-  gap: 16px;
-  align-items: flex-start;
-  transition: all 0.25s;
-}
-.pain-item:hover { border-color: rgba(248,113,113,0.25); transform: translateX(5px); }
-.pi-icon { font-size: 20px; flex-shrink: 0; margin-top: 2px; }
-.pi-title { font-family: var(--font-display); font-size: 14.5px; font-weight: 600; color: var(--text); margin-bottom: 4px; }
-.pi-desc { font-size: 13px; color: var(--text3); line-height: 1.65; }
-
-.sol-list { display: flex; flex-direction: column; gap: 14px; margin-top: 32px; }
-.sol-item {
-  background: var(--surface);
-  border: 1px solid rgba(91,82,240,0.1);
-  border-radius: var(--radius);
-  padding: 20px 22px;
-  display: flex;
-  gap: 16px;
-  align-items: flex-start;
-  transition: all 0.25s;
-}
-.sol-item:hover { border-color: rgba(91,82,240,0.35); transform: translateX(5px); }
-.si-icon {
-  width: 38px; height: 38px;
-  background: rgba(91,82,240,0.12);
-  border-radius: 10px;
-  display: flex; align-items: center; justify-content: center;
-  font-size: 18px;
-  flex-shrink: 0;
-}
-.si-title { font-family: var(--font-display); font-size: 14.5px; font-weight: 600; color: var(--text); margin-bottom: 4px; }
-.si-desc { font-size: 13px; color: var(--text3); line-height: 1.65; }
-
-/* ── SERVICES PREVIEW ── */
-.services-bg { background: var(--bg2); }
-.srv-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 18px;
-  margin-top: 56px;
-}
-.srv-card {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-xl);
-  padding: 32px 24px;
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-  transition: all 0.3s;
-  cursor: pointer;
-  text-decoration: none;
-}
-.srv-card:hover {
-  border-color: rgba(91,82,240,0.3);
-  transform: translateY(-8px);
-  box-shadow: 0 28px 64px rgba(0,0,0,0.45);
-}
-.srv-icon { font-size: 30px; }
-.srv-name { font-family: var(--font-display); font-size: 17px; font-weight: 700; color: var(--text); }
-.srv-desc { font-size: 13.5px; color: var(--text3); line-height: 1.7; flex: 1; }
-.srv-tag {
-  display: inline-block;
-  font-family: var(--font-display);
-  font-size: 10.5px;
-  font-weight: 600;
-  color: var(--accent2);
-  background: rgba(91,82,240,0.1);
-  padding: 4px 12px;
-  border-radius: 50px;
-  width: fit-content;
-}
-.srv-arrow { font-size: 20px; color: var(--accent2); margin-top: auto; transition: transform 0.2s; }
-.srv-card:hover .srv-arrow { transform: translateX(6px); }
-
-/* ── PROCESS STRIP ── */
-.proc-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 2px;
-  margin-top: 60px;
-  position: relative;
-}
-.proc-line {
-  position: absolute;
-  top: 36px; left: calc(12.5% + 28px); right: calc(12.5% + 28px);
-  height: 1px;
-  background: linear-gradient(90deg, var(--accent), var(--accent2));
-  opacity: 0.2;
-}
-.proc-step {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  padding: 0 20px;
-  position: relative;
-}
-.proc-num {
-  width: 56px; height: 56px;
-  border-radius: 50%;
-  border: 1px solid var(--border2);
-  background: var(--surface);
-  display: flex; align-items: center; justify-content: center;
-  font-family: var(--font-display);
-  font-size: 15px;
-  font-weight: 800;
-  color: var(--accent2);
-  margin-bottom: 20px;
-  z-index: 1;
-  transition: all 0.3s;
-}
-.proc-step:hover .proc-num {
-  background: var(--accent);
-  border-color: var(--accent);
-  color: #fff;
-  box-shadow: 0 0 28px var(--accent-glow);
-}
-.proc-step h4 { font-family: var(--font-display); font-size: 15px; font-weight: 700; color: var(--text); margin-bottom: 8px; }
-.proc-step p { font-size: 13px; color: var(--text3); line-height: 1.7; }
-
-/* ── MINI PORTFOLIO ── */
-.port-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 22px;
-  margin-top: 56px;
-}
-.port-card {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-xl);
-  overflow: hidden;
-  transition: all 0.3s;
-  text-decoration: none;
-  display: block;
-}
-.port-card:hover { transform: translateY(-8px); box-shadow: 0 32px 72px rgba(0,0,0,0.5); border-color: var(--border2); }
-.port-thumb {
-  height: 200px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  gap: 10px;
-  position: relative;
-  overflow: hidden;
-}
-.pt-gym { background: linear-gradient(135deg, #0d1a2e 0%, #1a2d4a 100%); }
-.pt-law { background: linear-gradient(135deg, #1a1208 0%, #2d1f0e 100%); }
-.pt-brand { background: linear-gradient(135deg, #091c1c 0%, #0d2d2d 100%); }
-.pt-emoji { font-size: 44px; }
-.pt-name { font-family: var(--font-display); font-size: 18px; font-weight: 800; color: #fff; letter-spacing: -0.02em; }
-.pt-type { font-size: 11px; color: rgba(255,255,255,0.4); font-family: var(--font-display); }
-.port-body { padding: 24px; }
-.port-body h3 { font-family: var(--font-display); font-size: 16px; color: var(--text); margin-bottom: 6px; }
-.port-body p { font-size: 13px; color: var(--text3); margin-bottom: 14px; line-height: 1.6; }
-.port-result { font-size: 12px; font-family: var(--font-display); font-weight: 600; color: var(--accent2); }
-
-/* ── CTA BANNER ── */
-.cta-wrap { background: var(--bg2); }
-.cta-banner {
-  background: linear-gradient(135deg, rgba(91,82,240,0.12) 0%, rgba(139,131,255,0.06) 100%);
-  border: 1px solid rgba(91,82,240,0.18);
-  border-radius: var(--radius-2xl);
-  padding: 90px 60px;
-  text-align: center;
-  position: relative;
-  overflow: hidden;
-}
-.cta-banner::before {
-  content: '';
-  position: absolute;
-  top: -100px; left: 50%;
-  transform: translateX(-50%);
-  width: 600px; height: 400px;
-  background: radial-gradient(ellipse, rgba(91,82,240,0.18), transparent 70%);
-  pointer-events: none;
-}
-.cta-banner h2 { font-size: clamp(28px, 4vw, 52px); margin-bottom: 18px; position: relative; }
-.cta-banner p { font-size: 17px; color: var(--text2); margin-bottom: 44px; position: relative; }
-.cta-banner .btn { position: relative; font-size: 16px; padding: 18px 44px; }
-
-/* ANIMATIONS */
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(22px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-@keyframes fadeLeft {
-  from { opacity: 0; transform: translateX(22px); }
-  to { opacity: 1; transform: translateX(0); }
-}
-@keyframes pulse {
-  0%, 100% { transform: scale(1); opacity: 1; }
-  50% { transform: scale(0.75); opacity: 0.5; }
-}
-@keyframes grow { from { width: 0; } }
-
-/* RESPONSIVE */
-@media (max-width: 1024px) {
-  .hero-grid { grid-template-columns: 1fr; }
-  .hero-panel { display: none; }
-  .ps-grid { grid-template-columns: 1fr; gap: 48px; }
-  .srv-grid { grid-template-columns: repeat(2, 1fr); }
-  .port-grid { grid-template-columns: repeat(2, 1fr); }
-  .proc-grid { grid-template-columns: repeat(2, 1fr); gap: 32px; }
-  .proc-line { display: none; }
-}
-@media (max-width: 560px) {
-  .srv-grid { grid-template-columns: 1fr; }
-  .port-grid { grid-template-columns: 1fr; }
-  .proc-grid { grid-template-columns: 1fr; }
-  .cta-banner { padding: 60px 28px; }
-  h1.hero-h1 { font-size: 38px; }
-  .hero-btns { flex-direction: column; }
-}
-</style>
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-PT43JN3P');</script>
-<!-- End Google Tag Manager -->
+<script>document.documentElement.classList.add('js')</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"ProfessionalService","@id":"https://kbwebdesign.pl/#business","name":"KB WebDesign","url":"https://kbwebdesign.pl/","description":"Tworzenie stron internetowych, obsługa techniczna oraz setup i prowadzenie social mediów dla firm z Opola i całej Polski.","telephone":"+48 572 070 483","email":"kbwebdesign.opole@gmail.com","image":"https://kbwebdesign.pl/og-image.png","logo":"https://kbwebdesign.pl/favicon.svg","address":{"@type":"PostalAddress","addressLocality":"Opole","addressRegion":"opolskie","addressCountry":"PL"},"areaServed":[{"@type":"City","name":"Opole"},{"@type":"AdministrativeArea","name":"województwo opolskie"},{"@type":"Country","name":"Polska"}],"founder":{"@type":"Person","name":"Kuba B."},"knowsLanguage":"pl","serviceType":["Tworzenie stron internetowych","Obsługa techniczna stron","Prowadzenie social mediów","Setup social mediów"],"hasOfferCatalog":{"@type":"OfferCatalog","name":"Usługi KB WebDesign","itemListElement":[{"@type":"Offer","itemOffered":{"@type":"Service","name":"Nowa strona internetowa","description":"W pełni niestandardowa strona firmowa: nowa od zera, redesign lub landing page, z SEO i responsywnym designem.","url":"https://kbwebdesign.pl/uslugi.html#nowa-strona","provider":{"@id":"https://kbwebdesign.pl/#business"},"areaServed":{"@type":"Country","name":"Polska"},"offers":{"@type":"Offer","priceCurrency":"PLN","priceSpecification":{"@type":"PriceSpecification","minPrice":1500,"priceCurrency":"PLN"}}}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Obsługa techniczna strony","description":"Aktualizacje, kopie zapasowe, edycje treści i monitoring dostępności strony w abonamencie miesięcznym.","url":"https://kbwebdesign.pl/uslugi.html#obsluga-techniczna","provider":{"@id":"https://kbwebdesign.pl/#business"},"areaServed":{"@type":"Country","name":"Polska"},"offers":{"@type":"Offer","priceCurrency":"PLN","priceSpecification":{"@type":"PriceSpecification","minPrice":300,"priceCurrency":"PLN"}}}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Prowadzenie social mediów","description":"Plan publikacji, posty, grafiki i opieka nad profilami firmowymi w mediach społecznościowych.","url":"https://kbwebdesign.pl/uslugi.html#social-media","provider":{"@id":"https://kbwebdesign.pl/#business"},"areaServed":{"@type":"Country","name":"Polska"}}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Setup social mediów","description":"Założenie i konfiguracja profili firmowych: grafiki, opis, dane kontaktowe i spójny wygląd ze stroną.","url":"https://kbwebdesign.pl/uslugi.html#setup-social-mediow","provider":{"@id":"https://kbwebdesign.pl/#business"},"areaServed":{"@type":"Country","name":"Polska"}}}]}},{"@type":"WebSite","@id":"https://kbwebdesign.pl/#website","url":"https://kbwebdesign.pl/","name":"KB WebDesign","inLanguage":"pl-PL","publisher":{"@id":"https://kbwebdesign.pl/#business"}},{"@type":"WebPage","@id":"https://kbwebdesign.pl/#webpage","url":"https://kbwebdesign.pl/","name":"KB WebDesign: strony internetowe i social media","description":"Tworzenie stron internetowych w Opolu, setup i prowadzenie social mediów oraz obsługa techniczna. Realizacja w 7–14 dni, SEO od startu. Bezpłatna wycena.","inLanguage":"pl-PL","isPartOf":{"@id":"https://kbwebdesign.pl/#website"},"about":{"@id":"https://kbwebdesign.pl/#business"}}]}</script>
 </head>
 <body>
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PT43JN3P"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
+<a class="skip-link" href="#main">Przejdź do treści</a>
+<div id="progress" aria-hidden="true"></div>
+<header>
+<nav class="site-nav" id="main-nav" aria-label="Główna nawigacja">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo" aria-label="KB WebDesign, strona główna"><span class="mark">KB</span>WebDesign</a>
+    <ul class="nav-links"><li><a href="index.html" class="active" aria-current="page">Strona główna</a></li><li><a href="uslugi.html">Usługi</a></li><li><a href="portfolio.html">Portfolio</a></li><li><a href="cennik.html">Cennik</a></li><li><a href="o-mnie.html">O mnie</a></li><li><a href="faq.html">FAQ</a></li><li><a href="kontakt.html" class="nav-cta">Bezpłatna wycena</a></li></ul>
+    <button class="nav-burger" id="nav-burger" type="button" aria-label="Menu" aria-expanded="false" aria-controls="nav-mobile"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="nav-mobile" id="nav-mobile"><a href="index.html">Strona główna</a><a href="uslugi.html">Usługi</a><a href="portfolio.html">Portfolio</a><a href="cennik.html">Cennik</a><a href="o-mnie.html">O mnie</a><a href="faq.html">FAQ</a><a href="kontakt.html">Bezpłatna wycena</a></div>
+</header>
+<main id="main">
 
 <!-- HERO -->
-<section id="hero">
-  <div class="hero-bg"></div>
+<section id="hero" aria-label="Wprowadzenie">
+  <div class="hero-grid container">
+    <div class="hero-copy">
+      <p class="hero-kicker"><span class="dot"></span>Opole, przyjmuję nowych klientów na 2026</p>
+      <h1 class="hero-h1">
+        <span class="ln"><span>Strony internetowe</span></span>
+        <span class="ln"><span>i social media</span></span>
+        <span class="ln"><span>dla firm z Opola.</span></span>
+      </h1>
+      <p class="hero-sub">Projektuję i buduję strony www, zakładam profile firmowe i prowadzę social media. Jedna osoba, jeden spójny wizerunek, szybka realizacja.</p>
+      <div class="hero-btns">
+        <a href="kontakt.html" class="btn btn-primary">Bezpłatna wycena <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a href="uslugi.html" class="btn btn-ghost">Zobacz usługi</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <svg class="hv" viewBox="0 0 440 500" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="hv-t hv-d">
+  <title id="hv-t">Strona internetowa i profil w social mediach</title>
+  <desc id="hv-d">Ilustracja: makieta strony firmowej obok profilu w social mediach i powiadomienia o nowym zapytaniu klienta.</desc>
+  <defs><clipPath id="clipimg"><rect x="214" y="150" width="120" height="132" rx="6"/></clipPath></defs>
+  <rect class="fadein" style="--t:.15s" x="8" y="30" width="344" height="310" rx="10" fill="#fff"/>
+  <rect class="draw" pathLength="1" style="--t:.2s" x="8" y="30" width="344" height="310" rx="10" fill="none" stroke="#0f2318" stroke-width="1.6"/>
+  <path class="draw" pathLength="1" style="--t:.9s" d="M8 68H352" stroke="#0f2318" stroke-width="1.6" fill="none"/>
+  <g class="fadein" style="--t:1s"><circle cx="28" cy="49" r="4" fill="none" stroke="#0f2318" stroke-width="1.2"/><circle cx="43" cy="49" r="4" fill="none" stroke="#0f2318" stroke-width="1.2"/><circle cx="58" cy="49" r="4" fill="none" stroke="#0f2318" stroke-width="1.2"/><rect x="86" y="41" width="200" height="16" rx="3" fill="#f4f7f5"/></g>
+  <g class="slide" style="--t:1.1s"><rect x="30" y="90" width="38" height="9" rx="2" fill="#1a7a4c"/><rect x="216" y="91" width="26" height="7" rx="2" fill="#c9dccf"/><rect x="252" y="91" width="26" height="7" rx="2" fill="#c9dccf"/><rect x="288" y="91" width="26" height="7" rx="2" fill="#c9dccf"/></g>
+  <rect class="grow" style="--t:1.3s" x="30" y="136" width="170" height="16" rx="2" fill="#0f2318"/>
+  <rect class="grow" style="--t:1.42s" x="30" y="160" width="128" height="16" rx="2" fill="#0f2318"/>
+  <rect class="grow" style="--t:1.55s" x="30" y="194" width="168" height="7" rx="2" fill="#c9dccf"/>
+  <rect class="grow" style="--t:1.62s" x="30" y="210" width="140" height="7" rx="2" fill="#c9dccf"/>
+  <g class="pop" style="--t:1.8s"><rect x="30" y="236" width="96" height="30" rx="4" fill="#1a7a4c"/><rect x="48" y="248" width="60" height="6" rx="2" fill="#fff" opacity=".9"/></g>
+  <g class="pop" style="--t:1.9s"><rect x="134" y="236" width="70" height="30" rx="4" fill="none" stroke="#0f2318" stroke-width="1.4"/></g>
+  <g class="fadein" style="--t:1.5s">
+    <rect x="214" y="150" width="120" height="132" rx="6" fill="#e6eee9"/>
+    <g clip-path="url(#clipimg)"><circle cx="298" cy="184" r="15" fill="#fff" opacity=".8"/><path d="M214 282L250 222 276 250 304 200 334 282Z" fill="#1a7a4c" opacity=".9"/></g>
+  </g>
+  <g class="pop" style="--t:2.1s"><rect x="30" y="288" width="96" height="36" rx="4" fill="none" stroke="#c9dccf" stroke-width="1.4"/><rect x="42" y="300" width="40" height="6" rx="2" fill="#c9dccf"/><rect x="42" y="311" width="26" height="5" rx="2" fill="#e6eee9"/></g>
+  <g class="pop" style="--t:2.2s"><rect x="134" y="288" width="96" height="36" rx="4" fill="none" stroke="#c9dccf" stroke-width="1.4"/><rect x="146" y="300" width="40" height="6" rx="2" fill="#c9dccf"/><rect x="146" y="311" width="26" height="5" rx="2" fill="#e6eee9"/></g>
+  <g class="slide" style="--t:2.4s">
+    <rect x="252" y="124" width="170" height="350" rx="24" fill="#fff"/>
+    <rect x="252" y="124" width="170" height="350" rx="24" fill="none" stroke="#0f2318" stroke-width="1.6"/>
+    <rect x="311" y="136" width="52" height="8" rx="4" fill="#0f2318"/>
+    <circle cx="284" cy="190" r="18" fill="#1a7a4c"/><text x="284" y="195" text-anchor="middle" font-size="12" font-weight="800" fill="#fff">KB</text>
+    <rect x="312" y="180" width="76" height="9" rx="2" fill="#0f2318"/><rect x="312" y="196" width="52" height="7" rx="2" fill="#c9dccf"/>
+    <rect x="268" y="222" width="106" height="26" rx="4" fill="#1a7a4c"/><rect x="288" y="232" width="66" height="6" rx="2" fill="#fff" opacity=".9"/>
+    <rect x="380" y="222" width="26" height="26" rx="4" fill="#e6eee9"/>
+    <g class="pop" style="--t:2.9s"><rect x="266" y="264" width="44" height="44" rx="3" fill="#c9dccf"/></g>
+    <g class="pop" style="--t:3s"><rect x="316" y="264" width="44" height="44" rx="3" fill="#1a7a4c"/></g>
+    <g class="pop" style="--t:3.1s"><rect x="366" y="264" width="44" height="44" rx="3" fill="#e6eee9"/></g>
+    <g class="pop" style="--t:3.2s"><rect x="266" y="314" width="44" height="44" rx="3" fill="#8fd1ac"/></g>
+    <g class="pop" style="--t:3.3s"><rect x="316" y="314" width="44" height="44" rx="3" fill="#e6eee9"/></g>
+    <g class="pop" style="--t:3.4s"><rect x="366" y="314" width="44" height="44" rx="3" fill="#0f2318"/></g>
+    <g class="pop" style="--t:3.5s"><rect x="266" y="364" width="44" height="44" rx="3" fill="#e6eee9"/></g>
+    <g class="pop" style="--t:3.6s"><rect x="316" y="364" width="44" height="44" rx="3" fill="#8fd1ac"/></g>
+    <g class="pop" style="--t:3.7s"><rect x="366" y="364" width="44" height="44" rx="3" fill="#c9dccf"/></g>
+    <g fill="none" stroke="#0f2318" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M288 446s-9-5.2-9-11.4a4.6 4.6 0 0 1 9-1.7 4.6 4.6 0 0 1 9 1.7c0 6.2-9 11.4-9 11.4z"/>
+      <path d="M337 433a8 8 0 1 1-3.6 6.7L329 447l1.8-4.6A8 8 0 0 1 337 433z"/>
+      <path d="M376 446l16-8-6 16-3-6z"/>
+    </g>
+  </g>
+  <g class="slide" style="--t:4s">
+    <rect x="8" y="374" width="214" height="60" rx="8" fill="#fff"/>
+    <rect x="8" y="374" width="214" height="60" rx="8" fill="none" stroke="#0f2318" stroke-width="1.6"/>
+    <circle cx="38" cy="404" r="14" fill="#1a7a4c"/><path d="M31.5 404.5l4.6 4.6 8-8.6" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="62" y="400" font-size="14" font-weight="700" fill="#0f2318">Nowe zapytanie</text>
+    <text x="62" y="418" font-size="12" fill="#44574c">z formularza na stronie</text>
+  </g>
+</svg>
+
+    </div>
+  </div>
   <div class="container">
-    <div class="hero-grid">
-      <div>
-        <div class="hero-badge">
-          <span class="badge-pulse"></span>
-          Przyjmuję nowych klientów — 2026
-        </div>
-        <h1 class="hero-h1">
-          Twoja strona<br>
-          powinna <span class="hl">przyciągać</span><br>
-          klientów, nie<br>ich odstraszać.
-        </h1>
-        <p class="hero-sub">
-          KB WebDesign tworzy szybkie, nowoczesne strony internetowe, które sprawiają, że lokalne firmy wyglądają jak liderzy branży — i zamieniają odwiedzających w płacących klientów.
-        </p>
-        <div class="hero-btns">
-          <a href="kontakt.html" class="btn btn-primary">
-            Bezpłatna wycena
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </a>
-          <a href="portfolio.html" class="btn btn-outline">Zobacz portfolio</a>
-        </div>
-        <div class="trust-row">
-          <div class="trust-item">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
-            Realizacja 7–14 dni
-          </div>
-          <div class="trust-item">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-            Gwarancja satysfakcji
-          </div>
-          <div class="trust-item">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3" stroke="#07070d" stroke-width="2"/></svg>
-            Bezpośredni kontakt
-          </div>
-        </div>
-      </div>
-      <div class="hero-panel">
-        <!-- <div class="h-card">
-          <div class="hc-label">Średni wzrost ruchu po redesignie</div>
-          <div class="hc-big">+214% <span>↑ organicznie</span></div>
-          <div class="hc-small">Średnia z projektów, pierwsze 6 miesięcy</div>
-          <div class="hc-bar"><div class="hc-fill" style="width:82%"></div></div>
-        </div> -->
-        <div class="h-card">
-          <div class="hc-label">Wynik Google PageSpeed</div>
-          <div class="hc-big">99 <span>/ 100</span></div>
-          <div class="hc-small">Wszystkie strony zoptymalizowane pod Core Web Vitals</div>
-          <div class="hc-bar"><div class="hc-fill" style="width:97%; background:linear-gradient(90deg,#34d399,#059669)"></div></div>
-        </div>
-        <div class="h-card">
-          <div class="hc-label">Zrealizowane projekty od 2025</div>
-          <div class="hc-big">4 <span>projekty</span></div>
-          <div class="hc-small">Małe projekty, podstawowe strony</div>
-          <div class="hc-dots">
-            <div class="hc-dot on"></div><div class="hc-dot on"></div><div class="hc-dot on2"></div>
-            <div class="hc-dot on"></div><div class="hc-dot on2"></div><div class="hc-dot"></div>
-          </div>
-        </div>
-      </div>
+    <div class="facts">
+      <div class="fact"><b>7–14 dni</b><span>typowy czas realizacji strony</span></div>
+      <div class="fact"><b>24 godziny</b><span>maksymalny czas odpowiedzi</span></div>
+      <div class="fact"><b>Jedna osoba</b><span>rozmawiasz bezpośrednio z wykonawcą</span></div>
     </div>
   </div>
 </section>
 
 <!-- PROBLEM / SOLUTION -->
-<section class="section" style="background: var(--bg);">
+<section class="section" aria-labelledby="ps-h">
   <div class="container">
-    <div class="ps-grid">
-      <div class="reveal">
-        <div class="eyebrow">Prawdziwy problem</div>
-        <h2 style="font-size:clamp(26px,3vw,38px); margin-bottom:14px;">Większość stron małych firm aktywnie <em style="font-style:normal; color:var(--red);">traci</em> klientów.</h2>
-        <p style="font-size:15px; color:var(--text3); line-height:1.85;">Gdy potencjalny klient trafia na Twoją stronę i widzi coś przestarzałego, wolnego lub niedziałającego na telefonie — wychodzi. I idzie prosto do konkurencji.</p>
-        <div class="pain-list">
-          <div class="pain-item reveal d1">
-            <div class="pi-icon">💀</div>
-            <div>
-              <div class="pi-title">Masz stronę, której nikt nie znajdzie</div>
-              <div class="pi-desc">Strona bez podstaw SEO jest niewidoczna. Większość klientów trafia przez Google — jeśli Cię tam nie ma, nie istniejesz.</div>
-            </div>
-          </div>
-          <div class="pain-item reveal d2">
-            <div class="pi-icon">📱</div>
-            <div>
-              <div class="pi-title">60% odwiedzających jest na telefonie</div>
-              <div class="pi-desc">Szczypcowanie, powiększanie, czekanie na wolną stronę — odbiją się w mniej niż 3 sekundy. Mobile to dziś standard, nie opcja.</div>
-            </div>
-          </div>
-          <div class="pain-item reveal d3">
-            <div class="pi-icon">🏚️</div>
-            <div>
-              <div class="pi-title">Przestarzały wygląd niszczy zaufanie</div>
-              <div class="pi-desc">Ludzie oceniają Twoją firmę w ułamku sekundy. Stara strona mówi: "ta firma nie dba o jakość." Twoja konkurencja to wie.</div>
-            </div>
-          </div>
-        </div>
+    <div class="split">
+      <div class="split-head reveal">
+        <h2 id="ps-h">Większość małych firm traci klientów, zanim ktokolwiek zadzwoni.</h2>
+        <p>Potencjalny klient sprawdza Cię w Google, na stronie i w social mediach. Jeśli trafia na coś przestarzałego, wolnego albo pustego, idzie do konkurencji.</p>
       </div>
-      <div class="reveal d1">
-        <div class="eyebrow">Jak to rozwiązuję</div>
-        <h2 style="font-size:clamp(26px,3vw,38px); margin-bottom:14px;">Strona zaprojektowana żeby <em style="font-style:normal; color:var(--accent2);">działać</em>, nie tylko istnieć.</h2>
-        <p style="font-size:15px; color:var(--text3); line-height:1.85;">Każda strona, którą tworzę, jest zbudowana wokół jednego celu: zamieniania odwiedzających w zapytania. Piękny design, szybkość, treści, które konwertują.</p>
-        <div class="sol-list">
-          <div class="sol-item reveal d1">
-            <div class="si-icon">🎯</div>
-            <div>
-              <div class="si-title">SEO gotowe od pierwszego dnia</div>
-              <div class="si-desc">Szybkość strony, meta tagi, dane strukturalne, indeksowanie mobile-first — wbudowane, nie doklejone na końcu.</div>
-            </div>
-          </div>
-          <div class="sol-item reveal d2">
-            <div class="si-icon">⚡</div>
-            <div>
-              <div class="si-title">Mobile-first — zawsze</div>
-              <div class="si-desc">Każdy piksel projektowany najpierw na małe ekrany. Twoja strona wygląda świetnie na każdym urządzeniu — gwarantowane.</div>
-            </div>
-          </div>
-          <div class="sol-item reveal d3">
-            <div class="si-icon">💎</div>
-            <div>
-              <div class="si-title">Design, który buduje natychmiastowy autorytet</div>
-              <div class="si-desc">Premium estetyka komunikuje profesjonalizm zanim klient przeczyta pierwsze słowo. Pierwsze wrażenie zamyka zlecenia.</div>
-            </div>
-          </div>
-        </div>
+      <ul class="plain-list" data-stagger="0.1">
+        <li class="reveal"><h3>Strona, której nikt nie znajdzie</h3><p>Bez podstaw SEO strona jest niewidoczna. Większość klientów zaczyna od Google, więc brak Cię tam oznacza brak zapytań.</p></li>
+        <li class="reveal"><h3>60% odwiedzających jest na telefonie</h3><p>Szczypanie, powiększanie i czekanie na wolną stronę kończy się szybkim powrotem do wyników wyszukiwania.</p></li>
+        <li class="reveal"><h3>Stary wygląd i puste profile</h3><p>Klient ocenia firmę w ułamku sekundy, na stronie i w social mediach. Przestarzała strona albo martwy profil mówią: tu nikt nie dba o jakość.</p></li>
+      </ul>
+    </div>
+    <div class="split">
+      <div class="split-head reveal">
+        <h2>Wizerunek zaprojektowany tak, żeby działał, a nie tylko istniał.</h2>
+        <p>Każda strona i każdy profil, który tworzę, ma jeden cel: zamieniać odwiedzających w zapytania.</p>
       </div>
+      <ul class="plain-list good" data-stagger="0.1">
+        <li class="reveal"><h3>SEO gotowe od pierwszego dnia</h3><p>Szybkość strony, meta tagi, dane strukturalne i indeksowanie mobile-first są wbudowane w projekt, a nie doklejone na końcu.</p></li>
+        <li class="reveal"><h3>Mobile-first, zawsze</h3><p>Każdy ekran projektuję najpierw na telefon. Strona wygląda świetnie na każdym urządzeniu.</p></li>
+        <li class="reveal"><h3>Spójny wizerunek na stronie i w social mediach</h3><p>Te same kolory, ton i jakość wszędzie tam, gdzie klient Cię spotka. Pierwsze wrażenie zamyka zlecenia.</p></li>
+      </ul>
     </div>
   </div>
 </section>
 
-<!-- SERVICES PREVIEW -->
-<div class="services-bg">
-  <section class="section">
-    <div class="container">
-      <div class="sec-head reveal">
-        <div class="eyebrow">Czym się zajmuję</div>
-        <h2>Wszystko, czego potrzebuje<br>Twoja obecność online.</h2>
-        <p>Konkretne usługi, jasne efekty, zero zbędnych dodatków. Wiesz dokładnie co dostajesz — i kiedy.</p>
-      </div>
-      <div class="srv-grid">
-        <a href="uslugi.html" class="srv-card reveal d1">
-          <div class="srv-icon">🌐</div>
-          <div class="srv-name">Strona internetowa</div>
-          <div class="srv-desc">W pełni niestandardowa, profesjonalnie zaprojektowana strona zbudowana wokół Twojej marki i celów biznesowych. Nie szablon.</div>
-          <div class="srv-tag">Najpopularniejsza</div>
-          <div class="srv-arrow">→</div>
-        </a>
-        <a href="uslugi.html" class="srv-card reveal d2">
-          <div class="srv-icon">♻️</div>
-          <div class="srv-name">Redesign strony</div>
-          <div class="srv-desc">Masz stronę, która Cię wstydzi? Przebuduję ją od podstaw — zachowując to co działa, naprawiając resztę.</div>
-          <div class="srv-tag">Wysoki zwrot</div>
-          <div class="srv-arrow">→</div>
-        </a>
-        <a href="uslugi.html" class="srv-card reveal d3">
-          <div class="srv-icon">🚀</div>
-          <div class="srv-name">Landing Page</div>
-          <div class="srv-desc">Jedna strona zoptymalizowana pod konwersję. Idealna do kampanii reklamowych, promocji usług czy zbierania zapisów.</div>
-          <div class="srv-tag">Szybka realizacja</div>
-          <div class="srv-arrow">→</div>
-        </a>
-        <a href="uslugi.html" class="srv-card reveal d4">
-          <div class="srv-icon">🔧</div>
-          <div class="srv-name">Opieka techniczna</div>
-          <div class="srv-desc">Aktualizacje, edycje, nowe podstrony, bezpieczeństwo — zajmuję się wszystkim, żebyś Ty mógł prowadzić firmę.</div>
-          <div class="srv-tag">Abonament miesięczny</div>
-          <div class="srv-arrow">→</div>
-        </a>
-      </div>
-    </div>
-  </section>
-</div>
-
-<!-- PROCESS -->
-<section class="section" style="background:var(--bg);">
+<!-- SERVICES -->
+<section class="section section-mist" aria-labelledby="srv-h">
   <div class="container">
     <div class="sec-head reveal">
-      <div class="eyebrow">Jak pracuję</div>
-      <h2>Od pierwszego kontaktu<br>do gotowej strony w 4 krokach.</h2>
-      <p>Bez ukrytych etapów. Bez nieskończonych poprawek. Przejrzysty proces, który szanuje Twój czas.</p>
+      <h2 id="srv-h">Strona, social media i opieka nad nimi.</h2>
+      <p>Cztery konkretne usługi, jasne efekty i zero zbędnych dodatków.</p>
     </div>
-    <div class="proc-grid">
-      <div class="proc-line"></div>
-      <div class="proc-step reveal">
-        <div class="proc-num">01</div>
-        <h4>Bezpłatna rozmowa</h4>
-        <p>Rozmawiamy o Twojej firmie, celach i konkurencji. Słucham — potem buduję plan dopasowany do tego, czego naprawdę potrzebujesz.</p>
+    <ol class="srv-list" data-stagger="0.08">
+      <li class="reveal"><a href="uslugi.html#nowa-strona"><span class="sl-num">01</span><span class="sl-title">Nowa strona internetowa</span><span class="sl-desc">Niestandardowa strona zbudowana wokół Twojej marki. Nowa od zera, redesign albo landing page.</span><span class="sl-price">od 1 500 zł</span><span class="sl-arrow"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a></li>
+      <li class="reveal"><a href="uslugi.html#obsluga-techniczna"><span class="sl-num">02</span><span class="sl-title">Obsługa techniczna</span><span class="sl-desc">Aktualizacje, kopie zapasowe, edycje treści i monitoring. Ty prowadzisz firmę, ja pilnuję strony.</span><span class="sl-price">od 300 zł / mies.</span><span class="sl-arrow"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a></li>
+      <li class="reveal"><a href="uslugi.html#social-media"><span class="sl-num">03</span><span class="sl-title">Social media</span><span class="sl-desc">Plan publikacji, posty, grafiki i opieka nad profilami firmowymi. Regularnie i w jednym stylu.</span><span class="sl-price">wycena indywidualna</span><span class="sl-arrow"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a></li>
+      <li class="reveal"><a href="uslugi.html#setup-social-mediow"><span class="sl-num">04</span><span class="sl-title">Setup social mediów</span><span class="sl-desc">Zakładam i konfiguruję profile firmowe: grafiki, opis, dane kontaktowe, wygląd spójny ze stroną.</span><span class="sl-price">wycena indywidualna</span><span class="sl-arrow"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a></li>
+    </ol>
+  </div>
+</section>
+
+<!-- SOCIAL BAND -->
+<section class="section section-deep" aria-labelledby="so-h">
+  <div class="container">
+    <div class="social-grid">
+      <div class="reveal">
+        <h2 id="so-h">Strona zbiera klientów z Google. Social media sprawiają, że o Tobie pamiętają.</h2>
+        <p class="lede">Dobra obecność online to dwie rzeczy działające razem: strona, która budzi zaufanie, i profile, które utrzymują kontakt z klientami. Zajmuję się obiema.</p>
+        <div class="so-offers">
+          <div class="so-offer"><h3>Setup profili</h3><p>Jednorazowe założenie i konfiguracja profili firmowych, z grafikami i opisem w stylu Twojej marki.</p></div>
+          <div class="so-offer"><h3>Prowadzenie</h3><p>Stały plan publikacji, posty i grafiki oraz opieka nad profilami, żebyś nie musiał o tym myśleć.</p></div>
+        </div>
+        <div class="so-btns">
+          <a href="uslugi.html#social-media" class="btn btn-light">Zobacz social media <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <a href="kontakt.html" class="btn btn-outline-light">Zapytaj o wycenę</a>
+        </div>
       </div>
-      <div class="proc-step reveal d1">
-        <div class="proc-num">02</div>
-        <h4>Podgląd projektu</h4>
-        <p>W ciągu 3 dni dostajesz wizualny mockup Twojej nowej strony. Widzisz jak będzie wyglądać zanim napiszę linijkę kodu.</p>
-      </div>
-      <div class="proc-step reveal d2">
-        <div class="proc-num">03</div>
-        <h4>Programowanie</h4>
-        <p>Buduję stronę czystym kodem, z szybkim ładowaniem i responsywnym designem. Dostajesz regularne aktualizacje postępu.</p>
-      </div>
-      <div class="proc-step reveal d3">
-        <div class="proc-num">04</div>
-        <h4>Publikacja i przekazanie</h4>
-        <p>Strona trafia na Twoją domenę. Konfiguruję analitykę, przekazuję dostępy i upewniam się, że możesz nią zarządzać samodzielnie.</p>
+      <div class="social-card reveal" style="--d:.15s" aria-hidden="true">
+        <div class="panel-title">Plan publikacji <small>Ten miesiąc</small></div>
+        <div class="cal">
+          <b>Pn</b><b>Wt</b><b>Śr</b><b>Cz</b><b>Pt</b><b>So</b><b>Nd</b>
+          <i class="q"></i><i></i><i class="r"></i><i></i><i class="q"></i><i class="p"></i><i></i>
+          <i></i><i class="r"></i><i></i><i class="q"></i><i></i><i class="r"></i><i></i>
+          <i class="q"></i><i></i><i class="r"></i><i></i><i class="q"></i><i></i><i class="p"></i>
+          <i></i><i class="r"></i><i></i><i class="q"></i><i></i><i class="r"></i><i></i>
+        </div>
+        <div class="cal-legend"><span>Post</span><span>Rolka lub grafika</span></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- MINI PORTFOLIO -->
-<div style="background:var(--bg2);">
-  <section class="section">
-    <div class="container">
-      <div class="sec-head reveal">
-        <div class="eyebrow">Wybrane realizacje</div>
-        <h2>Prawdziwe projekty.<br>Prawdziwe wyniki.</h2>
-        <p>Każdy projekt ma konkretny cel. Tak go osiągnęliśmy.</p>
-      </div>
-      <!-- <div class="port-grid">
-        <a href="portfolio.html" class="port-card reveal">
-          <div class="port-thumb pt-gym">
-            <div class="pt-emoji">💪</div>
-            <div class="pt-name">IronPeak Gym</div>
-            <div class="pt-type">Fitness & Siłownia</div>
-          </div>
-          <div class="port-body">
-            <h3>IronPeak Fitness</h3>
-            <p>Lokalna siłownia bez systemu zapisów online i niewidoczna w Google. Przeprojektowaliśmy pod kątem konwersji karnetów.</p>
-            <div class="port-result">↑ +63% nowych zapisów w 60 dni</div>
-          </div>
-        </a>
-        <a href="portfolio.html" class="port-card reveal d1">
-          <div class="port-thumb pt-law">
-            <div class="pt-emoji">⚖️</div>
-            <div class="pt-name">Wiertz & Wspólnicy</div>
-            <div class="pt-type">Kancelaria prawna</div>
-          </div>
-          <div class="port-body">
-            <h3>Wiertz & Wspólnicy</h3>
-            <p>Kancelaria opierająca się wyłącznie na poleceniach. Potrzebowali strony, która buduje zaufanie i generuje zapytania online.</p>
-            <div class="port-result">↑ 18 nowych zapytań w pierwszym miesiącu</div>
-          </div>
-        </a>
-        <a href="portfolio.html" class="port-card reveal d2">
-          <div class="port-thumb pt-brand">
-            <div class="pt-emoji">✨</div>
-            <div class="pt-name">Marta Nowak</div>
-            <div class="pt-type">Marka osobista</div>
-          </div>
-          <div class="port-body">
-            <h3>Marta Nowak — Coach</h3>
-            <p>Coach biznesowy z imponującym dorobkiem, ale przestarzałą obecnością online. Stworzyliśmy stronę, która pozycjonuje ją jako eksperta premium.</p>
-            <div class="port-result">↑ W pełni zarezerwowana w 3 tygodnie</div>
-          </div>
-        </a>
-      </div> -->
-      <div style="text-align:center; margin-top:40px;">
-        <a href="portfolio.html" class="btn btn-outline">Zobacz wszystkie realizacje →</a>
-      </div>
+<!-- PROCESS -->
+<section class="section" aria-labelledby="proc-h">
+  <div class="container">
+    <div class="sec-head reveal">
+      <h2 id="proc-h">Od pierwszej rozmowy do gotowej strony w czterech krokach.</h2>
+      <p>Bez ukrytych etapów i bez nieskończonych poprawek.</p>
     </div>
-  </section>
-</div>
+    <div class="proc-grid" data-stagger="0.12">
+      <div class="proc-step reveal"><div class="proc-num">1</div><h3>Bezpłatna rozmowa</h3><p>Rozmawiamy o Twojej firmie, celach i konkurencji. Słucham, a potem buduję plan dopasowany do tego, czego naprawdę potrzebujesz.</p></div>
+      <div class="proc-step reveal"><div class="proc-num">2</div><h3>Podgląd projektu</h3><p>W ciągu 3 dni dostajesz wizualny mockup nowej strony. Widzisz, jak będzie wyglądać, zanim napiszę linijkę kodu.</p></div>
+      <div class="proc-step reveal"><div class="proc-num">3</div><h3>Programowanie</h3><p>Buduję stronę czystym kodem, z szybkim ładowaniem i responsywnym designem. Na bieżąco dostajesz informacje o postępach.</p></div>
+      <div class="proc-step reveal"><div class="proc-num">4</div><h3>Publikacja i przekazanie</h3><p>Strona trafia na Twoją domenę. Konfiguruję analitykę i przekazuję dostępy. Jeśli zamawiasz social media, profile ruszają w tym samym czasie.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- PORTFOLIO PREVIEW -->
+<section class="section section-mist" aria-labelledby="port-h">
+  <div class="container">
+    <div class="sec-head reveal">
+      <h2 id="port-h">Wybrane realizacje.</h2>
+      <p>Strony, które zbudowałem dla firm z Opola i okolic. Każda zaczyna się od konkretnego celu biznesowego.</p>
+    </div>
+    <div class="work-grid" data-stagger="0.12">
+      <article class="work spot reveal">
+        <div class="work-thumb"><div class="mock" aria-hidden="true"><div class="mock-bar"><i></i><i></i><i></i><span></span></div><div class="mock-body"><div class="l"><b></b><b></b><s></s><s></s><u></u></div><div class="r"></div></div></div></div>
+        <div class="work-body">
+          <h3>Natalia Galik Design</h3>
+          <p>Strona wizytówka luksusowej pracowni projektowania wnętrz z Opola, w pełni w języku polskim.</p>
+          <dl class="work-meta">
+            <div class="wm"><dt>Branża</dt><dd>Projektowanie wnętrz</dd></div>
+            <div class="wm"><dt>Lokalizacja</dt><dd>Opole</dd></div>
+            <div class="wm"><dt>Zakres</dt><dd>Nowa strona internetowa</dd></div>
+            <div class="wm"><dt>Język</dt><dd>Polski</dd></div>
+          </dl>
+        </div>
+      </article>
+      <article class="work work-invite reveal">
+        <h3>Tu może być Twoja firma.</h3>
+        <p>Każdy projekt zaczynam od rozmowy o Twoich celach. Napisz do mnie, a przygotuję bezpłatną wycenę strony i, jeśli chcesz, profili w social mediach.</p>
+        <a href="kontakt.html" class="btn btn-light">Napisz do mnie <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </article>
+    </div>
+    <p style="margin-top:40px;" class="reveal"><a href="portfolio.html" class="btn btn-ghost">Zobacz portfolio <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></p>
+  </div>
+</section>
 
 <!-- CTA -->
-<div class="cta-wrap">
-  <section class="section">
-    <div class="container">
-      <div class="cta-banner reveal">
-        <div class="eyebrow" style="justify-content:center;">Gotowy?</div>
-        <h2>Zbudujmy coś,<br>z czego będziesz dumny.</h2>
-        <p>Umów bezpłatne 30-minutowe konsultacje. Zero zobowiązań, zero presji sprzedażowej — tylko szczera rozmowa o tym, czego potrzebuje Twoja firma.</p>
-        <a href="kontakt.html" class="btn btn-primary">
-          Chcę bezpłatną wycenę
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </a>
+<section class="section" aria-label="Kontakt">
+  <div class="container">
+    <div class="cta-banner reveal">
+      <div>
+        <h2>Zbudujmy stronę i profile, z których będziesz dumny.</h2>
+        <p>Umów bezpłatną 15-minutową rozmowę. Zero zobowiązań i zero presji sprzedażowej, tylko szczera rozmowa o tym, czego potrzebuje Twoja firma.</p>
+      </div>
+      <div class="cta-actions">
+        <a href="kontakt.html" class="btn btn-light">Chcę bezpłatną wycenę <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <div class="cta-contact"><a href="tel:+48572070483">+48 572 070 483</a><a href="mailto:kbwebdesign.opole@gmail.com">kbwebdesign.opole@gmail.com</a></div>
       </div>
     </div>
-  </section>
-</div>
+  </div>
+</section>
 
-<script src="shared.js"></script>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a href="index.html" class="nav-logo" aria-label="KB WebDesign, strona główna"><span class="mark">KB</span>WebDesign</a>
+      <p>Strony internetowe i social media dla firm z Opola i całej Polski. Bezpośredni kontakt, szybka realizacja, gwarancja satysfakcji.</p>
+    </div>
+    <div class="footer-col">
+      <h2>Usługi</h2>
+      <a href="uslugi.html#nowa-strona">Nowa strona internetowa</a>
+      <a href="uslugi.html#obsluga-techniczna">Obsługa techniczna</a>
+      <a href="uslugi.html#social-media">Social media</a>
+      <a href="uslugi.html#setup-social-mediow">Setup social mediów</a>
+    </div>
+    <div class="footer-col">
+      <h2>Firma</h2>
+      <a href="o-mnie.html">O mnie</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="cennik.html">Cennik</a>
+      <a href="faq.html">FAQ</a>
+    </div>
+    <div class="footer-col">
+      <h2>Kontakt</h2>
+      <a href="mailto:kbwebdesign.opole@gmail.com">kbwebdesign.opole@gmail.com</a>
+      <a href="tel:+48572070483">+48 572 070 483</a>
+      <a href="kontakt.html">Formularz kontaktowy</a>
+      <a href="kontakt.html">Bezpłatna wycena</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© <span id="year">2026</span> KB WebDesign. Wszelkie prawa zastrzeżone.</span>
+    <span>Projektuję i buduję w Opolu.</span>
+  </div>
+</footer>
+<script src="shared.js" defer></script>
 </body>
 </html>

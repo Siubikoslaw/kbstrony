@@ -3,235 +3,112 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="FAQ — KB WebDesign. Najczęstsze pytania o strony internetowe, czas realizacji, ceny i proces współpracy.">
-<title>FAQ — KB WebDesign</title>
+<title>FAQ: strony internetowe i social media | KB WebDesign</title>
+<meta name="description" content="Odpowiedzi na najczęstsze pytania o tworzenie stron, social media, czas realizacji, ceny i opiekę po publikacji.">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<link rel="canonical" href="https://kbwebdesign.pl/faq.html">
+<meta name="theme-color" content="#0a3d2a">
+<meta name="author" content="KB WebDesign">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pl_PL">
+<meta property="og:site_name" content="KB WebDesign">
+<meta property="og:title" content="FAQ: strony internetowe i social media | KB WebDesign">
+<meta property="og:description" content="Odpowiedzi na najczęstsze pytania o tworzenie stron, social media, czas realizacji, ceny i opiekę po publikacji.">
+<meta property="og:url" content="https://kbwebdesign.pl/faq.html">
+<meta property="og:image" content="https://kbwebdesign.pl/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="KB WebDesign: strony internetowe i social media dla firm z Opola">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="FAQ: strony internetowe i social media | KB WebDesign">
+<meta name="twitter:description" content="Odpowiedzi na najczęstsze pytania o tworzenie stron, social media, czas realizacji, ceny i opiekę po publikacji.">
+<meta name="twitter:image" content="https://kbwebdesign.pl/og-image.png">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&family=Newsreader:opsz,wght@6..72,400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="shared.css">
-<style>
-.page-hero {
-  padding: calc(var(--nav-h) + 80px) 0 80px;
-  text-align: center;
-  background: radial-gradient(ellipse 70% 50% at 50% 0%, rgba(91,82,240,0.12), transparent 70%);
-}
-.page-hero h1 { font-size: clamp(38px, 5vw, 64px); margin-bottom: 18px; }
-.page-hero p { font-size: 18px; color: var(--text2); max-width: 540px; margin: 0 auto; line-height: 1.8; font-weight: 300; }
-
-/* CATEGORY TABS */
-.cat-tabs { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; margin: 44px 0 56px; }
-.cat-tab {
-  font-family: var(--font-display);
-  font-size: 13px;
-  font-weight: 600;
-  padding: 9px 22px;
-  border-radius: 50px;
-  border: 1px solid var(--border2);
-  background: transparent;
-  color: var(--text2);
-  cursor: pointer;
-  transition: all 0.2s;
-}
-.cat-tab:hover, .cat-tab.active {
-  background: rgba(91,82,240,0.1);
-  border-color: rgba(91,82,240,0.3);
-  color: var(--accent2);
-}
-
-/* FAQ */
-.faq-section { max-width: 780px; margin: 0 auto; }
-.faq-cat { margin-bottom: 60px; display: none; }
-.faq-cat.visible { display: block; }
-.faq-cat-title {
-  font-family: var(--font-display);
-  font-size: 13px;
-  font-weight: 700;
-  color: var(--accent2);
-  text-transform: uppercase;
-  letter-spacing: 0.15em;
-  margin-bottom: 24px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-.faq-cat-title::after { content: ''; flex: 1; height: 1px; background: var(--border); }
-
-.faq-item { border-bottom: 1px solid var(--border); }
-.faq-item:first-of-type { border-top: 1px solid var(--border); }
-.faq-q {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 22px 0;
-  cursor: pointer;
-  font-family: var(--font-display);
-  font-size: 15.5px;
-  font-weight: 600;
-  color: var(--text);
-  transition: color 0.2s;
-  gap: 16px;
-}
-.faq-q:hover { color: var(--accent2); }
-.faq-icon {
-  width: 28px; height: 28px;
-  border: 1px solid var(--border2);
-  border-radius: 50%;
-  display: flex; align-items: center; justify-content: center;
-  font-size: 18px;
-  color: var(--text3);
-  flex-shrink: 0;
-  transition: all 0.3s;
-}
-.faq-item.open .faq-icon { background: var(--accent); border-color: var(--accent); color: #fff; transform: rotate(45deg); }
-.faq-a {
-  font-size: 14.5px;
-  color: var(--text3);
-  line-height: 1.85;
-  max-height: 0;
-  overflow: hidden;
-  transition: all 0.4s ease;
-}
-.faq-item.open .faq-a { max-height: 400px; padding-bottom: 22px; }
-</style>
+<script>document.documentElement.classList.add('js')</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"FAQPage","@id":"https://kbwebdesign.pl/faq.html#webpage","url":"https://kbwebdesign.pl/faq.html","name":"FAQ KB WebDesign","description":"Odpowiedzi na najczęstsze pytania o tworzenie stron, social media, czas realizacji, ceny i opiekę po publikacji.","inLanguage":"pl-PL","isPartOf":{"@id":"https://kbwebdesign.pl/#website"},"about":{"@id":"https://kbwebdesign.pl/#business"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Strona główna","item":"https://kbwebdesign.pl/"},{"@type":"ListItem","position":2,"name":"FAQ","item":"https://kbwebdesign.pl/faq.html"}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Jak długo trwa realizacja strony?","acceptedAnswer":{"@type":"Answer","text":"Standardowo 7–14 dni od momentu, gdy mam wszystkie materiały (treści, zdjęcia, podstawowe informacje o firmie). Prostsze projekty, jak landing page, zwykle schodzą szybciej, a konkretną datę oddania podaję na początku współpracy i jej dotrzymuję. Jeśli potrzebujesz pilnie, zapytaj o ekspresową realizację."}},{"@type":"Question","name":"Co muszę przygotować przed rozpoczęciem?","acceptedAnswer":{"@type":"Answer","text":"Potrzebuję krótkiego opisu firmy i usług, logo (jeśli masz) oraz ewentualnych zdjęć. Resztą się zajmuję. Jeśli nie masz logo, mogę zaproponować podstawową identyfikację lub skierować Cię do sprawdzonego grafika. Przy social mediach przydadzą się też dostępy do istniejących profili i informacja, kim są Twoi klienci."}},{"@type":"Question","name":"Ile razy mogę poprawiać projekt?","acceptedAnswer":{"@type":"Answer","text":"Przed rozpoczęciem kodowania dostajesz pełny podgląd projektu wizualnego. Na tym etapie masz do 3 poprawek. Dalszy rozwój i edycje strony zależą od wybranego pakietu."}},{"@type":"Question","name":"Jak wygląda pierwsza rozmowa?","acceptedAnswer":{"@type":"Answer","text":"To 15-minutowa rozmowa przez telefon. Opowiadasz o swojej firmie, klientach i celach, a ja pytam, słucham i na końcu mówię, co zrobiłbym na Twoim miejscu, szczerze i bez sprzedawania droższego pakietu na siłę. Zero zobowiązań. Możesz potem zdecydować, że nie chcesz współpracować, i to jest w porządku."}},{"@type":"Question","name":"Na czym będzie zbudowana moja strona?","acceptedAnswer":{"@type":"Answer","text":"Zależy od projektu i Twoich potrzeb. Dla prostych stron wybieram czysty HTML, CSS i JavaScript, co daje bardzo szybkie i proste rozwiązanie. Dla zaawansowanych funkcjonalności używam również backendu w PHP lub innym języku."}},{"@type":"Question","name":"Czy strona będzie działać na telefonach?","acceptedAnswer":{"@type":"Answer","text":"Tak, to jeden z moich standardów, a nie opcja premium. Każda strona jest projektowana mobile-first i testowana na smartfonach, tabletach i w różnych przeglądarkach. Ponad 60% ruchu w internecie pochodzi z urządzeń mobilnych, a strona, która nie działa na telefonie, traci klientów."}},{"@type":"Question","name":"Czy strona będzie szybka?","acceptedAnswer":{"@type":"Answer","text":"Tak. Optymalizuję każdą stronę pod kątem Core Web Vitals i PageSpeed. Typowy wynik to 90–97/100 w Google PageSpeed. To szybkie ładowanie, brak skakania strony podczas wczytywania i pozytywny sygnał dla Google."}},{"@type":"Question","name":"Czy strona będzie widoczna w Google?","acceptedAnswer":{"@type":"Answer","text":"Każda strona wychodzi z solidnymi podstawami SEO: poprawną strukturą nagłówków H1–H3, meta tagami, sitemap.xml, robots.txt, szybkim ładowaniem i danymi strukturalnymi. To fundament widoczności. SEO to długi proces i nie obiecuję pierwszej pozycji, ale daję Ci wszystko, żeby zacząć z jak najlepszego miejsca."}},{"@type":"Question","name":"Czy będę mógł samodzielnie edytować stronę?","acceptedAnswer":{"@type":"Answer","text":"Nie. Wszystkimi zmianami zajmuję się ja. Mówisz, co chcesz zmienić lub poprawić, a ja załatwiam to od strony technicznej."}},{"@type":"Question","name":"Czym różni się setup od prowadzenia social mediów?","acceptedAnswer":{"@type":"Answer","text":"Setup to usługa jednorazowa: zakładam lub porządkuję profile firmowe i przygotowuję grafiki, opis oraz dane kontaktowe. Prowadzenie to abonament miesięczny: plan publikacji, posty, grafiki i opieka nad profilami. Możesz zamówić sam setup albo od razu obie usługi."}},{"@type":"Question","name":"Na jakich platformach pracujesz?","acceptedAnswer":{"@type":"Answer","text":"Najczęściej na Facebooku i Instagramie. W zależności od branży także na innych platformach, na przykład LinkedIn czy TikTok. Wybieramy te, na których są Twoi klienci, zamiast zakładać profile wszędzie."}},{"@type":"Question","name":"Czy to ja będę właścicielem profili?","acceptedAnswer":{"@type":"Answer","text":"Tak. Profile zakładam na Twoje dane i przekazuję Ci pełne dostępy, więc nie jesteś ode mnie zależny, jeśli kiedyś zdecydujesz się zmienić sposób prowadzenia profili."}},{"@type":"Question","name":"Czy social media zastąpią stronę internetową?","acceptedAnswer":{"@type":"Answer","text":"Nie, to dwa różne narzędzia. Profile budują zasięg i kontakt z klientami, a strona daje wiarygodność, pozycje w Google i miejsce, do którego kierujesz każdego zainteresowanego. Najlepiej działają razem, w jednym spójnym stylu."}},{"@type":"Question","name":"Czy obiecujesz konkretne wyniki?","acceptedAnswer":{"@type":"Answer","text":"Nie obiecuję liczb obserwujących, bo zależą od branży, budżetu i czasu. Obiecuję regularność, spójny wizerunek i jasne podsumowanie tego, co działa, a co warto zmienić."}},{"@type":"Question","name":"Ile kosztuje strona internetowa?","acceptedAnswer":{"@type":"Answer","text":"Strona dla małej firmy zaczyna się od 1 500 zł (cena końcowa, bez VAT). Cena zależy od liczby podstron, funkcjonalności (np. sklep, rezerwacje), zakresu treści i pilności. Szczegółowy cennik znajdziesz w zakładce Cennik. Jeśli nie wiesz, od czego zacząć, napisz o swojej firmie, a przygotuję wycenę bez zobowiązań."}},{"@type":"Question","name":"Ile kosztują social media?","acceptedAnswer":{"@type":"Answer","text":"Cena zależy od liczby platform, częstotliwości publikacji i liczby grafik. Setup profili jest usługą jednorazową, a prowadzenie to abonament miesięczny. Wycenę dostajesz po krótkiej rozmowie, bez zobowiązań."}},{"@type":"Question","name":"Jak wygląda płatność?","acceptedAnswer":{"@type":"Answer","text":"Nie pobieram zaliczki. Płacisz po ukończeniu projektu i Twojej akceptacji. Gotowa strona trafia na wybraną domenę po wpłacie, a za usługę wystawiam rachunek."}},{"@type":"Question","name":"Co się dzieje po tym, jak strona trafia na serwer?","acceptedAnswer":{"@type":"Answer","text":"Jeśli chcesz zmienić treść na stronie, napisz lub zadzwoń do mnie, a ja wprowadzę zmiany. Jeśli potrzebujesz stałej opieki, możesz wybrać abonament obsługi technicznej."}},{"@type":"Question","name":"Czy strona będzie bezpieczna?","acceptedAnswer":{"@type":"Answer","text":"Tak. Każda strona ma certyfikat SSL (HTTPS), odpowiednie nagłówki bezpieczeństwa i jest konfigurowana zgodnie z dobrymi praktykami."}}]}]}</script>
 </head>
 <body>
-<section class="page-hero">
+<a class="skip-link" href="#main">Przejdź do treści</a>
+<div id="progress" aria-hidden="true"></div>
+<header>
+<nav class="site-nav" id="main-nav" aria-label="Główna nawigacja">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo" aria-label="KB WebDesign, strona główna"><span class="mark">KB</span>WebDesign</a>
+    <ul class="nav-links"><li><a href="index.html">Strona główna</a></li><li><a href="uslugi.html">Usługi</a></li><li><a href="portfolio.html">Portfolio</a></li><li><a href="cennik.html">Cennik</a></li><li><a href="o-mnie.html">O mnie</a></li><li><a href="faq.html" class="active" aria-current="page">FAQ</a></li><li><a href="kontakt.html" class="nav-cta">Bezpłatna wycena</a></li></ul>
+    <button class="nav-burger" id="nav-burger" type="button" aria-label="Menu" aria-expanded="false" aria-controls="nav-mobile"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="nav-mobile" id="nav-mobile"><a href="index.html">Strona główna</a><a href="uslugi.html">Usługi</a><a href="portfolio.html">Portfolio</a><a href="cennik.html">Cennik</a><a href="o-mnie.html">O mnie</a><a href="faq.html">FAQ</a><a href="kontakt.html">Bezpłatna wycena</a></div>
+</header>
+<main id="main">
+<header class="page-hero">
   <div class="container">
-    <div class="eyebrow" style="justify-content:center;">FAQ</div>
+    <nav class="crumbs" aria-label="Okruszki"><a href="index.html">Strona główna</a><span aria-hidden="true">/</span><span>FAQ</span></nav>
     <h1>Najczęstsze pytania.</h1>
-    <p>Zebrałem tu odpowiedzi na pytania, które słyszę od każdego nowego klienta. Nie znalazłeś swojego? Napisz do mnie.</p>
+    <p>Odpowiedzi na pytania, które słyszę od każdego nowego klienta: o strony, social media, ceny i współpracę. Nie znalazłeś swojego? Napisz do mnie.</p>
   </div>
-</section>
-
-<section class="section" style="background:var(--bg);">
+</header>
+<section class="section" aria-label="Pytania i odpowiedzi">
   <div class="container">
-    <div class="cat-tabs">
-      <button class="cat-tab active" onclick="showCat('all', this)">Wszystkie</button>
-      <button class="cat-tab" onclick="showCat('proces', this)">Proces</button>
-      <button class="cat-tab" onclick="showCat('techniczne', this)">Techniczne</button>
-      <button class="cat-tab" onclick="showCat('ceny', this)">Ceny i płatności</button>
-      <button class="cat-tab" onclick="showCat('po', this)">Po publikacji</button>
-    </div>
+    <div class="faq-wrap">
+      <div class="cat-tabs" role="group" aria-label="Kategorie pytań"><button class="cat-tab active" type="button" data-cat="all" aria-pressed="true">Wszystkie</button><button class="cat-tab" type="button" data-cat="proces" aria-pressed="false">Proces współpracy</button><button class="cat-tab" type="button" data-cat="techniczne" aria-pressed="false">Techniczne</button><button class="cat-tab" type="button" data-cat="social" aria-pressed="false">Social media</button><button class="cat-tab" type="button" data-cat="ceny" aria-pressed="false">Ceny i płatności</button><button class="cat-tab" type="button" data-cat="po" aria-pressed="false">Po publikacji</button></div>
+      <section class="faq-cat" data-cat="proces" aria-label="Proces współpracy"><h2><span class="ic-box"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg></span>Proces współpracy</h2><div class="faq-item"><h3><button class="faq-q" type="button" aria-expanded="false">Jak długo trwa realizacja strony? <span class="faq-icon"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span></button></h3><div class="faq-a"><div><p>Standardowo 7–14 dni od momentu, gdy mam wszystkie materiały (treści, zdjęcia, podstawowe informacje o firmie). Prostsze projekty, jak landing page, zwykle schodzą szybciej, a konkretną datę oddania podaję na początku współpracy i jej dotrzymuję. Jeśli potrzebujesz pilnie, zapytaj o ekspresową realizację.</p></div></div></div><div class="faq-item"><h3><button class="faq-q" type="button" aria-expanded="false">Co muszę przygotować przed rozpoczęciem? <span class="faq-icon"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span></button></h3><div class="faq-a"><div><p>Potrzebuję krótkiego opisu firmy i usług, logo (jeśli masz) oraz ewentualnych zdjęć. Resztą się zajmuję. Jeśli nie masz logo, mogę zaproponować podstawową identyfikację lub skierować Cię do sprawdzonego grafika. Przy social mediach przydadzą się też dostępy do istniejących profili i informacja, kim są Twoi klienci.</p></div></div></div><div class="faq-item"><h3><button class="faq-q" type="button" aria-expanded="false">Ile razy mogę poprawiać projekt? <span class="faq-icon"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span></button></h3><div class="faq-a"><div><p>Przed rozpoczęciem kodowania dostajesz pełny podgląd projektu wizualnego. Na tym etapie masz do 3 poprawek. Dalszy rozwój i edycje strony zależą od wybranego pakietu.</p></div></div></div><div class="faq-item"><h3><button class="faq-q" type="button" aria-expanded="false">Jak wygląda pierwsza rozmowa? <span class="faq-icon"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span></button></h3><div class="faq-a"><div><p>To 15-minutowa rozmowa przez telefon. Opowiadasz o swojej firmie, klientach i celach, a ja pytam, słucham i na końcu mówię, co zrobiłbym na Twoim miejscu, szczerze i bez sprzedawania droższego pakietu na siłę. Zero zobowiązań. Możesz potem zdecydować, że nie chcesz współpracować, i to jest w porządku.</p></div></div></div></section>
+<section class="faq-cat" data-cat="techniczne" aria-label="Techniczne"><h2><span class="ic-box"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 8l-4 4 4 4M16 8l4 4-4 4M13.5 5l-3 14"/></svg></span>Techniczne</h2><div class="faq-item"><h3><button class="faq-q" type="button" aria-expanded="false">Na czym będzie zbudowana moja strona? <span class="faq-icon"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span></button></h3><div class="faq-a"><div><p>Zależy od projektu i Twoich potrzeb. Dla prostych stron wybieram czysty HTML, CSS i JavaScript, co daje bardzo szybkie i proste rozwiązanie. Dla zaawansowanych funkcjonalności używam również backendu w PHP lub innym języku.</p></div></div></div><div class="faq-item"><h3><button class="faq-q" type="button" aria-expanded="false">Czy strona będzie działać na telefonach? <span class="faq-icon"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span></button></h3><div class="faq-a"><div><p>Tak, to jeden z moich standardów, a nie opcja premium. Każda strona jest projektowana mobile-first i testowana na smartfonach, tabletach i w różnych przeglądarkach. Ponad 60% ruchu w internecie pochodzi z urządzeń mobilnych, a strona, która nie działa na telefonie, traci klientów.</p></div></div></div><div class="faq-item"><h3><button class="faq-q" type="button" aria-expanded="false">Czy strona będzie szybka? <span class="faq-icon"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span></button></h3><div class="faq-a"><div><p>Tak. Optymalizuję każdą stronę pod kątem Core Web Vitals i PageSpeed. Typowy wynik to 90–97/100 w Google PageSpeed. To szybkie ładowanie, brak skakania strony podczas wczytywania i pozytywny sygnał dla Google.</p></div></div></div><div class="faq-item"><h3><button class="faq-q" type="button" aria-expanded="false">Czy strona będzie widoczna w Google? <span class="faq-icon"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span></button></h3><div class="faq-a"><div><p>Każda strona wychodzi z solidnymi podstawami SEO: poprawną strukturą nagłówków H1–H3, meta tagami, sitemap.xml, robots.txt, szybkim ładowaniem i danymi strukturalnymi. To fundament widoczności. SEO to długi proces i nie obiecuję pierwszej pozycji, ale daję Ci wszystko, żeby zacząć z jak najlepszego miejsca.</p></div></div></div><div class="faq-item"><h3><button class="faq-q" type="button" aria-expanded="false">Czy będę mógł samodzielnie edytować stronę? <span class="faq-icon"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span></button></h3><div class="faq-a"><div><p>Nie. Wszystkimi zmianami zajmuję się ja. Mówisz, co chcesz zmienić lub poprawić, a ja załatwiam to od strony technicznej.</p></div></div></div></section>
+<section class="faq-cat" data-cat="social" aria-label="Social media"><h2><span class="ic-box"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 11.5a7.5 7.5 0 0 1-10.8 6.7L4 20l1.4-4.6A7.5 7.5 0 1 1 20 11.5z"/><path d="M12 14.5s-3-1.8-3-3.9a1.7 1.7 0 0 1 3-1.1 1.7 1.7 0 0 1 3 1.1c0 2.1-3 3.9-3 3.9z"/></svg></span>Social media</h2><div class="faq-item"><h3><button class="faq-q" type="button" aria-expanded="false">Czym różni się setup od prowadzenia social mediów? <span class="faq-icon"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span></button></h3><div class="faq-a"><div><p>Setup to usługa jednorazowa: zakładam lub porządkuję profile firmowe i przygotowuję grafiki, opis oraz dane kontaktowe. Prowadzenie to abonament miesięczny: plan publikacji, posty, grafiki i opieka nad profilami. Możesz zamówić sam setup albo od razu obie usługi.</p></div></div></div><div class="faq-item"><h3><button class="faq-q" type="button" aria-expanded="false">Na jakich platformach pracujesz? <span class="faq-icon"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span></button></h3><div class="faq-a"><div><p>Najczęściej na Facebooku i Instagramie. W zależności od branży także na innych platformach, na przykład LinkedIn czy TikTok. Wybieramy te, na których są Twoi klienci, zamiast zakładać profile wszędzie.</p></div></div></div><div class="faq-item"><h3><button class="faq-q" type="button" aria-expanded="false">Czy to ja będę właścicielem profili? <span class="faq-icon"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span></button></h3><div class="faq-a"><div><p>Tak. Profile zakładam na Twoje dane i przekazuję Ci pełne dostępy, więc nie jesteś ode mnie zależny, jeśli kiedyś zdecydujesz się zmienić sposób prowadzenia profili.</p></div></div></div><div class="faq-item"><h3><button class="faq-q" type="button" aria-expanded="false">Czy social media zastąpią stronę internetową? <span class="faq-icon"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span></button></h3><div class="faq-a"><div><p>Nie, to dwa różne narzędzia. Profile budują zasięg i kontakt z klientami, a strona daje wiarygodność, pozycje w Google i miejsce, do którego kierujesz każdego zainteresowanego. Najlepiej działają razem, w jednym spójnym stylu.</p></div></div></div><div class="faq-item"><h3><button class="faq-q" type="button" aria-expanded="false">Czy obiecujesz konkretne wyniki? <span class="faq-icon"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span></button></h3><div class="faq-a"><div><p>Nie obiecuję liczb obserwujących, bo zależą od branży, budżetu i czasu. Obiecuję regularność, spójny wizerunek i jasne podsumowanie tego, co działa, a co warto zmienić.</p></div></div></div></section>
+<section class="faq-cat" data-cat="ceny" aria-label="Ceny i płatności"><h2><span class="ic-box"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M14.8 9.2c-.6-.8-1.6-1.2-2.8-1.2-1.7 0-2.8.8-2.8 2s1 1.7 2.8 2 2.8.8 2.8 2-1.1 2-2.8 2c-1.2 0-2.2-.4-2.8-1.2M12 6.5V8m0 8v1.5"/></svg></span>Ceny i płatności</h2><div class="faq-item"><h3><button class="faq-q" type="button" aria-expanded="false">Ile kosztuje strona internetowa? <span class="faq-icon"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span></button></h3><div class="faq-a"><div><p>Strona dla małej firmy zaczyna się od 1 500 zł (cena końcowa, bez VAT). Cena zależy od liczby podstron, funkcjonalności (np. sklep, rezerwacje), zakresu treści i pilności. Szczegółowy cennik znajdziesz w zakładce Cennik. Jeśli nie wiesz, od czego zacząć, napisz o swojej firmie, a przygotuję wycenę bez zobowiązań.</p></div></div></div><div class="faq-item"><h3><button class="faq-q" type="button" aria-expanded="false">Ile kosztują social media? <span class="faq-icon"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span></button></h3><div class="faq-a"><div><p>Cena zależy od liczby platform, częstotliwości publikacji i liczby grafik. Setup profili jest usługą jednorazową, a prowadzenie to abonament miesięczny. Wycenę dostajesz po krótkiej rozmowie, bez zobowiązań.</p></div></div></div><div class="faq-item"><h3><button class="faq-q" type="button" aria-expanded="false">Jak wygląda płatność? <span class="faq-icon"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span></button></h3><div class="faq-a"><div><p>Nie pobieram zaliczki. Płacisz po ukończeniu projektu i Twojej akceptacji. Gotowa strona trafia na wybraną domenę po wpłacie, a za usługę wystawiam rachunek.</p></div></div></div></section>
+<section class="faq-cat" data-cat="po" aria-label="Po publikacji"><h2><span class="ic-box"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6l7-3z"/><path d="M9 12l2.2 2.2L15.5 10"/></svg></span>Po publikacji</h2><div class="faq-item"><h3><button class="faq-q" type="button" aria-expanded="false">Co się dzieje po tym, jak strona trafia na serwer? <span class="faq-icon"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span></button></h3><div class="faq-a"><div><p>Jeśli chcesz zmienić treść na stronie, napisz lub zadzwoń do mnie, a ja wprowadzę zmiany. Jeśli potrzebujesz stałej opieki, możesz wybrać abonament obsługi technicznej.</p></div></div></div><div class="faq-item"><h3><button class="faq-q" type="button" aria-expanded="false">Czy strona będzie bezpieczna? <span class="faq-icon"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span></button></h3><div class="faq-a"><div><p>Tak. Każda strona ma certyfikat SSL (HTTPS), odpowiednie nagłówki bezpieczeństwa i jest konfigurowana zgodnie z dobrymi praktykami.</p></div></div></div></section>
 
-    <div class="faq-section">
-
-      <!-- PROCES -->
-      <div class="faq-cat visible" data-cat="proces">
-        <div class="faq-cat-title">⚙️ Proces współpracy</div>
-
-        <div class="faq-item reveal">
-          <div class="faq-q" onclick="toggleFaq(this)">Jak długo trwa realizacja strony? <span class="faq-icon">+</span></div>
-          <div class="faq-a">Standardowo 7–14 dni od momentu gdy mam wszystkie materiały (treści, zdjęcia, podstawowe informacje o firmie). Landing page można zrealizować w 3–5 dni. Na początku każdej współpracy podaję konkretną datę oddania strony — i jej dotrzymuję. Jeśli potrzebujesz pilnie, zapytaj o ekspresową realizację.</div>
+      <div class="contact-cta reveal">
+        <div>
+          <h2>Dalej masz pytania?</h2>
+          <p>Odpowiadam w ciągu 24 godzin. Nie musisz pasować do żadnej kategorii, opisz swoją sytuację, a powiem Ci, co bym zrobił.</p>
         </div>
-
-        <div class="faq-item reveal">
-          <div class="faq-q" onclick="toggleFaq(this)">Co muszę przygotować przed rozpoczęciem? <span class="faq-icon">+</span></div>
-          <div class="faq-a">Potrzebuję: krótki opis firmy i usług, logo (jeśli masz), ewentualne zdjęcia. Resztą się zajmuję. Jeśli nie masz logo — mogę zaproponować podstawową identyfikację lub skierować do sprawdzonego grafika.</div>
+        <div class="btns">
+          <a href="kontakt.html" class="btn btn-primary">Napisz do mnie <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <a href="mailto:kbwebdesign.opole@gmail.com" class="btn btn-ghost">kbwebdesign.opole@gmail.com</a>
         </div>
-
-        <div class="faq-item reveal">
-          <div class="faq-q" onclick="toggleFaq(this)">Ile razy mogę poprawiać projekt? <span class="faq-icon">+</span></div>
-          <div class="faq-a">Przed rozpoczęciem kodowania dostajesz pełny podgląd projektu wizualnego. Na tym etapie masz do 3 poprawek strony. Dalszy rozwój bądź edycja strony jest zależna od wybranego pakietu. </div>
-        </div>
-
-        <div class="faq-item reveal">
-          <div class="faq-q" onclick="toggleFaq(this)">Jak wygląda pierwsza rozmowa? <span class="faq-icon">+</span></div>
-          <div class="faq-a">15-minutowa rozmowa przez telefon. Opowiadasz mi o swojej firmie, klientach, celach. Ja pytam, słucham i na końcu mówię Ci co zrobiłbym na Twoim miejscu — szczerze i bez sprzedawania droższego pakietu na siłę. Zero zobowiązań. Możesz potem zdecydować, że nie chcesz współpracować — i to jest okej.</div>
-        </div>
-
-      </div>
-
-      <!-- TECHNICZNE -->
-      <div class="faq-cat visible" data-cat="techniczne">
-        <div class="faq-cat-title">💻 Techniczne</div>
-
-        <div class="faq-item reveal">
-          <div class="faq-q" onclick="toggleFaq(this)">Na czym będzie zbudowana moja strona? <span class="faq-icon">+</span></div>
-          <div class="faq-a">Zależy od projektu i Twoich potrzeb. Dla prostych stron — czysty HTML/CSS/JS (bardzo szybkie, bardzo proste). Dla zaawansowanych funkcjonalności - również backend w PHP lub innym języku.</div>
-        </div>
-
-        <div class="faq-item reveal">
-          <div class="faq-q" onclick="toggleFaq(this)">Czy strona będzie działać na telefonach? <span class="faq-icon">+</span></div>
-          <div class="faq-a">Tak — i to jest jeden z moich standardów, nie opcja premium. Każda strona jest projektowana mobile-first i testowana na smartfonach, tabletach i różnych przeglądarkach. Ponad 60% ruchu w internecie pochodzi z urządzeń mobilnych — strona, która nie działa na telefonie, to strona, która traci pieniądze.</div>
-        </div>
-
-        <div class="faq-item reveal">
-          <div class="faq-q" onclick="toggleFaq(this)">Czy strona będzie szybka? <span class="faq-icon">+</span></div>
-          <div class="faq-a">Tak. Optymalizuję każdą stronę pod kątem Core Web Vitals i PageSpeed. Typowy wynik to 90–97/100 w Google PageSpeed. Oznacza to szybkie ładowanie, brak "skakania" strony podczas ładowania i pozytywny sygnał dla Google. Wolna strona traci zarówno odwiedzających jak i pozycje w wyszukiwarce.</div>
-        </div>
-
-        <div class="faq-item reveal">
-          <div class="faq-q" onclick="toggleFaq(this)">Czy strona będzie widoczna w Google? <span class="faq-icon">+</span></div>
-          <div class="faq-a">Każda strona wychodzi z solidnymi podstawami SEO: poprawna struktura nagłówków H1–H3, meta tagi (tytuł, opis), sitemap.xml, robots.txt, szybkość ładowania, dane strukturalne. To fundament widoczności. SEO to długi proces — nie obiecuję pierwszej pozycji — ale daję Ci wszystko, żeby zacząć z jak najlepszej pozycji startowej.</div>
-        </div>
-
-        <div class="faq-item reveal">
-          <div class="faq-q" onclick="toggleFaq(this)">Czy będę mógł samodzielnie edytować stronę? <span class="faq-icon">+</span></div>
-          <div class="faq-a">Nie, wszystkimi zmianami zajmuję się ja, klient tylko mówi co chce zmienić lub poprawić, a jazajmuję się tym od technicznej strony</div>
-        </div>
-      </div>
-
-      <!-- CENY -->
-      <div class="faq-cat visible" data-cat="ceny">
-        <div class="faq-cat-title">💰 Ceny i płatności</div>
-
-        <div class="faq-item reveal">
-          <div class="faq-q" onclick="toggleFaq(this)">Ile kosztuje strona internetowa? <span class="faq-icon">+</span></div>
-          <div class="faq-a">Strona dla małej firmy zaczyna się od 1 500 zł. Cena zależy od liczby podstron, funkcjonalności (np. sklep, rezerwacje), zakresu treści i pilności. Szczegółowy cennik znajdziesz na stronie Cennik. Jeśli nie wiesz od czego zacząć — napisz mi o swojej firmie, a przygotuję wycenę bez zobowiązań.</div>
-        </div>
-
-        <div class="faq-item reveal">
-          <div class="faq-q" onclick="toggleFaq(this)">Jak wygląda płatność? <span class="faq-icon">+</span></div>
-          <div class="faq-a">Po ukończeniu projektu czekam na płatność. Gotowa strona na wybranej domenie trafia do internetu dopiero po wykonaniu płatności.</div>
-        </div>
-
-      </div>
-
-      <!-- PO PUBLIKACJI -->
-      <div class="faq-cat visible" data-cat="po">
-        <div class="faq-cat-title">🚀 Po publikacji</div>
-
-        <div class="faq-item reveal">
-          <div class="faq-q" onclick="toggleFaq(this)">Co się dzieje po tym jak strona trafia na serwer? <span class="faq-icon">+</span></div>
-          <div class="faq-a">W przypadku chęci zmiany treści na stronie, proszę o bezpośredni kontakt ze mną, a ja wykonam co należy.</div>
-        </div>
-
-        <div class="faq-item reveal">
-          <div class="faq-q" onclick="toggleFaq(this)">Czy strona będzie bezpieczna? <span class="faq-icon">+</span></div>
-          <div class="faq-a">Tak. Każda strona ma certyfikat SSL (HTTPS), odpowiednie nagłówki bezpieczeństwa i jest konfigurowana zgodnie z dobrymi praktykami.</div>
-        </div>
-      </div>
-
-    </div>
-
-    <!-- CONTACT CTA -->
-    <div class="reveal" style="text-align:center; margin-top:80px; padding:60px 40px; background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-2xl);">
-      <div class="eyebrow" style="justify-content:center;">Dalej masz pytania?</div>
-      <h2 style="font-size:clamp(24px,3.5vw,40px); margin-bottom:14px;">Napisz do mnie.<br>Odpowiadam w ciągu 24h.</h2>
-      <p style="font-size:16px; color:var(--text2); margin-bottom:36px; max-width:440px; margin-left:auto; margin-right:auto;">Nie musisz pasować do żadnej kategorii. Opisz swoją sytuację, a powiem Ci co bym zrobił.</p>
-      <div style="display:flex; gap:14px; justify-content:center; flex-wrap:wrap;">
-        <a href="kontakt.html" class="btn btn-primary">Napisz do mnie →</a>
-        <a href="mailto:kontakt@kbwebdesign.pl" class="btn btn-outline">kbwebdesign.opole@gmail.com</a>
       </div>
     </div>
   </div>
 </section>
-
-<script src="shared.js"></script>
-<script>
-function toggleFaq(el) {
-  const item = el.parentElement;
-  const isOpen = item.classList.contains('open');
-  document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
-  if (!isOpen) item.classList.add('open');
-}
-function showCat(cat, btn) {
-  document.querySelectorAll('.cat-tab').forEach(b => b.classList.remove('active'));
-  btn.classList.add('active');
-  document.querySelectorAll('.faq-cat').forEach(c => {
-    c.classList.toggle('visible', cat === 'all' || c.dataset.cat === cat);
-  });
-}
-</script>
+</main>
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a href="index.html" class="nav-logo" aria-label="KB WebDesign, strona główna"><span class="mark">KB</span>WebDesign</a>
+      <p>Strony internetowe i social media dla firm z Opola i całej Polski. Bezpośredni kontakt, szybka realizacja, gwarancja satysfakcji.</p>
+    </div>
+    <div class="footer-col">
+      <h2>Usługi</h2>
+      <a href="uslugi.html#nowa-strona">Nowa strona internetowa</a>
+      <a href="uslugi.html#obsluga-techniczna">Obsługa techniczna</a>
+      <a href="uslugi.html#social-media">Social media</a>
+      <a href="uslugi.html#setup-social-mediow">Setup social mediów</a>
+    </div>
+    <div class="footer-col">
+      <h2>Firma</h2>
+      <a href="o-mnie.html">O mnie</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="cennik.html">Cennik</a>
+      <a href="faq.html">FAQ</a>
+    </div>
+    <div class="footer-col">
+      <h2>Kontakt</h2>
+      <a href="mailto:kbwebdesign.opole@gmail.com">kbwebdesign.opole@gmail.com</a>
+      <a href="tel:+48572070483">+48 572 070 483</a>
+      <a href="kontakt.html">Formularz kontaktowy</a>
+      <a href="kontakt.html">Bezpłatna wycena</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© <span id="year">2026</span> KB WebDesign. Wszelkie prawa zastrzeżone.</span>
+    <span>Projektuję i buduję w Opolu.</span>
+  </div>
+</footer>
+<script src="shared.js" defer></script>
 </body>
 </html>
