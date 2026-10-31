@@ -132,7 +132,7 @@
     box.setAttribute('aria-label', 'Zgoda na pliki cookie');
     box.innerHTML =
       '<h2>Pliki cookie</h2>' +
-      '<p>Używam analityki (Google Tag Manager), żeby sprawdzać, które podstrony działają najlepiej. Włączam ją tylko za Twoją zgodą.</p>' +
+      '<p>Ta strona korzysta z analityki (Google Tag Manager), aby sprawdzać, które podstrony działają najlepiej. Włączamy ją tylko za Twoją zgodą.</p>' +
       '<div class="row"><button class="btn btn-primary btn-sm" data-c="granted" type="button">Zgadzam się</button>' +
       '<button class="btn btn-ghost btn-sm" data-c="denied" type="button">Odrzucam</button></div>';
     document.body.appendChild(box);

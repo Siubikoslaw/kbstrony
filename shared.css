@@ -209,6 +209,13 @@ h1.hero-h1 { font-size: clamp(46px, 6.6vw, 98px); letter-spacing: -0.035em; line
 .mock-body .l u { display: block; width: 96px; height: 26px; border-radius: 4px; background: var(--green); margin-top: 8px; }
 .mock-body .r { border-radius: 6px; background: var(--mint); position: relative; overflow: hidden; }
 .mock-body .r::after { content: ''; position: absolute; left: 12%; right: 12%; bottom: 0; height: 58%; background: var(--green); opacity: 0.85; clip-path: polygon(0 100%, 30% 30%, 55% 60%, 78% 10%, 100% 100%); }
+.work-thumb.photo { display: block; padding: 0; aspect-ratio: 16 / 10; overflow: hidden; background: var(--mint); }
+.work-thumb.photo img { width: 100%; height: 100%; object-fit: cover; transition: transform 1.4s var(--ease); }
+.work:hover .work-thumb.photo img { transform: scale(1.04); }
+.work-link { display: inline-flex; align-items: center; gap: 8px; width: fit-content; margin-top: 6px; font-weight: 600; color: var(--green); text-decoration: none; background: linear-gradient(currentColor, currentColor) left bottom / 0 1px no-repeat; transition: background-size 0.4s var(--ease); padding-bottom: 2px; }
+.work-link:hover { background-size: 100% 1px; }
+.work-link svg { width: 18px; height: 18px; transition: transform 0.4s var(--ease); }
+.work-link:hover svg { transform: translateX(4px); }
 .work-body { padding: 32px 36px 36px; display: flex; flex-direction: column; gap: 14px; flex: 1; }
 .work-body h3 { font-family: var(--serif); font-size: 32px; font-weight: 500; letter-spacing: -0.02em; }
 .work-body p { font-size: 16.5px; color: var(--ink-2); }
